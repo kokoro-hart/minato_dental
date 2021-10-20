@@ -1,0 +1,44 @@
+{
+  "siteInfo": {
+    "name": "みなと歯科クリニック",
+    "siteUrl": "サイトのドメイン"
+  },
+  "pages": {
+    "home": {
+      "name": "トップページ",
+      "description": "トップページの説明",
+      "type": "website",
+      "slug": "/"
+    },
+    "about": {
+      "name": "当院について",
+      "description": "当院についての説明",
+      "type": "article",
+      "slug": "/about/"
+    },
+    "guidance": {
+      "name": "診察案内",
+      "description": "診察案内の説明",
+      "type": "article",
+      "slug": "/guidance/"
+    },
+    "staff": {
+      "name": "スタッフ紹介",
+      "description": "スタッフ紹介の説明",
+      "type": "article",
+      "slug": "/staff/"
+    },
+    "blog": {
+      "name": "スタッフブログ",
+      "description": "スタッフブログの説明",
+      "type": "article",
+      "slug": "/blog/"
+    },
+    "contact": {
+      "name": "お問い合わせ",
+      "description": "お問い合わせの説明",
+      "type": "article",
+      "slug": "/contact/"
+    }
+  }
+}

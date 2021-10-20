@@ -1,0 +1,10 @@
+@use "foundation/global";
+
+.l-inner {
+  width: global.$layout-width-inner;
+  max-width: 100%;
+  height: inherit;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}

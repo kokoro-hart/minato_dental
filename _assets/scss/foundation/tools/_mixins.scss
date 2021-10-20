@@ -1,0 +1,73 @@
+@mixin fs($size, $importantFlg: false) {
+  font-size: $size + px + if($importantFlg, " !important", "");
+  font-size: $size/10 + rem + if($importantFlg, " !important", "");
+}
+
+//  ブレークポイント（モバイルファースト）
+//--------------------------------------------------------------------------
+$screen: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1280px,
+  xxl: 1400px,
+) !default;
+
+@mixin mq($size, $width: min) {
+  $result: 0;
+
+  @if (type-of($size) == number) {
+    $result: $size;
+  } @else {
+    @each $key, $value in $screen {
+      @if ($key == $size) {
+        $result: $value;
+      }
+    }
+  }
+
+  @if ($width == max) {
+    $result: $result - 1;
+  }
+
+  @media (#{$width}-width: #{$result}) {
+    @content;
+  }
+}
+
+
+//  ブラウザ判定 browser_switcher.jsと併用
+//--------------------------------------------------------------------------
+@mixin browser($browsers) {
+  @each $browser in $browsers {
+    html.#{$browsers} & {
+      @content;
+    }
+  }
+}
+
+
+//  フォントサイズ 行間の一括指定
+//--------------------------------------------------------------------------
+//フォントサイズ
+@mixin fz($font_xs: "", $font_md: "") {
+  font-size: #{$font_xs}px;
+
+  @if ($font_md != "") {
+    @include mq(md) {
+      font-size: #{$font_md}px;
+    }
+  }
+}
+//行間
+@mixin lh($lineH_xs: "", $lineH_md: "") {
+  line-height: #{$lineH_xs}em;
+
+  @if ($lineH_md != "") {
+    @include mq(md) {
+      line-height: #{$lineH_md}em;
+    }
+  }
+}
+

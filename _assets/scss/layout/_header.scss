@@ -1,0 +1,11 @@
+@use "foundation/global";
+
+.l-header {
+  
+}
+
+.l-header-logo {
+  &__svg {
+    color: global.$color-main;
+  }
+}
