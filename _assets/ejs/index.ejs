@@ -4,9 +4,79 @@
 
 <%# console.log(jsonData) %>
 <main class="p-home">
-  <div class="inner-block">
-    homeです
-  </div>
+  <!--診察時間 お知らせ-->
+  <section class="p-home-info">
+    <div class="p-home-medical">
+      <picture class="p-home-medical__picture">
+        <source class="p-home-medical__img" srcset="/img/webp/medical-time_sp.webp" media="(max-width: 767px)" type="image/webp" />
+        <source class="p-home-medical__img" srcset="/img/webp/medical-time_pc.webp" media="(min-width: 768px)" type="image/webp" />
+        <source class="p-home-medical__img" srcset="/img/common/medical-time_sp.png" media="(max-width: 767px)" />
+        <img src="/img/common/medical-time_pc.png" class="p-home-medical__img" media="(min-width: 768px)" alt="診察時間">
+      </picture>
+    </div>
+    <div class="p-home-news">
+      <div class="p-home-news__head">
+        <div class="p-home-news__title">
+          <h2 class="p-home-news__title-ja">お知らせ</h2>
+          <span class="p-home-news__title-en">NEWS</span>
+        </div>
+        <div class="p-home-news__past">
+          <a href="" class="p-home-news__past-link">
+            過去のお知らせはこちら
+          </a>
+        </div>
+      </div>
+      <div class="p-home-news__body">
+        <a href="" class="p-home-news__archive">
+          <time class="p-home-news__time" datetime="2021.07.01">2021.07.01</time>
+          <p class="p-home-news__text">
+            年末年始の営業時間のお知らせ
+          </p>          
+          <svg class="c-svg p-home-news__arrow" width="14" height="14">
+            <use xlink:href="/img/svg/sprite.min.svg#icon-right"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+  <!--/診察時間 お知らせ-->
+
+  <!--コンセプト-->
+  <section class="p-home-concept p-feature">
+    <svg class="c-svg p-feature__bg u-hidden-md-up" width="145vw" height="81vw">
+      <use xlink:href="/img/svg/sprite.min.svg#concept-bg" />
+    </svg>
+    <div class="p-feature__contents">
+            <picture class="p-feature__picture">
+              <source class="p-feature__img" srcset="/img/webp/concept-img01.webp" type="image/webp" />
+              <img src="/img/common/concept-img01.jpeg" class="p-feature__img" alt="コンセプトイメージ">
+            </picture>
+      <div class="p-feature__textarea">
+        <div class="p-feature__title">
+          <span class="p-feature__title-en">CONCEPT</span>
+          <h2 class="p-feature__title-ja">
+            健康的で素敵な笑顔あふれる <br>
+            街づくりを目指して
+          </h2>
+        </div>
+        
+        <p class="p-feature__text">
+          私たちは最新の医療技術を追求すると共に、患者様とのコミュニケーションを大事することで、気軽に通いやすく些細なことでも相談できる「街の掛かり付け医」を目指しております。
+          <br>
+          お子様からご高齢の方まで、快適な空間で治療が受けられる場を作り、地域医療に貢献しきたいと考えております。
+        </p>
+        <div class="p-feature__link-wrapper">
+          <a href="/about/" class="c-button-primary">
+            当院について
+            <svg class="c-svg c-button-primary__arrow" width="12" height="12">
+              <use xlink:href="/img/svg/sprite.min.svg#icon-right" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--/コンセプト-->
 </main>
 
 
