@@ -1,0 +1,133 @@
+@use "foundation/global";
+
+// Project トップページ (prefix: p-home)
+//--------------------------------------------------------------------------
+
+// メインビジュアル
+//--------------------------------------------------------------------------
+
+// 診察時間 お知らせ
+//--------------------------------------------------------------------------
+.p-home-info { 
+  margin-top: 200px;
+  padding: 0 20px;
+
+  @include global.mq(md) {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+  }
+}
+
+//診察時間
+.p-home-medical {
+  max-width: 477px;
+  width: 100%;
+  margin-top: -22px;
+  background-color: global.$color-text-white;
+  box-shadow: global.$box-shadow;
+  border-radius: 12px;
+
+  @include global.mq(md) {
+    margin-left: 63px;
+  }
+
+  &__picture {
+    width: 100%;
+  } 
+}
+
+//お知らせ
+.p-home-news {
+  $this: &;
+  max-width: 540px;
+  width: 100%;
+  margin-top: 40px;
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__title {
+    display: flex;
+    align-items: flex-end;
+    font-weight: 700;
+  }
+
+  &__title-ja {
+    @include global.fz(20);
+    @include global.lh(1.2);
+  }
+
+  &__title-en {
+    margin-left: 16px;
+    color: global.$color-main;
+    @include global.fz(11,12);
+    @include global.lh(1.7);
+  }
+
+  &__past {
+
+  }
+
+  &__past-link {
+    color: global.$color-text-gray;
+    @include global.fz(11,12);
+    @include global.lh(1.7);
+    text-decoration: underline;
+  }
+
+  &__body {
+    margin-top: 8px;
+  }
+
+  &__archive {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 12px 0;
+    border-top: 1px solid global.$color-text-gray;
+    border-bottom: 1px solid global.$color-text-gray;
+    transition: color 0.3s;
+
+    &:hover {
+      color: global.$color-main;
+      #{$this}__arrow {
+        color: global.$color-main;
+        transform: translate(4px, -50%);
+      }
+    }
+  }
+
+  &__time {
+    padding-left: 6px;
+    @include global.fz(12);
+    @include global.lh(1.4);
+    white-space: nowrap;
+  }
+
+  &__text {
+    margin-left: 12px;
+    padding-right: 32px;
+    @include global.fz(14);
+    @include global.lh(1.42);
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 5px;
+    width: 14px;
+    height: 14px;
+    color: global.$color-text-black;
+    transition: transform 0.3s;
+  }
+}
+
+// コンセプト
+//--------------------------------------------------------------------------
+.p-home-concept {
+  margin-top: 60px;
+}
