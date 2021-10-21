@@ -9,18 +9,21 @@
 
 /* Layout (prefix: l- )
    ----------------------------------------------------------------- */
-@use "layout/inner";
-@use "layout/header";
-@use "layout/footer";
+@use "layout/l-inner";
+@use "layout/l-header";
+@use "layout/l-footer";
 
 /* Component (prefix: c- )
    ----------------------------------------------------------------- */
-@use "object/component/nav";
+@use "object/component/c-global-nav";
+@use "object/component/c-button";
 
 /* Project (prefix: p- )
    ----------------------------------------------------------------- */
-@use "object/Project/index";
+@use "object/Project/p-header";
+@use "object/Project/p-home";
+@use "object/Project/p-feature";
 
 /* Utitlity (prefix: u- )
    ----------------------------------------------------------------- */
-@use "object/utility/hidden";
+@use "object/utility/u-hidden";
