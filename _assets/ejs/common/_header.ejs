@@ -48,91 +48,41 @@
         <!--/ヘッダーロゴ-->
 
         <div class="l-header__content">
+
           <!--グローバルナビ-->
           <nav class="c-global-nav" id="js-global-nav" area-hidden="true">
             <ul class="c-global-nav__list">
+              <% for(let page in jsonData.pages){ %>
+              <% if (page===pageId) { %>
               <li class="c-global-nav__item">
-                <a href="/" class="c-global-nav__link">
+                <a class="c-global-nav__link is-current">
                   <svg class="c-svg c-global-nav__icon" width="24" height="24">
-                    <use xlink:href="/img/svg/sprite.min.svg#icon-home" />
+                    <use xlink:href="/img/svg/sprite.min.svg#icon-<%= jsonData.pages[page].id %>" />
                   </svg>
                   <span class="c-global-nav__text">
-                    ホーム
+                    <%= jsonData.pages[page].name %>
                   </span>                
                   <svg class="c-svg c-global-nav__arrow-right u-hidden-xl-up" width="14" height="14">
                     <use xlink:href="/img/svg/sprite.min.svg#icon-right" />
                   </svg>
                 </a>
               </li>
-              <li class="c-global-nav__item">
-                <a href="/about/" class="c-global-nav__link">
-                  <svg class="c-svg c-global-nav__icon" width="24" height="24">
-                    <use xlink:href="/img/svg/sprite.min.svg#icon-about" />
-                  </svg>
-                  <span class="c-global-nav__text">
-                    当院について
-                  </span>
-                  <svg class="c-svg c-global-nav__arrow-right u-hidden-xl-up" width="14" height="14">
-                    <use xlink:href="/img/svg/sprite.min.svg#icon-right" />
-                  </svg>
-                </a>
-              </li>
-              <li class="c-global-nav__item">
-                <a href="/guidance/" class="c-global-nav__link">
-                  <svg class="c-svg c-global-nav__icon" width="24" height="24">
-                    <use xlink:href="/img/svg/sprite.min.svg#icon-guidance" />
-                  </svg>
-                  <span class="c-global-nav__text">
-                    診察案内
-                  </span>
-                  
-                  <svg class="c-svg c-global-nav__arrow-right u-hidden-xl-up" width="14" height="14">
-                    <use xlink:href="/img/svg/sprite.min.svg#icon-right" />
-                  </svg>
-                </a>
-              </li>
-              <li class="c-global-nav__item">
-                <a href="/staff/" class="c-global-nav__link">
-                  <svg class="c-svg c-global-nav__icon" width="24" height="24">
-                    <use xlink:href="/img/svg/sprite.min.svg#icon-staff" />
-                  </svg>
-                  <span class="c-global-nav__text">
-                    スタッフ紹介
-                  </span>
-                  
-                  <svg class="c-svg c-global-nav__arrow-right u-hidden-xl-up" width="14" height="14">
-                    <use xlink:href="/img/svg/sprite.min.svg#icon-right" />
-                  </svg>
-                </a>
-              </li>
-              <li class="c-global-nav__item">
-                <a href="/blog/" class="c-global-nav__link">
-                  <svg class="c-svg c-global-nav__icon" width="24" height="24">
-                    <use xlink:href="/img/svg/sprite.min.svg#icon-blog" />
-                  </svg>
-                  <span class="c-global-nav__text">
-                    スタッフブログ
-                  </span>
-                  
-                  <svg class="c-svg c-global-nav__arrow-right u-hidden-xl-up" width="14" height="14">
-                    <use xlink:href="/img/svg/sprite.min.svg#icon-right" />
-                  </svg>
-                </a>
-              </li>
-              <li class="c-global-nav__item">
-                <a href="/contact/" class="c-global-nav__link">
-                  <svg class="c-svg c-global-nav__icon" width="24" height="24">
-                    <use xlink:href="/img/svg/sprite.min.svg#icon-contact" />
-                  </svg>
-                  <span class="c-global-nav__text">
-                    お問い合わせ
-                  </span>
-                  
-                  <svg class="c-svg c-global-nav__arrow-right u-hidden-xl-up" width="14" height="14">
-                    <use xlink:href="/img/svg/sprite.min.svg#icon-right" />
-                  </svg>
-                </a>
-              </li>
+              <% } else { %>
+                <li class="c-global-nav__item">
+                  <a href="<%= jsonData.pages[page].slug %>" class="c-global-nav__link">
+                    <svg class="c-svg c-global-nav__icon" width="24" height="24">
+                      <use xlink:href="/img/svg/sprite.min.svg#icon-<%= jsonData.pages[page].id %>" />
+                    </svg>
+                    <span class="c-global-nav__text">
+                      <%= jsonData.pages[page].name %>
+                    </span>
+                    <svg class="c-svg c-global-nav__arrow-right u-hidden-xl-up" width="14" height="14">
+                      <use xlink:href="/img/svg/sprite.min.svg#icon-right" />
+                    </svg>
+                  </a>
+                </li>
+              <% } %>
+              <% }; %>
             </ul>
           </nav>
           <!--/グローバルナビ-->
@@ -159,6 +109,7 @@
             </a>
           </div>
           <!--電話番号-->
+
         </div>
       </div>
     </header>
