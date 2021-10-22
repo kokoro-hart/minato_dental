@@ -67,10 +67,6 @@
     @include global.lh(1.7);
   }
 
-  &__past {
-
-  }
-
   &__past-link {
     color: global.$color-text-gray;
     @include global.fz(11,12);
@@ -130,4 +126,82 @@
 //--------------------------------------------------------------------------
 .p-home-concept {
   margin-top: 60px;
+}
+
+// 当院3つのおすすめ
+//--------------------------------------------------------------------------
+.p-home-recommend {
+  margin-top: 100px;
+  margin-bottom: 100px;
+
+  @include global.mq(md) {
+    margin-top: 120px;
+  }
+
+  &__title-wrapper {
+    text-align: center;
+  }
+
+  &__items {
+    max-width: 600px;
+    margin: 38px auto 0;
+    padding: 0 48px;
+
+    @include global.mq(md) {
+      display: flex;
+      justify-content: center;
+      max-width: 966px;
+      margin: 60px auto 0;
+      padding: 0 20px;
+    }
+  }
+}
+
+.p-home-recommend-item {
+  text-align: center;
+  width: 100%;
+
+  @include global.mq(md) {
+    width: calc(33.333333% - 60px * 2 / 3);
+
+    &:nth-child(n + 2) {
+      margin-left: 60px;
+    }
+  }
+
+  &:not(:first-child) {
+    margin-top: 60px;
+
+    @include global.mq(md) {
+      margin-top: 0;
+    }
+  }
+  
+  &__title-img {
+    width: 178px;
+
+    @include global.mq(md) {
+      width: 190px;
+    }
+  }
+
+  &__svg {
+    display: inline-block;
+    margin-top: 12px;
+    width: 100%;
+    color: global.$color-sub02;
+  }
+
+  &__text {
+    display: inline-block;
+    text-align: left;
+    margin-top: 22px;
+    @include global.fz(14);
+    @include global.lh(1.7);
+  }
+
+  &__text--color-red {
+    margin: 0;
+    color: global.$color-accent;
+  }
 }
