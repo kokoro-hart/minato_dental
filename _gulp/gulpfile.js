@@ -222,7 +222,7 @@ const svg = () => {
         },
         {
           removeAttrs: {
-            attrs: ['fill', 'class', 'id', 'data-name', 'stroke']
+            attrs: ['class', 'id', 'data-name', 'stroke']
           }
         },
         {
