@@ -1,0 +1,45 @@
+@use "foundation/global";
+
+// Component タイトル
+//--------------------------------------------------------------------------
+
+.c-section-title {
+  position: relative;
+  display: inline-block;
+  color: global.$color-text-black;
+  @include global.fz(20, 28);
+  @include global.lh(1.4);
+  font-weight: 700;
+  letter-spacing: 1.6px;
+
+  @include global.mq(md) {
+    letter-spacing: 2.24px;
+  }
+
+  &__decoration {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 15px;
+
+    @include global.mq(md) {
+      width: 72px;
+      height: 20px;
+    }
+
+    &:first-child {
+      left: -64px;
+      @include global.mq(md) {
+        left: -95px;
+      }
+    }
+
+    &:last-child {
+      right: -64px;
+      @include global.mq(md) {
+        right: -95px;
+      }
+    }
+  }
+}
