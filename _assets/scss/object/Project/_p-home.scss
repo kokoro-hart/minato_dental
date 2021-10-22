@@ -20,7 +20,7 @@
 }
 
 //診察時間
-.p-home-medical {
+.p-home-medical-time{
   max-width: 477px;
   width: 100%;
   margin-top: -22px;
@@ -131,13 +131,6 @@
 // 当院3つのおすすめ
 //--------------------------------------------------------------------------
 .p-home-recommend {
-  margin-top: 100px;
-  margin-bottom: 100px;
-
-  @include global.mq(md) {
-    margin-top: 120px;
-  }
-
   &__title-wrapper {
     text-align: center;
   }
@@ -176,7 +169,7 @@
       margin-top: 0;
     }
   }
-  
+
   &__title-img {
     width: 178px;
 
@@ -203,5 +196,13 @@
   &__text--color-red {
     margin: 0;
     color: global.$color-accent;
+  }
+}
+
+// 診察案内
+//--------------------------------------------------------------------------
+.p-home-medical {
+  &__title-wrapper {
+    text-align: center;
   }
 }

@@ -6,12 +6,12 @@
 <main class="p-home">
   <!--診察時間 お知らせ-->
   <section class="p-home-info">
-    <div class="p-home-medical">
-      <picture class="p-home-medical__picture">
-        <source class="p-home-medical__img" srcset="/img/webp/medical-time_sp.webp" media="(max-width: 767px)" type="image/webp" />
-        <source class="p-home-medical__img" srcset="/img/webp/medical-time_pc.webp" media="(min-width: 768px)" type="image/webp" />
-        <source class="p-home-medical__img" srcset="/img/common/medical-time_sp.png" media="(max-width: 767px)" />
-        <img src="/img/common/medical-time_pc.png" class="p-home-medical__img" media="(min-width: 768px)" alt="診察時間">
+    <div class="p-home-medical-time">
+      <picture class="p-home-medical-time__picture">
+        <source class="p-home-medical-time__img" srcset="/img/webp/medical-time_sp.webp" media="(max-width: 767px)" type="image/webp" />
+        <source class="p-home-medical-time__img" srcset="/img/webp/medical-time_pc.webp" media="(min-width: 768px)" type="image/webp" />
+        <source class="p-home-medical-time__img" srcset="/img/common/medical-time_sp.png" media="(max-width: 767px)" />
+        <img src="/img/common/medical-time_pc.png" class="p-home-medical-time__img" media="(min-width: 768px)" alt="診察時間">
       </picture>
     </div>
     <div class="p-home-news">
@@ -49,7 +49,7 @@
     <div class="p-feature__contents">
             <picture class="p-feature__picture">
               <source class="p-feature__img" srcset="/img/webp/concept-img01.webp" type="image/webp" />
-              <img src="/img/common/concept-img01.jpeg" class="p-feature__img" alt="コンセプトイメージ">
+              <img src="/img/common/concept-img01.jpeg" width="584" height="401" class="p-feature__img" alt="コンセプトイメージ">
             </picture>
       <div class="p-feature__textarea">
         <div class="p-feature__title">
@@ -79,7 +79,7 @@
   <!--/コンセプト-->
 
   <!--当院３つのおすすめ-->
-  <section class="p-home-recommend">
+  <section class="p-home-recommend l-section">
     <div class="p-home-recommend__title-wrapper">
       <h2 class="c-section-title">
         <svg class="c-svg c-section-title__decoration" width="50" height="15">
@@ -131,6 +131,24 @@
     </ol>
   </section>
   <!--/当院３つのおすすめ-->
+
+  <!--診察案内-->
+  <section class="p-home-medical l-section">
+    <div class="l-inner">
+      <div class="p-home-medical__title-wrapper">
+        <h2 class="c-section-title">
+          <svg class="c-svg c-section-title__decoration" width="50" height="15">
+            <use xlink:href="/img/svg/sprite.min.svg#title-deco" />
+          </svg>
+          診療案内
+          <svg class="c-svg c-section-title__decoration" width="50" height="15">
+            <use xlink:href="/img/svg/sprite.min.svg#title-deco" />
+          </svg>
+        </h2>
+      </div>
+    </div>
+  </section>
+  <!--/診察案内-->
 </main>
 
 
