@@ -1,0 +1,8 @@
+@use "foundation/global";
+
+// Utility フォント
+//--------------------------------------------------------------------------
+
+.u-color-red {
+  color: global.$color-accent;
+}
