@@ -2,7 +2,7 @@
 
 // フォントファミリー
 //--------------------------------------------------------------------------
-//共通
+//英字邦字共通
 $font-family: 'M PLUS Rounded 1c', sans-serif;
 
 //  カラー
@@ -10,6 +10,7 @@ $font-family: 'M PLUS Rounded 1c', sans-serif;
 //テキストカラー
 $color-text-black: #393939;
 $color-text-white: #FFF;
+$color-text-gray: #888;
 
 //メインカラー
 $color-main: #1391E6;
@@ -20,6 +21,16 @@ $color-sub02: #DFF1FD;
 
 //アクセントカラー
 $color-accent: #EE5A6D;
+
+//ボーダーカラー
+$color-border: #393939;
+
+//マスクカラー
+$color-mask01: rgba(0, 0, 0, 0.2);
+$color-mask02: rgba(0, 0, 0, 0.4);
+
+//box-shadow 
+$box-shadow: 0px 3px 6px rgb(0 0 0 / 16%);
 
 //  レイアウト
 //--------------------------------------------------------------------------
