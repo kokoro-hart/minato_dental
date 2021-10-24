@@ -3,9 +3,9 @@
 <%- include('./common/_header', {pageId:pageId }) %>
 
 <%# console.log(jsonData) %>
-<main class="p-home">
+<main class="p-home l-home">
   <!--診察時間 お知らせ-->
-  <section class="p-home-info">
+  <section class="p-home-info l-home__info">
     <div class="p-home-medical-time">
       <picture class="p-home-medical-time__picture">
         <source class="p-home-medical-time__img" srcset="/img/webp/medical-time_sp.webp" media="(max-width: 767px)" type="image/webp" />
@@ -42,7 +42,7 @@
   <!--/診察時間 お知らせ-->
 
   <!--コンセプト-->
-  <section class="p-home-concept p-feature">
+  <section class="p-feature l-home__concept">
     <svg class="c-svg p-feature__bg u-hidden-md-up" width="145vw" height="81vw">
       <use xlink:href="/img/svg/sprite.min.svg#concept-bg" />
     </svg>
@@ -79,16 +79,10 @@
   <!--/コンセプト-->
 
   <!--当院３つのおすすめ-->
-  <section class="p-home-recommend l-section">
+  <section class="p-home-recommend l-home__recommend">
     <div class="p-home-recommend__title-wrapper">
       <h2 class="c-section-title">
-        <svg class="c-svg c-section-title__decoration" width="50" height="15">
-          <use xlink:href="/img/svg/sprite.min.svg#title-deco" />
-        </svg>
         当院の3つのおすすめ
-        <svg class="c-svg c-section-title__decoration" width="50" height="15">
-          <use xlink:href="/img/svg/sprite.min.svg#title-deco" />
-        </svg>
       </h2>
     </div>
     <ol class="p-home-recommend__items">
@@ -131,50 +125,153 @@
   <!--/当院３つのおすすめ-->
 
   <!--診察案内-->
-  <section class="p-home-medical l-decoration l-section">
-      <div class="l-decoration__top"></div>
-      <div class="l-decoration__body">
-        <div class="p-home-medical__contents l-inner">
-          <div class="p-home-medical__title-wrapper">
-            <h2 class="c-section-title">
-              <svg class="c-svg c-section-title__decoration" width="50" height="15">
-                <use xlink:href="/img/svg/sprite.min.svg#title-deco" />
-              </svg>
-              診療案内
-              <svg class="c-svg c-section-title__decoration" width="50" height="15">
-                <use xlink:href="/img/svg/sprite.min.svg#title-deco" />
-              </svg>
-            </h2>
-          </div>
-          <div class="p-home-medical__items">
-            <a href="" class="p-home-medical-item">
-              <div class="p-home-medical-item__text-wrapper">
-                <h2 class="p-home-medical-item__title">一般診療</h2>
-                <p class="p-home-medical-item__text">虫歯・入れ歯・小児歯科</p>
-              </div>
-            </a>
-            <a href="" class="p-home-medical-item">
-              <div class="p-home-medical-item__text-wrapper">
-                <h2 class="p-home-medical-item__title">特殊診療</h2>
-                <p class="p-home-medical-item__text">インプラント・ホワイトニング<br>予防歯科・口腔外科・審美歯科</p>
-              </div>
-            </a>
-          </div>
-          <p class="p-home-medical__text">
-            当院では、患者さんの歯の健康状態や治療方針を丁寧にカウンセリングし、十分ご理解していただいた上で治療いたします。
-            <br>
-            痛みに配慮することと、可能な限り削らない・抜かない治療に努めております。
-            <br>
-            <span class="u-color-red">
-              ※特殊性の高い矯正治療などは保険の適応外となります。
-              これらの治療を行う際は事前に詳細と費用のご説明いたします。
-            </span>
-          </p>
+  <section class="p-home-medical l-home__medical l-decoration">
+    <div class="l-decoration__top"></div>
+    <div class="l-decoration__body">
+      <div class="p-home-medical__contents l-inner">
+        <div class="p-home-medical__title-wrapper">
+          <h2 class="c-section-title">
+            診療案内
+          </h2>
         </div>
+        <div class="p-home-medical__items">
+          <a href="" class="p-home-medical-item">
+            <div class="p-home-medical-item__text-wrapper">
+              <h2 class="p-home-medical-item__title">一般診療</h2>
+              <p class="p-home-medical-item__text">虫歯・入れ歯・小児歯科</p>
+            </div>
+          </a>
+          <a href="" class="p-home-medical-item">
+            <div class="p-home-medical-item__text-wrapper">
+              <h2 class="p-home-medical-item__title">特殊診療</h2>
+              <p class="p-home-medical-item__text">インプラント・ホワイトニング<br>予防歯科・口腔外科・審美歯科</p>
+            </div>
+          </a>
+        </div>
+        <p class="p-home-medical__text">
+          当院では、患者さんの歯の健康状態や治療方針を丁寧にカウンセリングし、十分ご理解していただいた上で治療いたします。
+          <br>
+          痛みに配慮することと、可能な限り削らない・抜かない治療に努めております。
+          <br>
+          <span class="u-color-red">
+            ※特殊性の高い矯正治療などは保険の適応外となります。
+            これらの治療を行う際は事前に詳細と費用のご説明いたします。
+          </span>
+        </p>
       </div>
-      <div class="l-decoration__bottom"></div>
+    </div>
+    <div class="l-decoration__bottom"></div>
   </section>
   <!--/診察案内-->
+
+  <!--スタッフブログ-->
+  <section class="p-home-blog l-home__blog">
+    <div class="l-inner">
+      <div class="p-home-blog__title-wrapper">
+        <h2 class="c-section-title">
+          スタッフブログ
+        </h2>
+      </div>
+      <div class="p-home-blog__items">
+        <a href="" class="p-home-blog-item">
+          <p class="p-home-blog-item__thumbnail">
+            <img src="/img/common/blog01.jpeg" alt="記事の画像" class="p-home-blog-item__img">
+          </p>
+          <div class="p-home-blog-item__body">
+            <div class="p-home-blog-item__cats">
+              <p class="p-home-blog-item__cat">お知らせ</p>
+              <p class="p-home-blog-item__cat">お知らせ</p>
+            </div>
+            <p class="p-home-blog-item__title">
+              記事のタイトルが入ります。記事のタイトルが入ります。記事のタイトルが入ります。記事のタイトルが入ります。記事のタイトルが入ります。記事のタイトルが入ります。
+            </p>
+            <time class="p-home-blog-item__time" datetime="2020.02.14">2020.02.14</time>
+          </div>
+        </a>
+
+        <a href="" class="p-home-blog-item">
+          <p class="p-home-blog-item__thumbnail">
+            <img src="/img/common/blog02.jpeg" alt="記事の画像" class="p-home-blog-item__img">
+          </p>
+          <div class="p-home-blog-item__body">
+            <div class="p-home-blog-item__cats">
+              <p class="p-home-blog-item__cat">お知らせ</p>
+            </div>
+            <p class="p-home-blog-item__title">
+              記事のタイトルが入ります。記事のタイトルが入ります。
+            </p>
+            <time class="p-home-blog-item__time" datetime="2020.02.14">2020.02.14</time>
+          </div>
+        </a>
+        <a href="" class="p-home-blog-item">
+          <p class="p-home-blog-item__thumbnail">
+            <img src="/img/common/blog03.jpeg" alt="記事の画像" class="p-home-blog-item__img">
+          </p>
+          <div class="p-home-blog-item__body">
+            <div class="p-home-blog-item__cats">
+              <p class="p-home-blog-item__cat">お知らせ</p>
+            </div>
+            <p class="p-home-blog-item__title">
+              記事のタイトルが入ります。記事のタイトルが入ります。
+            </p>
+            <time class="p-home-blog-item__time" datetime="2020.02.14">2020.02.14</time>
+          </div>
+        </a>
+        <a href="" class="p-home-blog-item">
+          <p class="p-home-blog-item__thumbnail">
+            <img src="/img/common/blog01.jpeg" alt="記事の画像" class="p-home-blog-item__img">
+          </p>
+          <div class="p-home-blog-item__body">
+            <div class="p-home-blog-item__cats">
+              <p class="p-home-blog-item__cat">お知らせ</p>
+            </div>
+            <p class="p-home-blog-item__title">
+              記事のタイトルが入ります。記事のタイトルが入ります。
+            </p>
+            <time class="p-home-blog-item__time" datetime="2020.02.14">2020.02.14</time>
+          </div>
+        </a>
+        <a href="" class="p-home-blog-item">
+          <p class="p-home-blog-item__thumbnail">
+            <img src="/img/common/blog02.jpeg" alt="記事の画像" class="p-home-blog-item__img">
+          </p>
+          <div class="p-home-blog-item__body">
+            <div class="p-home-blog-item__cats">
+              <p class="p-home-blog-item__cat">お知らせ</p>
+            </div>
+            <p class="p-home-blog-item__title">
+              記事のタイトルが入ります。記事のタイトルが入ります。
+            </p>
+            <time class="p-home-blog-item__time" datetime="2020.02.14">2020.02.14</time>
+          </div>
+        </a>
+        <a href="" class="p-home-blog-item">
+          <p class="p-home-blog-item__thumbnail">
+            <img src="/img/common/blog03.jpeg" alt="記事の画像" class="p-home-blog-item__img">
+          </p>
+          <div class="p-home-blog-item__body">
+            <div class="p-home-blog-item__cats">
+              <p class="p-home-blog-item__cat">お知らせ</p>
+            </div>
+            <p class="p-home-blog-item__title">
+              記事のタイトルが入ります。記事のタイトルが入ります。
+            </p>
+            <time class="p-home-blog-item__time" datetime="2020.02.14">2020.02.14</time>
+          </div>
+        </a>
+      </div>
+
+      <div class="p-home-blog__link-wrapper">
+        <a href="/blog/" class="c-button-primary">
+          スタッフブログ一覧はこちら
+          <svg class="c-svg c-button-primary__arrow" width="12" height="12">
+            <use xlink:href="/img/svg/sprite.min.svg#icon-right" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+  <!--/スタッフブログ-->
 </main>
 
 
