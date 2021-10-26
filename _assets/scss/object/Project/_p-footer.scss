@@ -1,0 +1,228 @@
+@use "foundation/global";
+
+// Project フッター
+//--------------------------------------------------------------------------
+
+//インフォメーション
+.p-footer-info {
+  width: 100%;
+  border-radius: 8px;
+  padding: 32px 22px 20px 22px;
+  background-color: global.$color-text-white;
+  text-align: center;
+
+  @include global.mq(md) {
+    border-radius: 20px;
+  }
+  @include global.mq(lg) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__contact {
+    max-width: 478px;
+    width: 100%;
+    margin: auto;
+
+    @include global.mq(lg) {
+      margin: 0;
+    }
+  }
+
+  //ロゴ
+  &__logo {
+    line-height: 0;
+  }
+
+  &__logo-svg {
+    width: 311px;
+    height: 33px;
+    color: global.$color-main;
+
+    @include global.mq(md) {
+      width: 401px;
+      height: 45px;
+    }
+  }
+
+  //住所
+  &__access {
+    margin-top: 10px;
+    @include global.fz(14);
+    @include global.lh(1.7);
+  }
+
+  &__access-inside {
+    display: inline-block;
+    margin-left: 14px;
+  }
+
+
+  //電話番号
+  &__tel {
+    display: inline-block;
+    margin-top: 20px;
+    color: global.$color-main;
+    @include global.fz(32);
+    @include global.lh(1.12);
+    font-weight: 700;
+    letter-spacing: -0.64px;
+
+    @include global.mq(md) {
+      margin-top: 24px;
+    }
+  }
+
+  &__tel-svg {
+    width: 28px;
+    height: 28px;
+    color: global.$color-main;
+    transform: translateY(2px);
+  }
+
+  //営業時間
+  &__time {
+    color: global.$color-main;
+    @include global.fz(12);
+    @include global.lh(1.7);
+  }
+
+  //予約 お問い合わせ
+  &__link-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  //診察時間
+  &__medical {
+    display: inline-block;
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: global.$box-shadow;
+    margin-top: 20px;
+  }
+
+  &__medical-img {
+    width: 100%;
+  }
+}
+
+//マップ
+.p-footer-map {
+  max-width: 478px;
+  width: 100%;
+  margin: 22px auto 0;
+
+  @include global.mq(lg) {
+    max-width: 385px;
+    width: 100%;
+    margin: 0 0 0 40px;
+  }
+
+  &__inner {
+    position: relative;
+    width: 100%;
+    padding-top: 100%;
+  }
+
+  &__iframe {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+//フッターナビゲーション
+.p-footer-nav {
+  margin-top: 58px;
+  padding-left: 10px;
+  @include global.fz(16, 16);
+  @include global.lh(1.4);
+
+  @include global.mq(lg) {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__item {
+    margin-top: 40px;
+    font-weight: 700;
+
+    @include global.mq(lg) {
+      margin-top: 0;
+      &:nth-child(n + 2) {
+        margin-left: 40px;
+      }
+    }
+  }
+
+  &__box {
+    display: flex;
+  }
+
+  &__link {
+    font-weight: 700;
+  }
+}
+
+//下層リンク
+.p-footer-lower-nav {
+  font-weight: 500;
+
+  &:nth-child(n +2) {
+    margin-left: 26px;
+  }
+  &__item {
+    margin-top: 20px;
+  }
+
+  &__link {
+    position: relative;
+    padding-left: 12px;
+    transition: color 0.3s;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: -6px;
+      width: 12px;
+      height: 15px;
+      background-image: url('data:image/svg+xml;charset=utf8,%3Csvg%20height%3D%2212%22%20viewBox%3D%220%200%2015.4%2015.979%22%20width%3D%2216%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22%231391E6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%221.4%22%3E%3Cpath%20d%3D%22m7.5%2018h14%22%20transform%3D%22translate(-6.8%20-10.01)%22%2F%3E%3Cpath%20d%3D%22m18%207.5%206.606%207-6.606%207%22%20transform%3D%22translate(-9.906%20-6.51)%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      transition: transform 0.3s;
+    }
+
+    &:hover {
+      color: global.$color-main;
+      &::before {
+        transform: translate(2.5px, -50%);
+      }
+    }
+  }
+}
+
+//コピーライト
+.p-footer-copyright {
+  height: 115px;
+  margin-top: 60px;
+  padding-top: 17px;
+  background-color: global.$color-main;
+  text-align: center;
+
+  @include global.mq(xl) {
+    height: 55px;
+  }
+
+  &__text {
+    color: global.$color-text-white;
+  }
+}
