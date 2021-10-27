@@ -1,0 +1,37 @@
+@use "foundation/global";
+
+// Component パンくすリスト
+//--------------------------------------------------------------------------
+
+.c-breadcrumb {
+  width: 100%;
+  &__list {
+    display: flex;
+  }
+  &__item {
+    margin-right: 8px;
+    @include global.fz(12);
+    @include global.lh(1.4);
+    font-weight: 500;
+    &:first-child {
+      color: global.$color-text-gray;
+    }
+    &:last-child {
+      color: global.$color-text-black;
+    }
+    &:not(:first-child) {
+      position: relative;
+      padding-left: 20px;
+      &::after {
+        content: "＞";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+      }
+    }
+  }
+  &__link {
+    display: inline-block;
+  }
+}
