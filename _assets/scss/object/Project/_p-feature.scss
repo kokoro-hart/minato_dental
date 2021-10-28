@@ -3,27 +3,10 @@
 // Project フューチャー
 //--------------------------------------------------------------------------
 
+//デフォルト
 .p-feature {
   position: relative;
-  padding-top: 104px;
   overflow: hidden;
-
-  @include global.mq(md) {
-    padding-top: 180px;
-    padding-bottom: 8.4375vw;
-    &::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 33%;
-      width: 102%;
-      height: 725px;
-      background: url(../img/common/concept-bg_pc.png) no-repeat left center / contain;
-    }
-  }
-
-
-  margin-bottom: 100px;
 
   &__bg {
     position: absolute;
@@ -115,6 +98,56 @@
 
     @include global.mq(md) {
       height: 438px;
+    }
+  }
+}
+
+
+//背景ベクターあり
+.p-feature--decoration {
+  padding-top: 104px;
+  @include global.mq(md) {
+    padding-top: 180px;
+    padding-bottom: 8.4375vw;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 33%;
+      width: 102%;
+      height: 725px;
+      background: url(../img/common/concept-bg_pc.png) no-repeat left center / contain;
+    }
+  }
+}
+
+//リバース
+.p-feature--reverse {
+  @include global.mq(md) {
+    &::after {
+      visibility: hidden;
+    }
+  }
+
+  .p-feature__contents {
+    @include global.mq(md) {
+      flex-direction: row-reverse;
+    }
+  }
+
+  .p-feature__picture {
+    border-radius: 20px 0 0 20px ;
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .p-feature__textarea {
+    @include global.mq(md) {
+      margin-right: 40px;
+    }
+
+    @include global.mq(lg) {
+      margin-right: 95px;
     }
   }
 }
