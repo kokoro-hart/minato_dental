@@ -6,3 +6,11 @@
 .u-ml15 {
   margin-left: 15px;
 }
+
+.u-mt10 {
+  margin-top: 10px;
+
+  @include global.mq(md) {
+    margin-top: 14px;
+  }
+}
