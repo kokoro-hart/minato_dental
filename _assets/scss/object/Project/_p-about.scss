@@ -28,3 +28,64 @@
     }
   }
 }
+
+//院内の様子
+.p-about-state {
+  width: 100%;
+  margin-bottom: -11px;
+
+  @include global.mq(md) {
+    margin-bottom: -24px;
+  }
+  &__title-wrapper {
+    text-align: center;
+  }
+
+  &__photos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 40px;
+
+    @include global.mq(md) {
+      margin-top: 60px;
+      &::after {
+        content: "";
+        width: calc(33.33333% - 24px * 2 / 3 );
+      }
+    }
+  }
+
+  &__photo {
+    overflow: hidden;
+    border-radius: 20px;
+    width: calc(50% - 12px / 2);
+    margin-bottom: 11px;
+
+    @include global.mq(sm) {
+      border-radius: 25px;
+    }
+
+    @include global.mq(md) {
+      width: calc(33.33333% - 24px * 2 / 3 );
+      margin-bottom: 24px;
+    }
+  }
+
+  &__picture {
+    display: block;
+    position: relative;
+    width: 100%;
+    padding-top: 100%;
+  }
+
+  &__img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
