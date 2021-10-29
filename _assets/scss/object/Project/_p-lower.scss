@@ -11,14 +11,8 @@
   width: 90%;
   height: 188px;
   border-radius: 12px;
-  margin-top: 80px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 80px auto 0;
   background: no-repeat center center / cover;
-
-  &::before {
-
-  }
 
   @include global.mq(md) {
     height: 340px;
@@ -59,6 +53,7 @@
   }
 }
 
+//当院について
 .p-lower-mv--about {
   background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(../img/webp/mv-about_sp.webp);
   @include global.browser("ie") {
@@ -75,6 +70,27 @@
     }
     @include global.browser("safari") {
       background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(../img/common/mv-about_pc.jpeg);
+    }
+  }
+}
+
+//診察案内
+.p-lower-mv--medical {
+  background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(../img/webp/mv-medical_sp.webp);
+  @include global.browser("ie") {
+    background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(../img/common/mv-medical_sp.jpeg);
+  }
+  @include global.browser("safari") {
+    background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(../img/common/mv-medical_sp.jpeg);
+  }
+
+  @include global.mq(md) {
+    background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(../img/webp/mv-medical_pc.webp);
+    @include global.browser("ie") {
+      background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(../img/common/mv-medical_pc.jpeg);
+    }
+    @include global.browser("safari") {
+      background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(../img/common/mv-medical_pc.jpeg);
     }
   }
 }
