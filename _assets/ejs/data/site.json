@@ -3,6 +3,7 @@
     "name": "みなみ歯科クリニック",
     "siteUrl": "サイトのドメイン"
   },
+
   "pages": {
     "home": {
       "name": "ホーム",
@@ -18,12 +19,12 @@
       "type": "article",
       "slug": "/about/"
     },
-    "guidance": {
+    "medical": {
       "name": "診察案内",
-      "id": "guidance",
+      "id": "medical",
       "description": "診察案内の説明",
       "type": "article",
-      "slug": "/guidance/"
+      "slug": "/medical/"
     },
     "staff": {
       "name": "スタッフ紹介",
@@ -45,6 +46,48 @@
       "description": "お問い合わせの説明",
       "type": "article",
       "slug": "/contact/"
+    },
+    "reserve": {
+      "name": "WEB予約",
+      "id": "web",
+      "description": "WEB予約の説明",
+      "type": "article",
+      "slug": "/reserve/"
+    }
+
+  },
+
+  "nav": {
+    "home": {
+      "name": "ホーム",
+      "id": "home",
+      "slug": "/"
+    },
+    "about": {
+      "name": "当院について",
+      "id": "about",
+      "slug": "/about/"
+    },
+    "medical": {
+      "name": "診察案内",
+      "id": "medical",
+      "slug": "/medical/"
+    },
+    "staff": {
+      "name": "スタッフ紹介",
+      "id": "staff",
+      "slug": "/staff/"
+    },
+    "blog": {
+      "name": "スタッフブログ",
+      "id": "blog",
+      "slug": "/blog/"
+    },
+    "contact": {
+      "name": "お問い合わせ",
+      "id": "contact",
+      "slug": "/contact/"
     }
   }
+
 }
