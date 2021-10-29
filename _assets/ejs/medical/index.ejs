@@ -1,0 +1,171 @@
+<% let pageId='medical' ; %>
+
+  <%- include('../common/_header', {pageId:pageId }) %>
+
+    <% console.log(jsonData) %>
+      <main class="p-medical">
+        <!--メインビジュアル-->
+        <section class="p-lower-mv p-lower-mv--medical">
+          <picture class="p-lower-mv__picture">
+            <source class="p-lower-mv__img" srcset="/img/webp/mv-medical_sp.webp" media="(max-width: 767px)"type="image/webp" />
+            <source class="p-lower-mv__img" srcset="/img/webp/mv-medical_pc.webp" media="(min-width: 768px)"type="image/webp" />
+            <source class="p-lower-mv__img" srcset="/img/webp/mv-medical_pc.webp" media="(max-width: 767px)" />
+            <img src="/img/common/mv-medical_pc.jpeg" class="p-lower-mv__img" media="(min-width: 768px)" decoding="async" alt="診察案内">
+          </picture>
+          <div class="p-lower-mv__contents">
+            <h2 class="p-lower-mv__heading">診療案内</h2>
+            <p class="p-lower-mv__lead">MEDICAL</p>
+          </div>
+        </section>
+        <!--/メインビジュアル-->
+
+        <!--パンくずリスト-->
+        <div class="c-breadcrumb u-mt10">
+          <div class="l-inner">
+            <ul class="c-breadcrumb__list" itemscope itemtype="https://schema.org/BreadcrumbList">
+              <li class="c-breadcrumb__item" itemprop="itemListElement" itemscope
+                itemtype="https://schema.org/ListItem">
+                <a class="c-breadcrumb__link" itemprop="item" href="/"><span itemprop="name">ホーム</span></a>
+                <meta itemprop="position" content="1" />
+              </li>
+              <li class="c-breadcrumb__item" itemprop="itemListElement" itemscope
+                itemtype="https://schema.org/ListItem">
+                <a class="c-breadcrumb__link" itemprop="item" href="/medical/"><span itemprop="name">診察案内</span></a>
+                <meta itemprop="position" content="2" />
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!--/パンくずリスト-->
+
+        <div class="l-lower l-lower-medical">
+          <!--診察案内ナビゲーション-->
+          <div class="p-medical-nav">
+            <div class="p-medical-nav__inner l-inner">
+              <div class="p-medical-nav__group">
+                <div class="p-medical-nav__title-wrapper">
+                  <h2 class="p-medical-nav__title">一般診療</h2>
+                  <p class="p-medical-nav__label">保険対象</p>
+                </div>
+                <ul class="p-medical-nav__list">
+                  <% for (let detail in jsonData.medical01){ %>
+                  <li class="p-medical-nav__item">
+                    <a href="" class="p-medical-nav__link">
+                      <%= jsonData.medical01[detail].title %>
+                    </a>
+                  </li>
+                  <% }; %>
+                </ul>
+              </div>
+
+              <div class="p-medical-nav__group">
+                <div class="p-medical-nav__title-wrapper">
+                  <h2 class="p-medical-nav__title">特殊診療</h2>
+                  <p class="p-medical-nav__label">実費</p>
+                </div>
+                <ul class="p-medical-nav__list">
+                  <% for (let detail in jsonData.medical02){ %>
+                  <li class="p-medical-nav__item">
+                    <a href="" class="p-medical-nav__link">
+                      <%= jsonData.medical02[detail].title %>
+                    </a>
+                  </li>
+                  <% }; %>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!--/診察案内ナビゲーション-->
+
+          <!--一般診療-->
+          <section class="l-lower-medical__details l-decoration">
+            <div class="l-decoration__top"></div>
+            <div class="p-medical-detail l-decoration__body">
+              <div class="p-medical-detail__title-wrapper">
+                <h2 class="c-section-title">一般診療</h2>
+              </div>
+              <div class="l-inner">
+                <ul class="p-medical-detail__items">
+                  <% for (let detail in jsonData.medical01){ %>
+                    <li class="p-medical-detail-item">
+                      <div class="p-medical-detail-item__title-wrapper">
+                        <h3 class="p-medical-detail-item__title">
+                          <%= jsonData.medical01[detail].title %>
+                        </h3>
+                        <p class="p-medical-detail-item__lead">
+                          <%= jsonData.medical01[detail].lead %>
+                        </p>
+                      </div>
+                      <p class="p-medical-detail-item__text">
+                        <%= jsonData.medical01[detail].text %>
+                          <br>
+                          <br>
+                          <%= jsonData.medical01[detail].text %>
+                      </p>
+                      <div class="p-medical-detail-item__img-wrapper">
+                        <img src="<%= jsonData.medical01[detail].src %>" alt="<%= jsonData.medical01[detail].title %>"
+                          class="p-medical-detail-item__img">
+                      </div>
+                      <svg class="c-svg p-medical-detail-item__tag u-hidden-md-up" width="80" height="60">
+                        <use xlink:href="/img/svg/sprite.min.svg#icon-tag01_sp" />
+                      </svg>
+                      <svg class="c-svg p-medical-detail-item__tag u-hidden-md-down" width="100" height="80">
+                        <use xlink:href="/img/svg/sprite.min.svg#icon-tag01_pc" />
+                      </svg>
+                    </li>
+                    <% }; %>
+                </ul>
+              </div>
+            </div>
+            <div class="l-decoration__bottom"></div>
+          </section>
+          <!--/一般診療-->
+          
+          <!--特殊診療-->
+          <section class="l-lower-medical__details l-decoration">
+            <div class="l-decoration__top"></div>
+            <div class="p-medical-detail l-decoration__body">
+              <div class="p-medical-detail__title-wrapper">
+                <h2 class="c-section-title">特殊診療</h2>
+              </div>
+              <div class="l-inner">
+                <ul class="p-medical-detail__items">
+                  <% for (let detail in jsonData.medical02){ %>
+                    <li class="p-medical-detail-item">
+                      <div class="p-medical-detail-item__title-wrapper">
+                        <h3 class="p-medical-detail-item__title">
+                          <%= jsonData.medical02[detail].title %>
+                        </h3>
+                        <p class="p-medical-detail-item__lead">
+                          <%= jsonData.medical02[detail].lead %>
+                        </p>
+                      </div>
+                      <p class="p-medical-detail-item__text">
+                        <%= jsonData.medical02[detail].text %>
+                          <br>
+                          <br>
+                          <%= jsonData.medical02[detail].text %>
+                      </p>
+                      <div class="p-medical-detail-item__img-wrapper">
+                        <img src="<%= jsonData.medical02[detail].src %>" alt="<%= jsonData.medical02[detail].title %>"
+                          class="p-medical-detail-item__img">
+                      </div>
+                      <svg class="c-svg p-medical-detail-item__tag u-hidden-md-up" width="80" height="60">
+                        <use xlink:href="/img/svg/sprite.min.svg#icon-tag01_sp" />
+                      </svg>
+                      <svg class="c-svg p-medical-detail-item__tag u-hidden-md-down" width="100" height="80">
+                        <use xlink:href="/img/svg/sprite.min.svg#icon-tag01_pc" />
+                      </svg>
+                    </li>
+                    <% }; %>
+                </ul>
+              </div>
+            </div>
+            <div class="l-decoration__bottom"></div>
+          </section>
+          <!--/特殊診療-->
+        </div>
+        
+      </main>
+
+      <%- include('../common/_footer', {pageId:pageId }) %>
