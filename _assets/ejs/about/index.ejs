@@ -6,6 +6,12 @@
 <main class="p-about">
   <!--メインビジュアル-->
   <section class="p-lower-mv p-lower-mv--about">
+    <picture class="p-lower-mv__picture">
+      <source class="p-lower-mv__img" srcset="/img/webp/mv-about_sp.webp" media="(max-width: 767px)" type="image/webp" />
+      <source class="p-lower-mv__img" srcset="/img/webp/mv-about_pc.webp" media="(min-width: 768px)" type="image/webp" />
+      <source class="p-lower-mv__img" srcset="/img/webp/mv-about_pc.webp" media="(max-width: 767px)" />
+      <img src="/img/common/mv-about_pc.jpeg" class="p-lower-mv__img" media="(min-width: 768px)" decoding="async" alt="診察案内">
+    </picture>
     <div class="p-lower-mv__contents">
       <h2 class="p-lower-mv__heading">当院について</h2>
       <p class="p-lower-mv__lead">ABOUT OUR CLINIC</p>
