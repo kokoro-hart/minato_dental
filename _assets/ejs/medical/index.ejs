@@ -45,12 +45,12 @@
               <div class="p-medical-nav__group">
                 <div class="p-medical-nav__title-wrapper">
                   <h2 class="p-medical-nav__title">一般診療</h2>
-                  <p class="p-medical-nav__label">保険対象</p>
+                  <p class="p-medical-nav__label p-medical-nav__label--blue">保険対象</p>
                 </div>
                 <ul class="p-medical-nav__list">
                   <% for (let detail in jsonData.medical01){ %>
                   <li class="p-medical-nav__item">
-                    <a href="" class="p-medical-nav__link">
+                    <a href="#<%= jsonData.medical01[detail].id %>" class="p-medical-nav__link">
                       <%= jsonData.medical01[detail].title %>
                     </a>
                   </li>
@@ -61,12 +61,12 @@
               <div class="p-medical-nav__group">
                 <div class="p-medical-nav__title-wrapper">
                   <h2 class="p-medical-nav__title">特殊診療</h2>
-                  <p class="p-medical-nav__label">実費</p>
+                  <p class="p-medical-nav__label p-medical-nav__label--red">実費</p>
                 </div>
                 <ul class="p-medical-nav__list">
                   <% for (let detail in jsonData.medical02){ %>
                   <li class="p-medical-nav__item">
-                    <a href="" class="p-medical-nav__link">
+                    <a href="#<%= jsonData.medical02[detail].id %>" class="p-medical-nav__link">
                       <%= jsonData.medical02[detail].title %>
                     </a>
                   </li>
@@ -78,7 +78,7 @@
           <!--/診察案内ナビゲーション-->
 
           <!--一般診療-->
-          <section class="l-lower-medical__details l-decoration">
+          <section id="medical01" class="l-lower-medical__details l-decoration">
             <div class="l-decoration__top"></div>
             <div class="p-medical-detail l-decoration__body">
               <div class="p-medical-detail__title-wrapper">
@@ -87,7 +87,7 @@
               <div class="l-inner">
                 <ul class="p-medical-detail__items">
                   <% for (let detail in jsonData.medical01){ %>
-                    <li class="p-medical-detail-item">
+                    <li id="<%= jsonData.medical01[detail].id %>" class="p-medical-detail-item">
                       <div class="p-medical-detail-item__title-wrapper">
                         <h3 class="p-medical-detail-item__title">
                           <%= jsonData.medical01[detail].title %>
@@ -96,15 +96,16 @@
                           <%= jsonData.medical01[detail].lead %>
                         </p>
                       </div>
-                      <p class="p-medical-detail-item__text">
-                        <%= jsonData.medical01[detail].text %>
-                          <br>
-                          <br>
+                      <div class="p-medical-detail-item__body">
+                        <p class="p-medical-detail-item__text">
                           <%= jsonData.medical01[detail].text %>
-                      </p>
-                      <div class="p-medical-detail-item__img-wrapper">
-                        <img src="<%= jsonData.medical01[detail].src %>" alt="<%= jsonData.medical01[detail].title %>"
-                          class="p-medical-detail-item__img">
+                            <br>
+                            <br>
+                            <%= jsonData.medical01[detail].text %>
+                        </p>
+                        <div class="p-medical-detail-item__img-wrapper">
+                          <img src="<%= jsonData.medical01[detail].src %>" alt="<%= jsonData.medical01[detail].title %>" class="p-medical-detail-item__img">
+                        </div>
                       </div>
                       <svg class="c-svg p-medical-detail-item__tag u-hidden-md-up" width="80" height="60">
                         <use xlink:href="/img/svg/sprite.min.svg#icon-tag01_sp" />
@@ -122,7 +123,7 @@
           <!--/一般診療-->
           
           <!--特殊診療-->
-          <section class="l-lower-medical__details l-decoration">
+          <section id="medical02" class="l-lower-medical__details l-decoration">
             <div class="l-decoration__top"></div>
             <div class="p-medical-detail l-decoration__body">
               <div class="p-medical-detail__title-wrapper">
@@ -131,7 +132,7 @@
               <div class="l-inner">
                 <ul class="p-medical-detail__items">
                   <% for (let detail in jsonData.medical02){ %>
-                    <li class="p-medical-detail-item">
+                    <li id="<%= jsonData.medical02[detail].id %>" class="p-medical-detail-item">
                       <div class="p-medical-detail-item__title-wrapper">
                         <h3 class="p-medical-detail-item__title">
                           <%= jsonData.medical02[detail].title %>
@@ -140,15 +141,17 @@
                           <%= jsonData.medical02[detail].lead %>
                         </p>
                       </div>
-                      <p class="p-medical-detail-item__text">
-                        <%= jsonData.medical02[detail].text %>
-                          <br>
-                          <br>
+                      <div class="p-medical-detail-item__body">
+                        <p class="p-medical-detail-item__text">
                           <%= jsonData.medical02[detail].text %>
-                      </p>
-                      <div class="p-medical-detail-item__img-wrapper">
-                        <img src="<%= jsonData.medical02[detail].src %>" alt="<%= jsonData.medical02[detail].title %>"
-                          class="p-medical-detail-item__img">
+                            <br>
+                            <br>
+                            <%= jsonData.medical02[detail].text %>
+                        </p>
+                        <div class="p-medical-detail-item__img-wrapper">
+                          <img src="<%= jsonData.medical02[detail].src %>" alt="<%= jsonData.medical02[detail].title %>"
+                            class="p-medical-detail-item__img">
+                        </div>
                       </div>
                       <svg class="c-svg p-medical-detail-item__tag u-hidden-md-up" width="80" height="60">
                         <use xlink:href="/img/svg/sprite.min.svg#icon-tag01_sp" />
