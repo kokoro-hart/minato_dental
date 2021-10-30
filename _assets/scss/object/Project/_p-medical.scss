@@ -1,0 +1,248 @@
+@use "foundation/global";
+
+// Project 診察案内 (prefix: p-medical)
+//--------------------------------------------------------------------------
+
+//診察案内ナビゲーション
+.p-medical-nav {
+  &__inner {
+  }
+
+  &__group {
+    width: 100%;
+    &:nth-child(n + 2) {
+      margin-top: 80px;
+    }
+  }
+
+  &__title-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  &__title {
+    @include global.fz(20, 28);
+    @include global.lh(1.4);
+    font-weight: 700;
+    letter-spacing: 1.6px;
+
+    @include global.mq(md) {
+      letter-spacing: 2.24px;
+    }
+  }
+
+  &__label {
+    display: flex;
+    align-items: center;
+    border-radius: 24px;
+    height: 35px;
+    margin-left: 24px;
+    padding: 0 12px;
+    color: global.$color-text-white;
+    @include global.fz(14);
+    @include global.lh(1);
+    font-weight: 700;
+    letter-spacing: 1.12px;
+  }
+
+  &__label--blue {
+    background-color: global.$color-main;
+  }
+
+  &__label--red {
+    background-color: global.$color-accent;
+  }
+
+  &__list {
+    margin-top: 32px;
+
+    @include global.mq(md) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__item {
+    display: block;
+
+    margin-bottom: 16px;
+    text-align: center;
+
+    @include global.mq(md) {
+      &:not(:last-child) {
+        margin-right: 16px;
+      }
+    }
+  }
+
+  &__link {
+    display: block;
+    border: 2px solid global.$color-main;
+    border-radius: 12px;
+    padding: 18px 20px;
+    color: global.$color-main;
+    @include global.fz(20, 24);
+    @include global.lh(1);
+    font-weight: 700;
+    letter-spacing: 1.6px;
+    white-space: nowrap;
+    transition: background-color 0.3s, padding 0.3s;
+
+    @include global.mq(md) {
+      padding: 22px 29px;
+      letter-spacing: 1.92px;
+    }
+
+    &:hover {
+      padding: 11px 29px 25px;
+      background-color: global.$color-sub02;
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20height%3D%2221.452%22%20viewBox%3D%220%200%2020%2021.452%22%20width%3D%2220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22none%22%3E%3Cpath%20d%3D%22m0%202.236h20v19.216h-20z%22%2F%3E%3Cpath%20d%3D%22m10.824%2010.824-.206-10.618-10.618-.206%22%20stroke%3D%22%231391e6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%222%22%20transform%3D%22matrix(-.70710678%20.70710678%20-.70710678%20-.70710678%2017.807%209.095)%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+      background-position: bottom 5px center;
+      background-repeat: no-repeat;
+
+      @include global.mq(md) {
+        padding: 11px 29px 31px;
+      }
+    }
+  }
+}
+
+//診察案内詳細
+.p-medical-detail {
+  &__title-wrapper {
+    width: 100%;
+    text-align: center;
+  }
+
+  &__items {
+    width: 100%;
+    margin-top: 40px;
+
+    @include global.mq(md) {
+      margin-top: 60px;
+    }
+  }
+}
+
+//診察内容詳細アイテム
+.p-medical-detail-item {
+  position: relative;
+  border-radius: 20px;
+  width: 100%;
+  padding: 30px 20px 20px;
+  background-color: global.$color-text-white;
+
+  @include global.mq(md) {
+    padding: 62px 60px 60px;
+  }
+
+  &:nth-child(n + 2) {
+    margin-top: 20px;
+
+    @include global.mq(md) {
+      margin-top: 40px;
+    }
+  }
+
+  &__title-wrapper {
+    border-bottom: 1px solid global.$color-border02;
+    padding-bottom: 20px;
+
+    @include global.mq(md) {
+      display: flex;
+      align-items: center;
+      padding-bottom: 44px;
+    }
+  }
+
+  &__title {
+    @include global.fz(20, 28);
+    @include global.lh(1.4, 1.57);
+    font-weight: 700;
+    letter-spacing: 1.6px;
+
+    @include global.mq(md) {
+      letter-spacing: 2.24px;
+    }
+  }
+
+  &__lead {
+    margin-top: 18px;
+    color: global.$color-main;
+    @include global.fz(14);
+    @include global.lh(1.4);
+    letter-spacing: 1.12px;
+    font-weight: 700;
+
+    @include global.mq(md) {
+      margin-top: 0;
+      margin-left: 40px;
+    }
+  }
+
+  &__body {
+    margin-top: 20px;
+    @include global.mq(md) {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 40px;
+    }
+  }
+
+  &__text {
+    @include global.fz(14);
+    @include global.lh(1.71);
+
+    @include global.mq(md) {
+      width: calc(50% - 25px / 2);
+    }
+
+    @include global.mq(lg) {
+      width: calc(50% - 40px / 2);
+    }
+  }
+
+  &__img-wrapper {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    width: 100%;
+    margin-top: 16px;
+    padding-top: 3 / 4 * 100%; 
+
+    @include global.mq(md) {
+      width: calc(50% - 25px / 2);
+      margin-top: 0;
+      padding-top: 3 / 9 * 100%; 
+    }
+
+    @include global.mq(lg) {
+      width: calc(50% - 40px / 2);
+    }
+  }
+
+  &__img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__tag {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 8px;
+    width: 80px;
+    height: 60px;
+
+    @include global.mq(md) {
+      top: 0;
+      width: 100px;
+      height: 80px;
+    }
+  }
+}
