@@ -52,29 +52,29 @@
           <!--グローバルナビ-->
           <nav class="c-global-nav" id="js-global-nav" area-hidden="true">
             <ul class="c-global-nav__list">
-              <% for(let page in jsonData.pages){ %>
-              <% if (page===pageId) { %>
+              <% for (let page in jsonData.nav){ %>
+              <% if (page === pageId) { %>
               <li class="c-global-nav__item">
                 <a class="c-global-nav__link is-current">
                   <svg class="c-svg c-global-nav__icon" width="24" height="24">
-                    <use xlink:href="/img/svg/sprite.min.svg#icon-<%= jsonData.pages[page].id %>" />
+                    <use xlink:href="/img/svg/sprite.min.svg#icon-<%= jsonData.nav[page].id %>" />
                   </svg>
                   <span class="c-global-nav__text">
-                    <%= jsonData.pages[page].name %>
+                    <%= jsonData.nav[page].name %>
                   </span>                
                   <svg class="c-svg c-global-nav__arrow-right u-hidden-xl-up" width="14" height="14">
                     <use xlink:href="/img/svg/sprite.min.svg#icon-right" />
                   </svg>
                 </a>
               </li>
-              <% } else { %>
+              <% }else { %>
                 <li class="c-global-nav__item">
-                  <a href="<%= jsonData.pages[page].slug %>" class="c-global-nav__link">
+                  <a href="<%= jsonData.nav[page].slug %>" class="c-global-nav__link">
                     <svg class="c-svg c-global-nav__icon" width="24" height="24">
-                      <use xlink:href="/img/svg/sprite.min.svg#icon-<%= jsonData.pages[page].id %>" />
+                      <use xlink:href="/img/svg/sprite.min.svg#icon-<%= jsonData.nav[page].id %>" />
                     </svg>
                     <span class="c-global-nav__text">
-                      <%= jsonData.pages[page].name %>
+                      <%= jsonData.nav[page].name %>
                     </span>
                     <svg class="c-svg c-global-nav__arrow-right u-hidden-xl-up" width="14" height="14">
                       <use xlink:href="/img/svg/sprite.min.svg#icon-right" />
