@@ -6,6 +6,7 @@
   max-width: 728px;
   width: 100%;
   margin: auto;
+
   &__dl {
     width: 100%;
   }
@@ -49,7 +50,7 @@
     @include global.lh(1.4);
 
     @include global.mq(md) {
-      max-width: calc(240px  - 62px);
+      max-width: calc(240px - 62px);
     }
   }
 
@@ -97,6 +98,18 @@
     }
   }
 
+  &__select {
+    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%20width%3D%2220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22m0%200h20v20h-20z%22%20fill%3D%22%23fcfcfc%22%20opacity%3D%220%22%2F%3E%3Cpath%20d%3D%22m5%207.5%205%205%205-5%22%20fill%3D%22none%22%20stroke%3D%22%23393939%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%221.667%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+  }
+
+  &__date {
+    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%20width%3D%2220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22m0%200h20v20h-20z%22%20fill%3D%22none%22%2F%3E%3Cpath%20d%3D%22m0%2013.573a1.391%201.391%200%200%200%201.377%201.4h10.1a1.391%201.391%200%200%200%201.377-1.4v-7.957h-12.854zm9.182-5.734a.349.349%200%200%201%20.344-.351h1.148a.349.349%200%200%201%20.344.351v1.17a.349.349%200%200%201%20-.344.351h-1.148a.349.349%200%200%201%20-.344-.351zm0%203.744a.349.349%200%200%201%20.344-.351h1.148a.349.349%200%200%201%20.344.351v1.17a.349.349%200%200%201%20-.344.351h-1.148a.349.349%200%200%201%20-.344-.351zm-3.673-3.744a.349.349%200%200%201%20.344-.351h1.147a.349.349%200%200%201%20.344.351v1.17a.349.349%200%200%201%20-.344.351h-1.147a.349.349%200%200%201%20-.344-.351zm0%203.744a.349.349%200%200%201%20.344-.351h1.147a.349.349%200%200%201%20.344.351v1.17a.349.349%200%200%201%20-.344.347h-1.147a.349.349%200%200%201%20-.344-.351zm-3.673-3.744a.349.349%200%200%201%20.344-.351h1.148a.349.349%200%200%201%20.344.351v1.17a.349.349%200%200%201%20-.344.351h-1.147a.349.349%200%200%201%20-.344-.351zm0%203.744a.349.349%200%200%201%20.344-.351h1.148a.349.349%200%200%201%20.344.351v1.17a.349.349%200%200%201%20-.344.351h-1.147a.349.349%200%200%201%20-.344-.351zm9.641-9.711h-1.377v-1.404a.465.465%200%200%200%20-.459-.468h-.918a.465.465%200%200%200%20-.459.468v1.4h-3.673v-1.4a.465.465%200%200%200%20-.459-.468h-.918a.465.465%200%200%200%20-.459.468v1.4h-1.378a1.391%201.391%200%200%200%20-1.377%201.408v1.4h12.854v-1.4a1.391%201.391%200%200%200%20-1.377-1.404z%22%20fill%3D%22%23393939%22%20transform%3D%22translate(4%203)%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+  }
+
   &__textarea {
     height: 160px;
   }
@@ -106,4 +119,130 @@
     display: flex;
     justify-content: center;
   }
+}
+
+// コンタクトフォーム7用のスタイル
+//--------------------------------------------------------------------------
+.wpcf7-list-item {
+  margin-left: 0;
+}
+
+.date-2,
+.date-3 {
+  display: block;
+  margin-top: 14px;
+  @include global.mq(md) {
+    margin-top: 20px;
+  }
+}
+
+//ラジオボタン
+[type="radio"] {
+  display: none;
+}
+
+[type="radio"] + span {
+  position: relative;
+  display: inline-block;
+  margin: 0 40px 0 0;
+  padding: 8px 0 8px 32px;
+  @include global.fz(14);
+  @include global.lh(1);
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    border: 1px solid global.$color-main;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    background: global.$color-text-white;
+  }
+
+  @include global.mq(md) {
+    margin-right: 32px;
+  }
+}
+
+[type="radio"]:checked + span {
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 6px;
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    background: global.$color-main;
+  }
+}
+
+//チェックボックス
+.checkbox-1 span label {
+  display: inline-block;
+  padding-bottom: 16px;
+}
+
+[type="checkbox"] {
+  display: none;
+}
+
+[type="checkbox"] + span {
+  display: inline-block;
+  position: relative;
+  margin: 0 24px 0 0;
+  padding: 0 0 0 32px;
+  @include global.fz(14);
+  @include global.lh(1);
+  cursor: pointer;
+
+  @include global.mq(md) {
+    margin-right: 32px;
+  }
+}
+
+[type="checkbox"] + span::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  border: 1px solid global.$color-main;
+  width: 24px;
+  height: 24px;
+  background: global.$color-text-white;
+}
+
+[type="checkbox"]:checked + span::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-60%) rotate(-45deg);
+  left: 1px;
+  border-bottom: 4px solid global.$color-main;
+  border-left: 4px solid global.$color-main;
+  width: 23px;
+  height: 14.4px;
+}
+
+//日付選択
+input[type="date"] {
+  position: relative;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
 }
