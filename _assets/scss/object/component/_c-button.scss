@@ -112,9 +112,22 @@
   width: 100%;
   padding: 9px 13px;
   color: global.$color-main;
-  @include global.fz(14);
+  @include global.fz(14, 16);
   @include global.lh(1);
   white-space: nowrap;
+  letter-spacing: 1.12px;
+  transition: background-color 0.3s, color 0.3s;
+
+  &:hover {
+    background-color: global.$color-main;
+    color: global.$color-text-white;
+  }
+
+  @include global.mq(md) {
+    max-width: 360px;
+    padding: 18px 22px;
+    letter-spacing: 1.28px;
+  }
 }
 
 // フッターボタン
