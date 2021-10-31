@@ -102,6 +102,21 @@
   }
 }
 
+// submitボタン
+//-----------------------
+.c-button-submit {
+  display: inline-block;
+  border: 1px solid global.$color-main;
+  border-radius: 28px;
+  max-width: 273px;
+  width: 100%;
+  padding: 9px 13px;
+  color: global.$color-main;
+  @include global.fz(14);
+  @include global.lh(1);
+  white-space: nowrap;
+}
+
 // フッターボタン
 //-----------------------
 .c-button-footer {
@@ -155,3 +170,4 @@
     color: global.$color-text-white;
   } 
 }
+
