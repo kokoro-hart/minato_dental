@@ -6,3 +6,11 @@
 .u-color-red {
   color: global.$color-accent;
 }
+
+.u-color-gray {
+  color: global.$color-text-gray;
+}
+
+.u-fz11 {
+  @include global.fz(11);
+}
