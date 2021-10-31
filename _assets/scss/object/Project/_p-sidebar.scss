@@ -1,0 +1,207 @@
+@use "foundation/global";
+
+// Layout サイドバー
+//--------------------------------------------------------------------------
+
+.p-sidebar {
+  &__title {
+    position: relative;
+    border-bottom: 1px solid global.$color-text-black;
+    width: 100%;
+    padding-left: 34px;
+    padding-bottom: 6px;
+    padding-top: 6px;
+    @include global.fz(16);
+    @include global.lh(1.25);
+  }
+
+  &__title-icon {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    color: global.$color-text-black;
+  }
+
+  &__cards {
+    margin-top: 20px;
+  }
+}
+
+//クリニックの紹介
+.p-sidebar-intro {
+  &__picture {
+    display: block;
+    margin-top: 20px;
+  }
+
+  &__title {
+    margin-top: 20px;
+    @include global.fz(16);
+    @include global.lh(1.5);
+    font-weight: 700;
+  }
+
+  &__text {
+    margin-top: 14px;
+    @include global.fz(14);
+    @include global.lh(1.71);
+  }
+
+  &__button {
+    position: relative;
+    display: inline-block;
+    margin-top: 14px;
+    padding-right: 18px;
+    color: global.$color-main;
+    @include global.fz(14);
+    @include global.lh(1);
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 0;
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20height%3D%2218%22%20viewBox%3D%220%200%2018%2018%22%20width%3D%2218%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22%231391e6%22%3E%3Cpath%20d%3D%22m0%200h18v18h-18z%22%20opacity%3D%220%22%20transform%3D%22matrix(0%20-1%201%200%200%2018)%22%2F%3E%3Cpath%20d%3D%22m9.765%2015.7a.765.765%200%200%201%20-.589-1.255l3.427-4.1-3.303-4.105a.782.782%200%201%201%201.232-.964l3.7%204.59a.765.765%200%200%201%200%20.972l-3.832%204.59a.765.765%200%200%201%20-.635.272z%22%20transform%3D%22translate(-2.295%20-1.349)%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      width: 18px;
+      height: 18px;
+    }
+  }
+}
+
+//新着記事
+.p-sidebar-new {
+  margin-top: 61px;
+}
+
+
+//投稿
+.p-sidebar-card {
+  $this: &;
+  display: flex;
+  min-height: 100px;
+  height: 100%;
+  margin-bottom: 20px;
+  transition: color 0.3s;
+
+  &:hover {
+    color: global.$color-main;
+
+    #{$this}__img {
+      transform: translate(-50%, -50%) scale(1.1, 1.1);
+    }
+  }
+  
+  &__thumbnail {
+    position: relative;
+    overflow: hidden;
+    max-width: 133px;
+    width: 100%;
+  }
+
+  &__img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease-out;
+  }
+
+  &__body {
+    width: calc(100% - 133px);
+    padding: 10px 10px 0 10px;
+  }
+
+  &__cats {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -5px;
+    margin-top: -5px;
+  }
+
+  &__cat {
+    display: inline-block;
+    border-radius: 10px;
+    margin-left: 5px;
+    margin-top: 5px;
+    padding: 4px 8px;
+    background-color: global.$color-main;
+    color: global.$color-text-white;
+    @include global.fz(10);
+    @include global.lh(1);
+    white-space: nowrap;
+  }
+
+  &__title {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-top: 8px;
+    @include global.fz(14);
+    @include global.lh(1.42);
+    font-weight: 500;
+  }
+
+  &__time {
+    margin-top: 9px;
+    color: global.$color-text-gray;
+    @include global.fz(11);
+    @include global.lh(1);
+  }
+}
+
+
+//カテゴリーリスト
+.p-sidebar-cats {
+  margin-top: 61px;
+
+  &__list {
+    margin-top: 16px;
+    padding-left: 21px;
+  }
+
+  &__item {
+    display: block;
+    margin-bottom: 14px;
+  }
+
+  &__link {
+    display: block;
+    position: relative;
+    padding-left: 12px;
+    transition: color 0.3s;
+    @include global.fz(16);
+    @include global.lh(1.4);
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: -6px;
+      width: 12px;
+      height: 15px;
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20height%3D%2212%22%20viewBox%3D%220%200%2015.4%2015.979%22%20width%3D%2216%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22%231391E6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%221.4%22%3E%3Cpath%20d%3D%22m7.5%2018h14%22%20transform%3D%22translate(-6.8%20-10.01)%22%2F%3E%3Cpath%20d%3D%22m18%207.5%206.606%207-6.606%207%22%20transform%3D%22translate(-9.906%20-6.51)%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      transition: transform 0.3s;
+    }
+
+    &:hover {
+      color: global.$color-main;
+      &::before {
+        transform: translate(2.5px, -50%);
+      }
+    }
+  }
+}
