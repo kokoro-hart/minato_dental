@@ -1,0 +1,109 @@
+@use "foundation/global";
+
+// Project フォーム
+//--------------------------------------------------------------------------
+.p-form {
+  max-width: 728px;
+  width: 100%;
+  margin: auto;
+  &__dl {
+    width: 100%;
+  }
+
+  &__row {
+    border-top: 1px solid global.$color-border03;
+    padding: 26px 0;
+
+    @include global.mq(md) {
+      display: flex;
+      align-items: center;
+    }
+
+    &:last-child {
+      border-bottom: 1px solid global.$color-border03;
+    }
+  }
+
+  &__dd {
+    margin-top: 13px;
+    width: 100%;
+
+    @include global.mq(md) {
+      margin-top: 0;
+    }
+  }
+
+  &__dt {
+    display: flex;
+    max-width: calc(100% - 80px);
+    width: 100%;
+
+    @include global.mq(md) {
+      max-width: 240px;
+    }
+  }
+
+  &__label {
+    position: relative;
+    @include global.fz(16);
+    @include global.lh(1.4);
+
+    @include global.mq(md) {
+      max-width: calc(240px  - 62px);
+    }
+  }
+
+  &__label--required {
+    &::after {
+      content: "必須";
+      position: absolute;
+      top: 50%;
+      right: -48px;
+      transform: translateY(-50%);
+      border-radius: 4px;
+      width: 36px;
+      height: 23px;
+      padding: 0 6px;
+      background-color: global.$color-accent;
+      color: global.$color-text-white;
+      @include global.fz(12);
+      @include global.lh(1);
+      font-weight: 700;
+      white-space: nowrap;
+      line-height: 23px;
+
+      @include global.mq(md) {
+        right: -52px;
+      }
+    }
+  }
+
+  &__input {
+    box-shadow: none;
+    appearance: none;
+    border-radius: 4px;
+    width: 100%;
+    padding: 13px 16px;
+    background-color: global.$color-form;
+    color: inherit;
+    @include global.fz(16);
+    @include global.lh(1.4);
+    font-family: inherit;
+
+    &::placeholder {
+      @include global.fz(16);
+      @include global.lh(1);
+      color: global.$color-border02;
+    }
+  }
+
+  &__textarea {
+    height: 160px;
+  }
+
+  &__submit-wrapper {
+    margin-top: 72px;
+    display: flex;
+    justify-content: center;
+  }
+}
