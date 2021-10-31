@@ -1,0 +1,180 @@
+<% let pageId='blog' ; %>
+
+  <%- include('../common/_header', {pageId:pageId }) %>
+
+    <% console.log(jsonData) %>
+      <main class="">
+        <!--メインビジュアル-->
+        <section class="p-lower-mv">
+          <picture class="p-lower-mv__picture">
+            <source class="p-lower-mv__img" srcset="/img/webp/mv-blog_sp.webp" media="(max-width: 767px)" type="image/webp" />
+            <source class="p-lower-mv__img" srcset="/img/webp/mv-blog_pc.webp" media="(min-width: 768px)" type="image/webp" />
+            <source class="p-lower-mv__img" srcset="/img/webp/mv-blog_pc.webp" media="(max-width: 767px)" />
+            <img src="/img/common/mv-blog_pc.jpeg" class="p-lower-mv__img" media="(min-width: 768px)" decoding="async" alt="スタッフブログ">
+          </picture>
+          <div class="p-lower-mv__contents">
+            <h2 class="p-lower-mv__heading">スタッフブログ</h2>
+            <p class="p-lower-mv__lead">STAFF BLOG</p>
+          </div>
+        </section>
+        <!--/メインビジュアル-->
+
+        <!--パンくずリスト-->
+        <div class="c-breadcrumb u-mt10">
+          <div class="l-inner">
+            <ul class="c-breadcrumb__list" itemscope itemtype="https://schema.org/BreadcrumbList">
+              <li class="c-breadcrumb__item" itemprop="itemListElement" itemscope
+                itemtype="https://schema.org/ListItem">
+                <a class="c-breadcrumb__link" itemprop="item" href="/"><span itemprop="name">ホーム</span></a>
+                <meta itemprop="position" content="1" />
+              </li>
+              <li class="c-breadcrumb__item" itemprop="itemListElement" itemscope
+                itemtype="https://schema.org/ListItem">
+                <a class="c-breadcrumb__link" itemprop="item" href="/blog/"><span itemprop="name">スタッフブログ</span></a>
+                <meta itemprop="position" content="2" />
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!--/パンくずリスト-->
+
+        <!--スタッフブログ-->
+        <section class="p-archive l-lower l-archive">
+          <div class="p-archive__inner l-inner">
+            <!--メインエリア-->
+            <main class="p-archive-main l-archive__main">
+              <article class="p-archive-main__cards">
+                <% for (let post in jsonData.blog){ %>
+                <a href="" class="p-archive-main-card">
+                  <div class="p-archive-main-card__thumbnail">
+                    <img data-src="<%= jsonData.blog[post].src %>" alt="記事の画像" class="p-archive-main-card__img lazyload">
+                  </div>
+                  <div class="p-archive-main-card__body">
+                    <div class="p-archive-main-card__cats">
+                      <p class="p-archive-main-card__cat">
+                        <%= jsonData.blog[post].category %>
+                      </p>
+                    </div>
+                    <h3 class="p-archive-main-card__title">
+                      <%= jsonData.blog[post].title %>
+                    </h3>
+                    <time class="p-archive-main-card__time" datetime="<%= jsonData.blog[post].time %>">
+                      <%= jsonData.blog[post].time %>
+                    </time>
+                  </div>
+                </a>
+                <% }; %>
+              </article>
+              <!--ページネーション-->
+              <div class="p-archive-main__pagination c-pagination">
+                <a href="" class="next page-numbers">
+                  <svg class="c-svg c-pagination__arrow c-pagination__arrow--next" width="16" height="16">
+                    <use xlink:href="/img/svg/sprite.min.svg#arrow-next" />
+                  </svg>
+                  次へ
+                </a>
+                <a href="" class="page-numbers current">1</a>
+                <a href="" class="page-numbers">2</a>
+                <a href="" class="page-numbers">3</a>   
+                <a href="" class="prev page-numbers">
+                  <svg class="c-svg c-pagination__arrow c-pagination__arrow--prev" width="16" height="16">
+                    <use xlink:href="/img/svg/sprite.min.svg#arrow-prev" />
+                  </svg>
+                  前へ
+                </a>
+              </div>
+              <!--/ページネーション-->
+            </main>
+            <!--/メインエリア-->
+
+            <!--サイドバー-->
+            <aside class="p-sidebar l-archive__sidebar">
+              <!--クリニックの紹介-->
+              <article class="p-sidebar-intro">
+                <h2 class="p-sidebar__title">
+                  <svg class="c-svg p-sidebar__title-icon" width="24" height="24">
+                    <use xlink:href="/img/svg/sprite.min.svg#icon-sidebar01" />
+                  </svg>
+                  クリニックの紹介
+                </h2>
+                <picture class="p-sidebar-intro__picture">
+                  <source class="p-sidebar-intro__img" srcset="/img/webp/sidebar01.webp"type="image/webp" />
+                  <img src="/img/common/sidebar01.jpeg" alt="クリニックの紹介" class="p-sidebar-intro__img lazyload">
+                </picture>
+                <h3 class="p-sidebar-intro__title">みなみ歯科クリニック</h3>
+                <p class="p-sidebar-intro__text">お子様からご高齢の方まで、快適な空間で治療が受けられる場を作り、地域医療に貢献しきたいと考えております。</p>
+                <a href="/about/" class="p-sidebar-intro__button">
+                  当院について
+                </a>
+              </article>
+              <!--/クリニックの紹介-->
+
+              <!--新着記事-->
+              <article class="p-sidebar-new">
+                <h2 class="p-sidebar__title">
+                  <svg class="c-svg p-sidebar__title-icon" width="24" height="24">
+                    <use xlink:href="/img/svg/sprite.min.svg#icon-sidebar03" />
+                  </svg>
+                  新着記事
+                </h2>
+                <div class="p-sidebar__cards">
+                  <% for (let post in jsonData.new){ %>
+                  <a href="" class="p-sidebar-card">
+                    <div class="p-sidebar-card__thumbnail">
+                      <img data-src="<%= jsonData.new[post].src %>" alt="記事の画像" class="p-sidebar-card__img lazyload">
+                    </div>
+                    <div class="p-sidebar-card__body">
+                      <div class="p-sidebar-card__cats">
+                        <p class="p-sidebar-card__cat">
+                          <%= jsonData.new[post].category %>
+                        </p>
+                      </div>
+                      <h3 class="p-sidebar-card__title">
+                        <%= jsonData.new[post].title %>
+                      </h3>
+                      <time class="p-sidebar-card__time" datetime="<%= jsonData.new[post].time %>">
+                        <%= jsonData.new[post].time %>
+                      </time>
+                    </div>
+                  </a>
+                  <% }; %>
+                </div>
+              </article>
+              <!--新着記事-->
+
+              <!--カテゴリーリスト-->
+              <article class="p-sidebar-cats">
+                <h2 class="p-sidebar__title">
+                  <svg class="c-svg p-sidebar__title-icon" width="24" height="24">
+                    <use xlink:href="/img/svg/sprite.min.svg#icon-sidebar03" />
+                  </svg>
+                  カテゴリー
+                </h2>
+                <ul class="p-sidebar-cats__list">
+                  <li class="p-sidebar-cats__item">
+                    <a href="" class="p-sidebar-cats__link">
+                      歯科助手
+                    </a>
+                  </li>
+                  <li class="p-sidebar-cats__item">
+                    <a href="" class="p-sidebar-cats__link">
+                      歯科衛生士
+                    </a>
+                  </li>
+                  <li class="p-sidebar-cats__item">
+                    <a href="" class="p-sidebar-cats__link">
+                      その他
+                    </a>
+                  </li>
+                </ul>
+              </article>
+              <!--/カテゴリーリスト-->
+            </aside>
+            <!--サイドバー-->
+          </div>
+        </section>
+        <!--/スタッフブログ-->
+
+      </main>
+
+      <%- include('../common/_footer', {pageId:pageId }) %>
