@@ -11,19 +11,37 @@
    ----------------------------------------------------------------- */
 @use "layout/l-inner";
 @use "layout/l-header";
+@use "layout/l-home";
+@use "layout/l-lower";
+@use "layout/l-archive";
+@use "layout/l-decoration";
 @use "layout/l-footer";
 
 /* Component (prefix: c- )
    ----------------------------------------------------------------- */
 @use "object/component/c-global-nav";
 @use "object/component/c-button";
+@use "object/component/c-breadcrumb";
+@use "object/component/c-pagination";
+@use "object/component/c-reserve";
+@use "object/component/c-title";
 
 /* Project (prefix: p- )
    ----------------------------------------------------------------- */
 @use "object/Project/p-header";
 @use "object/Project/p-home";
 @use "object/Project/p-feature";
+@use "object/Project/p-lower";
+@use "object/Project/p-about";
+@use "object/Project/p-medical";
+@use "object/Project/p-archive";
+@use "object/Project/p-sidebar";
+@use "object/Project/p-contact";
+@use "object/Project/p-form";
+@use "object/Project/p-footer";
 
 /* Utitlity (prefix: u- )
    ----------------------------------------------------------------- */
 @use "object/utility/u-hidden";
+@use "object/utility/u-font";
+@use "object/utility/u-margin";
