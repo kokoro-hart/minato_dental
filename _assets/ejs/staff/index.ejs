@@ -1,0 +1,114 @@
+<% let pageId='staff' ; %>
+
+  <%- include('../common/_header', {pageId:pageId }) %>
+
+    <% console.log(jsonData) %>
+      <main class="p-staff">
+        <!--メインビジュアル-->
+        <section class="p-lower-mv">
+          <picture class="p-lower-mv__picture">
+            <source class="p-lower-mv__img" srcset="/img/webp/mv-staff_sp.webp" media="(max-width: 767px)" type="image/webp" />
+            <source class="p-lower-mv__img" srcset="/img/webp/mv-staff_pc.webp" media="(min-width: 768px)" type="image/webp" />
+            <source class="p-lower-mv__img" srcset="/img/webp/mv-staff_pc.webp" media="(max-width: 767px)" />
+            <img src="/img/common/mv-staff_pc.jpeg" class="p-lower-mv__img" media="(min-width: 768px)" decoding="async" alt="スタッフの紹介">
+          </picture>
+          <div class="p-lower-mv__contents">
+            <h2 class="p-lower-mv__heading">スタッフ紹介</h2>
+            <p class="p-lower-mv__lead">STAFF</p>
+          </div>
+        </section>
+        <!--/メインビジュアル-->
+
+        <!--パンくずリスト-->
+        <div class="c-breadcrumb u-mt10">
+          <div class="l-inner">
+            <ul class="c-breadcrumb__list" itemscope itemtype="https://schema.org/BreadcrumbList">
+              <li class="c-breadcrumb__item" itemprop="itemListElement" itemscope
+                itemtype="https://schema.org/ListItem">
+                <a class="c-breadcrumb__link" itemprop="item" href="/"><span itemprop="name">ホーム</span></a>
+                <meta itemprop="position" content="1" />
+              </li>
+              <li class="c-breadcrumb__item" itemprop="itemListElement" itemscope
+                itemtype="https://schema.org/ListItem">
+                <a class="c-breadcrumb__link" itemprop="item" href="/staff/"><span itemprop="name">スタッフ紹介</span></a>
+                <meta itemprop="position" content="2" />
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!--/パンくずリスト-->
+
+
+        <div class="l-lower l-lower-staff">
+
+          <!--院長の挨拶-->
+          <section class="p-staff-director">
+            <div class="p-staff-director__title-wrapper">
+              <h2 class="c-section-title">院長のあいさつ</h2>
+            </div>
+            <div class="p-staff-director__inner l-inner">
+              <div class="p-staff-director__about">
+                <h3 class="p-staff-director__title">
+                  気軽に相談できる<br>街の歯医者さんでありたい。
+                </h3>
+                <div class="p-staff-director__text-wrapper">
+                  <p class="p-staff-director__text">
+                    当院は治療はもちろん、予防歯科にも力を入れておりますので、お口に関する相談だけでもお越しいただきたいと考えております。                    
+                  </p>
+                </div> 
+                <div class="p-staff-director__text-wrapper">
+                  <p class="p-staff-director__text">
+                    「患部を直すこと」より「未然に防ぐこと」が最も良い歯科医療と言えますので、些細なことでも気軽に話せる街の歯医者さんとして、明るい街づくりに貢献していきたいと考えております。
+                  </p>
+                </div>
+                <div class="p-staff-director__text-wrapper u-align-right">
+                  <p class="p-staff-director__text">
+                    みなみ歯科クリニック<br>院長　南 俊雄
+                  </p>
+                </div>
+                <picture class="p-staff-director__picture u-hidden-md-up">                  
+                  <source class="p-staff-director__img" srcset="/img/webp/staff-director.webp" type="image/webp" />
+                  <img src="/img/common/staff-director.jpeg" class="p-staff-director__img lazyload" alt="院長の写真">
+                </picture>
+                <div class="p-staff-director__career">
+                  <p class="p-staff-director__sub-title">経歴</p>
+                  <div class="p-staff-director__row">
+                    <p class="p-staff-director__text">2004年</p>
+                    <p class="p-staff-director__text">東京医科歯科大学歯学部 卒業</p>
+                  </div>
+                  <div class="p-staff-director__row">
+                    <p class="p-staff-director__text">2008年</p>
+                    <p class="p-staff-director__text">東京歯科大学歯学研究科大学院修了<br>博士(歯学)取得</p>
+                  </div>
+                  <div class="p-staff-director__row">
+                    <p class="p-staff-director__text">2012年</p>
+                    <p class="p-staff-director__text">みなみ歯科クリニック 開院</p>
+                  </div>
+                </div>
+                <div class="p-staff-director__certified">
+                  <p class="p-staff-director__sub-title">資格</p>
+                  <div class="p-staff-director__row">
+                    <p class="p-staff-director__text">歯科医師臨床研修指導歯科医</p>
+                  </div>
+                  <div class="p-staff-director__row">
+                    <p class="p-staff-director__text">博士(歯学)</p>
+                  </div>
+                  <div class="p-staff-director__row">
+                    <p class="p-staff-director__text">衛生検査技師</p>
+                  </div>
+                </div>
+              </div>
+              <div class="p-staff-director__img-wrapper">
+                <picture class="p-staff-director__picture u-hidden-md-down">
+                  <source class="p-staff-director__img" srcset="/img/webp/staff-director.webp" type="image/webp" />
+                  <img src="/img/common/staff-director.jpeg" class="p-staff-director__img lazyload" alt="院長の写真">
+                </picture>
+              </div>
+            </div>
+          </section>
+          <!--/院長の挨拶-->
+        </div>
+
+      </main>
+
+      <%- include('../common/_footer', {pageId:pageId }) %>
