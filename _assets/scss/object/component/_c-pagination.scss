@@ -64,10 +64,10 @@
   }
 
   .prev.page-numbers {
-    padding: 7px 33px 7px 15px;
+    padding: 8px 33px 7px 15px;
 
     @include global.mq(md) {
-      padding: 9px 39px 9px 15px;
+      padding: 11px 39px 10px 15px;
     }
 
     &:hover {
@@ -78,10 +78,10 @@
   }
 
   .next.page-numbers {
-    padding: 7px 15px 7px 33px;
+    padding: 8px 15px 7px 33px;
 
     @include global.mq(md) {
-      padding: 9px 15px 9px 39px;
+      padding: 11px 15px 10px 39px;
     }
 
     &:hover {
