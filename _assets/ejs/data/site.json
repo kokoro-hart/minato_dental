@@ -95,7 +95,7 @@
   },
 
 
-  "//診察案内: 一般診療": "",
+  "//診察案内ページ: 一般診療": "",
   "medical01": { 
     "detail01": {
       "title": "一般歯科",
@@ -120,7 +120,7 @@
     }
   },
 
-  "//診察案内: 特殊診療": "",
+  "//診察案内ページ: 特殊診療": "",
   "medical02": { 
     "detail01": {
       "title": "入れ歯",
@@ -159,7 +159,64 @@
     }
   },
 
-  "//スタッフブログ": "",
+  "//スタッフ紹介ページ: 歯科衛生士": "",
+  "staff01": { 
+    "member01": {
+      "src" : "/img/common/staff01.jpeg",
+      "name": "鈴木 太郎",
+      "from": "北海道",
+      "hobby": "スキー、料理",
+      "food": "お寿司、うなぎ"
+    },
+    "member02": {
+      "src" : "/img/common/staff02.jpeg",
+      "name": "山田 花子",
+      "from": "北海道",
+      "hobby": "スキー、料理",
+      "food": "お寿司、うなぎ"
+    }
+  },
+
+  "//スタッフ紹介ページ: 歯科助手": "",
+  "staff02": { 
+    "member01": {
+      "src" : "/img/common/staff03.jpeg",
+      "name": "山田 花子",
+      "from": "北海道",
+      "hobby": "スキー、料理",
+      "food": "お寿司、うなぎ"
+    },
+    "member02": {
+      "src" : "/img/common/staff04.jpeg",
+      "name": "山田 花子",
+      "from": "北海道",
+      "hobby": "スキー、料理",
+      "food": "お寿司、うなぎ"
+    },
+    "member03": {
+      "src" : "/img/common/staff05.jpeg",
+      "name": "山田 花子",
+      "from": "北海道",
+      "hobby": "スキー、料理",
+      "food": "お寿司、うなぎ"
+    },
+    "member04": {
+      "src" : "/img/common/staff06.jpeg",
+      "name": "山田 花子",
+      "from": "北海道",
+      "hobby": "スキー、料理",
+      "food": "お寿司、うなぎ"
+    },
+    "member05": {
+      "src" : "/img/common/staff07.jpeg",
+      "name": "山田 花子",
+      "from": "北海道",
+      "hobby": "スキー、料理",
+      "food": "お寿司、うなぎ"
+    }
+  },
+
+  "//スタッフブログページ": "",
   "blog": { 
     "post01": {
       "title": "記事のタイトルが入ります。記事のタイトルが入ります。記事のタイトルが入ります。",
