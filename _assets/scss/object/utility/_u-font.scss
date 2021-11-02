@@ -14,3 +14,7 @@
 .u-fz11 {
   @include global.fz(11);
 }
+
+.u-align-right {
+  text-align: right;
+}
