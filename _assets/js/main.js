@@ -1,14 +1,11 @@
-/**
- * @modules : node_modulesフォルダまでの絶対パスのエイリアス
- * webpack.config.jsにて定義している
- */
-
-//SVGスプライトをIEで使用するためのライブラリ
+//svguse（svgスプライト ie対応）
 import '@modules/svgxuse';
-//ブラウザ判定のためライブラリ
-import './lib/b_browser_switcher.js';
 
+//ブラウザ判定
+import './lib/b_browser_switcher.js';
 
 import './common'
 
 import './modules/drawer'
+
+import './modules/swiper'
