@@ -4,6 +4,48 @@
 
 <%# console.log(jsonData) %>
 <main class="p-home l-home">
+
+  <!--メインビジュアル-->
+  <section id="js-mv" class="p-home-mv">
+    <div class="swiper swiper-mv">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide">
+          <picture class="p-home-mv__picture">
+            <source class="p-home-mv__img" srcset="/img/webp/mv01.webp" type="image/webp" />
+            <img src="/img/common/mv01.jpeg" class="p-home-mv__img" width="1160" height="520" decoding="async" alt="メインビジュアル">
+          </picture>
+        </div>
+        <div class="swiper-slide">
+          <picture class="p-home-mv__picture">
+            <source class="p-home-mv__img" srcset="/img/webp/mv02.webp" type="image/webp" />
+            <img src="/img/common/mv02.jpeg" class="p-home-mv__img" width="1160" height="520" decoding="async" alt="メインビジュアル">
+          </picture>
+        </div>
+        <div class="swiper-slide">
+          <picture class="p-home-mv__picture">
+            <source class="p-home-mv__img" srcset="/img/webp/mv03.webp" type="image/webp" />
+            <img src="/img/common/mv03.jpeg" class="p-home-mv__img" width="1160" height="520" decoding="async" alt="メインビジュアル">
+          </picture>
+        </div>
+      </div>
+      <svg class="c-svg p-home-mv__text u-hidden-md-up" width="265" height="74.5">
+        <use xlink:href="/img/svg/sprite.min.svg#mv-text_sp" />
+      </svg>
+      <svg class="c-svg p-home-mv__text u-hidden-md-down" width="415" height="120">
+        <use xlink:href="/img/svg/sprite.min.svg#mv-text_pc" />
+      </svg>
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+    
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </section>
+  <!--/メインビジュアル-->
+
   <!--診察時間 お知らせ-->
   <section class="p-home-info l-home__info">
     <div class="p-home-medical-time">
@@ -11,7 +53,7 @@
         <source class="p-home-medical-time__img" srcset="/img/webp/medical-time_sp.webp" media="(max-width: 767px)" type="image/webp" />
         <source class="p-home-medical-time__img" srcset="/img/webp/medical-time_pc.webp" media="(min-width: 768px)" type="image/webp" />
         <source class="p-home-medical-time__img" srcset="/img/common/medical-time_sp.png" media="(max-width: 767px)" />
-        <img data-src="/img/common/medical-time_pc.png" class="p-home-medical-time__img" media="(min-width: 768px)" alt="診察時間">
+        <img src="/img/common/medical-time_pc.png" class="p-home-medical-time__img" media="(min-width: 768px)" decoding="async" alt="診察時間">
       </picture>
     </div>
     <div class="p-home-news">
@@ -21,7 +63,7 @@
           <span class="p-home-news__title-en">NEWS</span>
         </div>
         <div class="p-home-news__past">
-          <a href="" class="p-home-news__past-link">
+          <a href="/news/" class="p-home-news__past-link">
             過去のお知らせはこちら
           </a>
         </div>
@@ -42,14 +84,14 @@
   <!--/診察時間 お知らせ-->
 
   <!--コンセプト-->
-  <section class="p-feature l-home__concept">
+  <section class="p-feature p-feature--decoration l-home__concept">
     <svg class="c-svg p-feature__bg u-hidden-md-up" width="145vw" height="81vw">
       <use xlink:href="/img/svg/sprite.min.svg#concept-bg" />
     </svg>
     <div class="p-feature__contents">
       <picture class="p-feature__picture">
         <source class="p-feature__img" srcset="/img/webp/concept-img01.webp" type="image/webp" />
-        <img data-src="/img/common/concept-img01.jpeg" width="584" height="401" class="p-feature__img lazyload" alt="コンセプトイメージ">
+        <img data-src="/img/common/concept-img01.jpeg" width="1280" height="876" class="p-feature__img lazyload" alt="コンセプトイメージ">
       </picture>
       <div class="p-feature__textarea">
         <div class="p-feature__title">
@@ -135,13 +177,13 @@
           </h2>
         </div>
         <div class="p-home-medical__items">
-          <a href="" class="p-home-medical-item">
+          <a href="/medical#medical01" class="p-home-medical-item">
             <div class="p-home-medical-item__text-wrapper">
               <h2 class="p-home-medical-item__title">一般診療</h2>
               <p class="p-home-medical-item__text">虫歯・入れ歯・小児歯科</p>
             </div>
           </a>
-          <a href="" class="p-home-medical-item">
+          <a href="/medical#medical02" class="p-home-medical-item">
             <div class="p-home-medical-item__text-wrapper">
               <h2 class="p-home-medical-item__title">特殊診療</h2>
               <p class="p-home-medical-item__text">インプラント・ホワイトニング<br>予防歯科・口腔外科・審美歯科</p>
