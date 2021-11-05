@@ -1,15 +1,134 @@
 @use "foundation/global";
 
-// Project トップページ (prefix: p-home)
+// Project トップページ
 //--------------------------------------------------------------------------
 
 // メインビジュアル
 //--------------------------------------------------------------------------
+.p-home-mv {
+  position: relative;
+  width: 100%;
+  height: 447px;
+  margin-top: 80px;
+  padding: 0px 20px;
+
+  @include global.mq(md) {
+    max-width: 1920px;
+    width: 90.625%;
+    height: 100%;
+    margin: 120px auto 0;
+    padding: 0;
+  }
+
+  &__picture {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__img {
+    height: 100%;
+    object-fit: cover;
+    object-position: left;
+    width: 100%;
+
+    @include global.mq(md) {
+      object-position: center;
+    }
+  }
+
+  &__text {
+    position: absolute;
+    bottom: 51px;
+    left: 63px;
+    z-index: 1;
+    width: 265px;
+    height: 74.5px;
+
+    @include global.mq(md) {
+      width: 415px;
+      height: 120px;
+    }
+  }
+
+  //swiper-mv
+  .swiper-mv {
+    border-radius: 28px;
+    height: 100%;
+  }
+
+  .swiper-slide::after {
+    content: "";
+    position: absolute;
+    background: rgba(global.$color-text-black, 0.1);
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+
+  .swiper-button-prev, .swiper-button-next {
+    top: 49%;
+    width: 48px;
+    height: 48px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    z-index: 1;
+
+    @include global.mq(md) {
+      width: 66px;
+      height: 66px;
+    }
+
+    &::after {
+      visibility: hidden;
+    }
+  }
+
+  .swiper-button-prev {
+    left: -2px;
+    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2266%22%20height%3D%2266%22%20viewBox%3D%220%200%2066%2066%22%3E%3Cdefs%3E%3Cstyle%3E.a%7Bfill%3A%23fff%3B%7D.b%7Bfill%3Anone%3Bstroke%3A%23c2c2c2%3Bstroke-linecap%3Around%3Bstroke-width%3A2px%3B%7D.c%7Bfilter%3Aurl(%23a)%3B%7D%3C%2Fstyle%3E%3Cfilter%20id%3D%22a%22%20x%3D%220%22%20y%3D%220%22%20width%3D%2266%22%20height%3D%2266%22%20filterUnits%3D%22userSpaceOnUse%22%3E%3CfeOffset%20dy%3D%223%22%20input%3D%22SourceAlpha%22%2F%3E%3CfeGaussianBlur%20stdDeviation%3D%223%22%20result%3D%22b%22%2F%3E%3CfeFlood%20flood-opacity%3D%220.161%22%2F%3E%3CfeComposite%20operator%3D%22in%22%20in2%3D%22b%22%2F%3E%3CfeComposite%20in%3D%22SourceGraphic%22%2F%3E%3C%2Ffilter%3E%3C%2Fdefs%3E%3Cg%20transform%3D%22translate(9%206)%22%3E%3Cg%20class%3D%22c%22%20transform%3D%22matrix(1%2C%200%2C%200%2C%201%2C%20-9%2C%20-6)%22%3E%3Ccircle%20class%3D%22a%22%20cx%3D%2224%22%20cy%3D%2224%22%20r%3D%2224%22%20transform%3D%22translate(9%206)%22%2F%3E%3C%2Fg%3E%3Cpath%20class%3D%22b%22%20d%3D%22M17.6%2C0V17.6H0%22%20transform%3D%22translate(40.627%2023.714)%20rotate(135)%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E');
+    
+    @include global.mq(md) {
+      left: -33px;
+    }
+  }
+
+  .swiper-button-next {
+    right: -2px;
+    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2266%22%20height%3D%2266%22%20viewBox%3D%220%200%2066%2066%22%3E%3Cdefs%3E%3Cstyle%3E.a%7Bfill%3A%23fff%3B%7D.b%7Bfill%3Anone%3Bstroke%3A%23c2c2c2%3Bstroke-linecap%3Around%3Bstroke-width%3A2px%3B%7D.c%7Bfilter%3Aurl(%23a)%3B%7D%3C%2Fstyle%3E%3Cfilter%20id%3D%22a%22%20x%3D%220%22%20y%3D%220%22%20width%3D%2266%22%20height%3D%2266%22%20filterUnits%3D%22userSpaceOnUse%22%3E%3CfeOffset%20dy%3D%223%22%20input%3D%22SourceAlpha%22%2F%3E%3CfeGaussianBlur%20stdDeviation%3D%223%22%20result%3D%22b%22%2F%3E%3CfeFlood%20flood-opacity%3D%220.161%22%2F%3E%3CfeComposite%20operator%3D%22in%22%20in2%3D%22b%22%2F%3E%3CfeComposite%20in%3D%22SourceGraphic%22%2F%3E%3C%2Ffilter%3E%3C%2Fdefs%3E%3Cg%20transform%3D%22translate(9%206)%22%3E%3Cg%20class%3D%22c%22%20transform%3D%22matrix(1%2C%200%2C%200%2C%201%2C%20-9%2C%20-6)%22%3E%3Ccircle%20class%3D%22a%22%20cx%3D%2224%22%20cy%3D%2224%22%20r%3D%2224%22%20transform%3D%22translate(9%206)%22%2F%3E%3C%2Fg%3E%3Cpath%20class%3D%22b%22%20d%3D%22M17.6%2C17.6V0H0%22%20transform%3D%22translate(19.818%2011.269)%20rotate(45)%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E');
+  
+    @include global.mq(md) {
+      right: -33px;
+    }
+  }
+
+  .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal {
+    position: absolute;
+    bottom: 28px;
+    left: -8px;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    width: 100%;
+
+    @include global.mq(md) {
+      bottom: 12px;
+      left: -17px;
+    }
+  }
+
+  .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin-top: 10px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
 
 // 診察時間 お知らせ
 //--------------------------------------------------------------------------
 .p-home-info {
-  margin-top: 200px;
   padding: 0 20px;
 
   @include global.mq(md) {
@@ -21,13 +140,15 @@
 
 //診察時間
 .p-home-medical-time {
+  position: relative;
+  box-shadow: global.$box-shadow;
+  border-radius: 12px;
+  z-index: 1;
   max-width: 477px;
   width: 100%;
   margin-top: -22px;
   background-color: global.$color-text-white;
-  box-shadow: global.$box-shadow;
-  border-radius: 12px;
-
+  
   @include global.mq(md) {
     margin-left: 63px;
   }
@@ -43,6 +164,7 @@
   max-width: 540px;
   width: 100%;
   margin-top: 40px;
+
   &__head {
     display: flex;
     justify-content: space-between;
@@ -89,6 +211,7 @@
 
     &:hover {
       color: global.$color-main;
+
       #{$this}__arrow {
         color: global.$color-main;
         transform: translate(4px, -50%);
@@ -144,17 +267,13 @@
   }
 }
 
-//当院3つのおすすめカード
+//当院3つのおすすめ カード
 .p-home-recommend-item {
   text-align: center;
   width: 100%;
 
   @include global.mq(md) {
     width: calc(33.333333% - 60px * 2 / 3);
-
-    &:nth-child(n + 2) {
-      margin-left: 60px;
-    }
   }
 
   &:not(:first-child) {
@@ -162,6 +281,7 @@
 
     @include global.mq(md) {
       margin-top: 0;
+      margin-left: 60px;
     }
   }
 
@@ -418,7 +538,7 @@
   display: flex;
   width: 100%;
   margin-bottom: 20px;
-  
+
   @include global.mq(md) {
     display: block;
     border-radius: 20px;
@@ -441,7 +561,7 @@
       }
     }
   }
-  
+
   &__thumbnail {
     overflow: hidden;
     width: 40%;
