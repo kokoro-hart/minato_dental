@@ -5,12 +5,10 @@
 <%# console.log(jsonData) %>
 <main class="p-home l-home">
 
-  <!--メインビジュアル-->
+  <!--メインビジュアル（swiper）-->
   <section id="js-mv" class="p-home-mv">
     <div class="swiper swiper-mv">
-      <!-- Additional required wrapper -->
       <div class="swiper-wrapper">
-        <!-- Slides -->
         <div class="swiper-slide">
           <picture class="p-home-mv__picture">
             <source class="p-home-mv__img" srcset="/img/webp/mv01.webp" type="image/webp" />
@@ -37,17 +35,16 @@
         <use xlink:href="/img/svg/sprite.min.svg#mv-text_pc" />
       </svg>
     </div>
-    <!-- If we need pagination -->
     <div class="swiper-pagination"></div>
     
-    <!-- If we need navigation buttons -->
     <div class="swiper-button-prev"></div>
     <div class="swiper-button-next"></div>
   </section>
-  <!--/メインビジュアル-->
+  <!--/メインビジュアル（swiper）-->
 
   <!--診察時間 お知らせ-->
   <section class="p-home-info l-home__info">
+    <!--診察時間-->
     <div class="p-home-medical-time">
       <picture class="p-home-medical-time__picture">
         <source class="p-home-medical-time__img" srcset="/img/webp/medical-time_sp.webp" media="(max-width: 767px)" type="image/webp" />
@@ -56,6 +53,8 @@
         <img src="/img/common/medical-time_pc.png" class="p-home-medical-time__img" media="(min-width: 768px)" decoding="async" alt="診察時間">
       </picture>
     </div>
+    <!--/診察時間-->
+    <!--お知らせ-->
     <div class="p-home-news">
       <div class="p-home-news__head">
         <div class="p-home-news__title">
@@ -80,6 +79,7 @@
         </a>
       </div>
     </div>
+    <!--/お知らせ-->
   </section>
   <!--/診察時間 お知らせ-->
 
@@ -139,6 +139,7 @@
           歯の治療において、小さな違和感は大きなストレスにつながります。<br class="u-hidden-sm-up">私たちは常に快適な歯科医療技術の研究を行っております。
         </p>
       </li>
+
       <li class="p-home-recommend-item">
         <h3 class="p-home-recommend-item__title">
           <img data-src="/img/common/recommend02.png" width="355" height="65" alt="おすすめ02" class="p-home-recommend-item__title-img lazyload">
@@ -150,6 +151,7 @@
           「通いやすさ」も医院選びの重要なポイントと考え、2019年のリニューアルを期に更に駅の近くへ場所を移しました。
         </p>
       </li>
+      
       <li class="p-home-recommend-item">
         <h3 class="p-home-recommend-item__title">
           <img data-src="/img/common/recommend03.png" width="355" height="65" alt="おすすめ03" class="p-home-recommend-item__title-img lazyload">
