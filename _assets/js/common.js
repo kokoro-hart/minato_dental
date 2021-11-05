@@ -1,14 +1,3 @@
-/**
- * @modules : node_modulesフォルダまでの絶対パスのエイリアス
- * webpack.config.jsにて定義している
- */
-
-//jQueryを使うとき
-//import $ from "@modules/jquery";
-//slickを使うとき
-// import '@modules/slick-carousel';
-
-
 
 //ビューポート幅360px以下はリサイズして表示
 !(function () {
@@ -81,7 +70,7 @@ window.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
       const targetId = link.hash;
       const targetElement = document.querySelector(targetId);
-      const targetOffsetTop = window.pageYOffset + targetElement.getBoundingClientRect().top - 60;
+      const targetOffsetTop = window.pageYOffset + targetElement.getBoundingClientRect().top - 80;
 
       window.scrollTo({
         top: targetOffsetTop,
