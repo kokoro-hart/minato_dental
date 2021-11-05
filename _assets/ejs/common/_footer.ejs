@@ -44,14 +44,14 @@
             <source class="p-footer-info__medical-img" srcset="/img/webp/medical-time_sp.webp" media="(max-width: 767px)" type="image/webp" />
             <source class="p-footer-info__medical-img" srcset="/img/webp/medical-time_pc.webp" media="(min-width: 768px)" type="image/webp" />
             <source class="p-footer-info__medical-img" srcset="/img/common/medical-time_sp.png" media="(max-width: 767px)" />
-            <img src="/img/common/medical-time_pc.png" class="p-footer-info__medical-img lazyload" media="(min-width: 768px)" alt="診察時間">
+            <img data-src="/img/common/medical-time_pc.png" class="p-footer-info__medical-img lazyload" media="(min-width: 768px)" alt="診察時間">
           </picture>          
         </div>
         <div class="p-footer-map">
           <div class="p-footer-map__inner">
             <iframe class="p-footer-map__iframe lazyload"
               data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.9756333026817!2d139.63371001568854!3d35.70221723018938!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018f2767eb9e92b%3A0xc2d0573363890acc!2z6Zi_5L2Q44O26LC36aeF!5e0!3m2!1sja!2sjp!4v1635168343638!5m2!1sja!2sjp"
-              width="600" height="450" style="border:0;" allowfullscreen="">
+              width="315" height="315" style="border:0;" allowfullscreen="">
             </iframe>
           </div>
         </div>
@@ -220,6 +220,9 @@
 
 </div><!-- /wrapper -->
 
+<% if (pageId==='home' || pageId==='staff' ) { %>
+  <script src="//unpkg.com/swiper/swiper-bundle.min.js"></script>
+<% } %>
 <script src="/js/bundle.js"></script>
 </body>
 
