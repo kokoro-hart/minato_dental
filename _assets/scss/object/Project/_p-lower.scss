@@ -13,6 +13,18 @@
   border-radius: 12px;
   margin: 80px auto 0;
 
+  &::after {
+    background: rgba(global.$color-text-black, 0.2);
+    border-radius: 12px;
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+  }
+
   @include global.mq(md) {
     height: 340px;
     margin-top: 120px;
@@ -38,6 +50,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 1;
     width: 100%;
     color: global.$color-text-white;
     text-align: center;
