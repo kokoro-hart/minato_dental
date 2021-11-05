@@ -11,6 +11,7 @@
     align-items: center;
   }
 
+  //スタイル書き換えの都合上max-widthを使用
   @include global.mq(xl, max) {
     position: fixed;
     top: 0;
@@ -26,6 +27,7 @@
     width: 100vw;
     color: global.$color-text-white;
     transition: opacity 0.3s ease;
+
     &::after {
       content: "";
       position: fixed;
@@ -33,8 +35,10 @@
       left: 0;
       right: 0;
       bottom: 0;
+      width: 100%;
+      height: 100%;
       background-color: global.$color-sub01;
-      z-index: -1;
+      z-index: 12;
     }
   }
 
@@ -48,6 +52,7 @@
     max-width: 255px;
     width: 100%;
     height: inherit;
+    z-index: 14;
 
     @include global.mq(xl) {
       display: flex;
@@ -155,6 +160,7 @@
   }
 }
 
+//アクティブ時
 .c-global-nav.is-active {
   visibility: visible;
   opacity: 1;

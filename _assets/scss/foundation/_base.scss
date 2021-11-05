@@ -1,9 +1,14 @@
 @use "global";
 
+//ベーススタイル
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+html {
+  min-height: 100vh
 }
 
 html,
@@ -19,12 +24,18 @@ body {
   -webkit-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
+  font-weight: 500;
 }
 
 body,
 button,
 input {
   line-height: 1.6;
+}
+
+body.is-drawerActive {
+  overflow: hidden;
+  height: 100vh;
 }
 
 a {
@@ -109,6 +120,7 @@ img {
   max-width: 100%;
   height: auto;
 }
+
 
 
 

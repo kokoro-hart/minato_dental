@@ -121,7 +121,7 @@
   }
 }
 
-//リバース
+//レイアウトリバース
 .p-feature--reverse {
   @include global.mq(md) {
     &::after {
