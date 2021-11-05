@@ -20,6 +20,9 @@
   <meta property="og:image" content="/common/og-image.jpg">
   <meta property="og:site_name" content="<%= jsonData.siteInfo.siteUrl %> ">
 
+  <% if (pageId=== 'home' || pageId==='staff') { %>
+    <link rel="stylesheet" href="//unpkg.com/swiper/swiper-bundle.min.css">
+  <% } %>
   <link rel="stylesheet" type="text/css" href="/css/style.css">
 
 </head>
