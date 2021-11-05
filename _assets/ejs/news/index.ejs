@@ -9,7 +9,7 @@
           <picture class="p-lower-mv__picture">
             <source class="p-lower-mv__img" srcset="/img/webp/mv-blog_sp.webp" media="(max-width: 767px)" type="image/webp" />
             <source class="p-lower-mv__img" srcset="/img/webp/mv-blog_pc.webp" media="(min-width: 768px)" type="image/webp" />
-            <source class="p-lower-mv__img" srcset="/img/webp/mv-blog_pc.webp" media="(max-width: 767px)" />
+            <source class="p-lower-mv__img" srcset="/img/common/mv-blog_sp.jpeg" media="(max-width: 767px)" />
             <img src="/img/common/mv-blog_pc.jpeg" class="p-lower-mv__img" media="(min-width: 768px)" decoding="async" alt="お知らせ">
           </picture>
           <div class="p-lower-mv__contents">
@@ -45,7 +45,7 @@
             <main class="p-archive-main l-archive__main">
               <article class="p-archive-main__cards">
                 <% for (let post in jsonData.blog){ %>
-                  <a href="" class="p-archive-main-card">
+                  <a href="/single/" class="p-archive-main-card">
                     <div class="p-archive-main-card__thumbnail">
                       <img data-src="<%= jsonData.blog[post].src %>" alt="記事の画像"
                         class="p-archive-main-card__img lazyload">
@@ -100,7 +100,7 @@
                 </h2>
                 <picture class="p-sidebar-intro__picture">
                   <source class="p-sidebar-intro__img" srcset="/img/webp/sidebar01.webp" type="image/webp" />
-                  <img src="/img/common/sidebar01.jpeg" alt="クリニックの紹介" class="p-sidebar-intro__img lazyload">
+                  <img src="/img/common/sidebar01.jpeg" alt="クリニックの紹介" decoding="async" class="p-sidebar-intro__img">
                 </picture>
                 <h3 class="p-sidebar-intro__title">みなみ歯科クリニック</h3>
                 <p class="p-sidebar-intro__text">お子様からご高齢の方まで、快適な空間で治療が受けられる場を作り、地域医療に貢献しきたいと考えております。</p>
@@ -120,7 +120,7 @@
                 </h2>
                 <div class="p-sidebar__cards">
                   <% for (let post in jsonData.new){ %>
-                    <a href="" class="p-sidebar-card">
+                    <a href="/single/" class="p-sidebar-card">
                       <div class="p-sidebar-card__thumbnail">
                         <img data-src="<%= jsonData.new[post].src %>" alt="記事の画像" class="p-sidebar-card__img lazyload">
                       </div>
