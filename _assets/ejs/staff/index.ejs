@@ -9,7 +9,7 @@
           <picture class="p-lower-mv__picture">
             <source class="p-lower-mv__img" srcset="/img/webp/mv-staff_sp.webp" media="(max-width: 767px)" type="image/webp" />
             <source class="p-lower-mv__img" srcset="/img/webp/mv-staff_pc.webp" media="(min-width: 768px)" type="image/webp" />
-            <source class="p-lower-mv__img" srcset="/img/webp/mv-staff_pc.webp" media="(max-width: 767px)" />
+            <source class="p-lower-mv__img" srcset="/img/common/mv-staff_sp.jpeg" media="(max-width: 767px)" />
             <img src="/img/common/mv-staff_pc.jpeg" class="p-lower-mv__img" media="(min-width: 768px)" decoding="async" alt="スタッフの紹介">
           </picture>
           <div class="p-lower-mv__contents">
@@ -69,7 +69,7 @@
                   </div>
                   <picture class="p-staff-director__picture u-hidden-md-up">                  
                     <source class="p-staff-director__img" srcset="/img/webp/staff-director.webp" type="image/webp" />
-                    <img data-src="/img/common/staff-director.jpeg" class="p-staff-director__img lazyload" alt="院長の写真">
+                    <img src="/img/common/staff-director.jpeg" class="p-staff-director__img" width="460" height="613" decoding="async" alt="院長の写真">
                   </picture>
                   <div class="p-staff-director__career">
                     <p class="p-staff__sub-title">経歴</p>
@@ -111,11 +111,9 @@
           <!--/院長の挨拶-->
 
           <!--ギャラリー（swiper.js）-->
-          <section class="p-staff-gallery l-lower-staff__gallery">
+          <section id="js-gallery" class="p-staff-gallery l-lower-staff__gallery">
             <div class="swiper swiper-gallery">
-              <!-- Additional required wrapper -->
               <div class="swiper-wrapper">
-                <!-- Slides -->
                 <div class="swiper-slide">
                   <picture class="p-staff-gallery__picture">
                     <source class="p-staff-gallery__img" srcset="/img/webp/staff-swiper01.webp" type="image/webp" />

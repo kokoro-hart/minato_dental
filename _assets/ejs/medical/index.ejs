@@ -5,11 +5,11 @@
     <% console.log(jsonData) %>
       <main class="p-medical">
         <!--メインビジュアル-->
-        <section class="p-lower-mv p-lower-mv--medical">
+        <section class="p-lower-mv">
           <picture class="p-lower-mv__picture">
             <source class="p-lower-mv__img" srcset="/img/webp/mv-medical_sp.webp" media="(max-width: 767px)"type="image/webp" />
             <source class="p-lower-mv__img" srcset="/img/webp/mv-medical_pc.webp" media="(min-width: 768px)"type="image/webp" />
-            <source class="p-lower-mv__img" srcset="/img/webp/mv-medical_pc.webp" media="(max-width: 767px)" />
+            <source class="p-lower-mv__img" srcset="/img/common/mv-medical_sp.jpeg" media="(max-width: 767px)" />
             <img src="/img/common/mv-medical_pc.jpeg" class="p-lower-mv__img" media="(min-width: 768px)" decoding="async" alt="診察案内">
           </picture>
           <div class="p-lower-mv__contents">
@@ -104,7 +104,7 @@
                             <%= jsonData.medical01[detail].text %>
                         </p>
                         <div class="p-medical-detail-item__img-wrapper">
-                          <img src="<%= jsonData.medical01[detail].src %>" alt="<%= jsonData.medical01[detail].title %>" class="p-medical-detail-item__img">
+                          <img data-src="<%= jsonData.medical01[detail].src %>" alt="<%= jsonData.medical01[detail].title %>" class="p-medical-detail-item__img lazyload">
                         </div>
                       </div>
                       <svg class="c-svg p-medical-detail-item__tag u-hidden-md-up" width="80" height="60">
@@ -149,8 +149,7 @@
                             <%= jsonData.medical02[detail].text %>
                         </p>
                         <div class="p-medical-detail-item__img-wrapper">
-                          <img src="<%= jsonData.medical02[detail].src %>" alt="<%= jsonData.medical02[detail].title %>"
-                            class="p-medical-detail-item__img">
+                          <img data-src="<%= jsonData.medical02[detail].src %>" alt="<%= jsonData.medical02[detail].title %>" class="p-medical-detail-item__img lazyload">
                         </div>
                       </div>
                       <svg class="c-svg p-medical-detail-item__tag u-hidden-md-up" width="80" height="60">
