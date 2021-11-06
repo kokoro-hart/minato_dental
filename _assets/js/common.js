@@ -61,6 +61,9 @@ function inViewport(entries, observer) {
 }
 
 //ページ内リンク
+const header = document.getElementById('js-header').offsetHeight;
+const urlHash = location.hash;
+
 window.addEventListener('DOMContentLoaded', () => {
   const anchorLinks = document.querySelectorAll('a[href^="#"]');
   const anchorLinksArr = Array.prototype.slice.call(anchorLinks);
@@ -70,7 +73,7 @@ window.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
       const targetId = link.hash;
       const targetElement = document.querySelector(targetId);
-      const targetOffsetTop = window.pageYOffset + targetElement.getBoundingClientRect().top - 80;
+      const targetOffsetTop = window.pageYOffset + targetElement.getBoundingClientRect().top - (header + 10);
 
       window.scrollTo({
         top: targetOffsetTop,
@@ -78,4 +81,18 @@ window.addEventListener('DOMContentLoaded', () => {
       });
     });
   });
+});
+
+//ページ遷移先がアンカーリンクの場合headerの高さを引く
+window.addEventListener('DOMContentLoaded', () => {
+  if (urlHash) {
+    setTimeout(function () {
+      const urlTarget = document.getElementById(urlHash.replace('#', ''));
+      const urlPosition = window.pageYOffset + urlTarget.getBoundingClientRect().top - (header + 10);
+
+      window.scroll({
+        top: urlPosition,
+      });
+    }, 10);
+  }
 });
