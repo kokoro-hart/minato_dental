@@ -78,4 +78,20 @@ add_action('init', function() {
     'show_in_rest' => true,
   ]);
 
+  //スタッフ紹介
+  register_post_type('staffs', [
+    'label' => 'スタッフ紹介',
+    'public' => true,
+    'menu_position' => 6,
+    'supports' => ['thumbnail','title','editor','custom-fields'],
+    'has_archive' => true,
+    'show_in_rest' =>true,
+  ]);
+
+  register_taxonomy('staff', 'staffs',[
+    'label' => '役職',
+    'hierarchical' => true,
+    'show_in_rest' => true,
+  ]);
+
 });
