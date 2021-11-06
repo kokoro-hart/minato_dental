@@ -12,18 +12,19 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 13px;
-    height: 13px;
+    width: 16px;
+    height: 16px;
     transition: transform 0.3s;
   }
 
   &__arrow--next {
-    left: 15px;
+    right: 15px;
+    left: auto;
   }
 
   &__arrow--prev {
-    left: auto;
-    right: 15px;
+    left: right;
+    left: 15px;
   }
 
   .page-numbers {
@@ -39,7 +40,7 @@
     transition: background-color 0.3s, color 0.3s;
 
     @include global.mq(md) {
-      padding: 9px 12px;
+      padding: 11px 13px;
     }
 
     &:not(:first-child) {
@@ -64,29 +65,29 @@
   }
 
   .prev.page-numbers {
-    padding: 8px 33px 7px 15px;
-
-    @include global.mq(md) {
-      padding: 11px 39px 10px 15px;
-    }
-
-    &:hover {
-      #{$this}__arrow--prev {
-        transform: translate(3px, -50%);
-      }
-    }
-  }
-
-  .next.page-numbers {
-    padding: 8px 15px 7px 33px;
+    padding: 8px 15px 7px 39px;
 
     @include global.mq(md) {
       padding: 11px 15px 10px 39px;
     }
 
     &:hover {
-      #{$this}__arrow--next {
+      #{$this}__arrow--prev {
         transform: translate(-3px, -50%);
+      }
+    }
+  }
+
+  .next.page-numbers {
+    padding: 8px 39px 7px 15px;
+
+    @include global.mq(md) {
+      padding: 11px 39px 10px 15px;
+    }
+
+    &:hover {
+      #{$this}__arrow--next {
+        transform: translate(3px, -50%);
       }
     }
   }
