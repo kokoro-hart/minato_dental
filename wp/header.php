@@ -47,7 +47,7 @@
                 </a>
               </li>
               <li class="c-global-nav__item">
-                <a href="<?php echo esc_url(home_url('/about')); ?>" class="c-global-nav__link <?php if(is_page('about')) echo 'is-current' ?>">
+                <a href="<?php echo esc_url(home_url('/about')); ?>" class="c-global-nav__link <?php check('about');?>">
                   <svg class="c-svg c-global-nav__icon" width="24" height="24">
                     <use xlink:href="<? echo get_template_directory_uri(); ?>/img/svg/sprite.min.svg#icon-about" />
                   </svg>
@@ -60,7 +60,7 @@
                 </a>
               </li>
               <li class="c-global-nav__item">
-                <a href="<?php echo esc_url(home_url('/medical')); ?>" class="c-global-nav__link <?php if(is_page('medical')) echo 'is-current' ?>">
+                <a href="<?php echo esc_url(home_url('/medical')); ?>" class="c-global-nav__link <?php check('medical');?>">
                   <svg class="c-svg c-global-nav__icon" width="24" height="24">
                     <use xlink:href="<? echo get_template_directory_uri(); ?>/img/svg/sprite.min.svg#icon-medical" />
                   </svg>
@@ -73,7 +73,7 @@
                 </a>
               </li>
               <li class="c-global-nav__item">
-                <a href="<?php echo esc_url(home_url('/staff')); ?>" class="c-global-nav__link <?php if(is_page('staff')) echo 'is-current' ?>">
+                <a href="<?php echo esc_url(home_url('/staff')); ?>" class="c-global-nav__link <?php check('staff');?>">
                   <svg class="c-svg c-global-nav__icon" width="24" height="24">
                     <use xlink:href="<? echo get_template_directory_uri(); ?>/img/svg/sprite.min.svg#icon-staff" />
                   </svg>
@@ -86,7 +86,7 @@
                 </a>
               </li>
               <li class="c-global-nav__item">
-                <a href="<?php echo esc_url(home_url('/blog')); ?>" class="c-global-nav__link <?php if(is_archive('blog')) echo 'is-current' ?>">
+                <a href="<?php echo esc_url(home_url('/blog')); ?>" class="c-global-nav__link <?php check('blog');?>">
                   <svg class="c-svg c-global-nav__icon" width="24" height="24">
                     <use xlink:href="<? echo get_template_directory_uri(); ?>/img/svg/sprite.min.svg#icon-blog" />
                   </svg>
@@ -99,7 +99,7 @@
                 </a>
               </li>
               <li class="c-global-nav__item">
-                <a href="<?php echo esc_url(home_url('/contact')); ?>" class="c-global-nav__link <?php if(is_page('contact')) echo 'is-current' ?>">
+                <a href="<?php echo esc_url(home_url('/contact')); ?>" class="c-global-nav__link <?php check('contact');?>">
                   <svg class="c-svg c-global-nav__icon" width="24" height="24">
                     <use xlink:href="<? echo get_template_directory_uri(); ?>/img/svg/sprite.min.svg#icon-contact" />
                   </svg>
@@ -114,6 +114,7 @@
             </ul>
           </nav>
           <!--/グローバルナビ-->
+
           <!--ドロワーボタン-->
           <button id="js-drawer" class="c-button-drawer u-hidden-xl-up" aria-controls="js-glabal-nav" aria-expanded="false" area-label="メニューを開閉する">
             <span class="c-button-drawer__line"></span>
