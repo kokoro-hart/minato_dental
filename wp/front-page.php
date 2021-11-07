@@ -181,18 +181,22 @@
               </h2>
             </div>
             <div class="p-home-medical__items">
-              <a href="/medical#medical01" class="p-home-medical-item">
+              <?php
+                // タクソノミ取得
+                $catargs = array(
+                  'taxonomy' => 'medical'
+                );
+                $cat_lists = get_categories( $catargs );
+                foreach($cat_lists as $cat) :
+                $cat_slug = $cat->slug; // カテゴリのスラッグを取得
+              ?>
+              <a href="/medical#<?php echo $cat_slug; ?>" class="p-home-medical-item">
                 <div class="p-home-medical-item__text-wrapper">
-                  <h2 class="p-home-medical-item__title">一般診療</h2>
-                  <p class="p-home-medical-item__text">虫歯・入れ歯・小児歯科</p>
+                  <h2 class="p-home-medical-item__title"><?php echo $cat->name;?></h2>
+                  <p class="p-home-medical-item__text"><?php echo $cat->description;?></p>
                 </div>
               </a>
-              <a href="/medical#medical02" class="p-home-medical-item">
-                <div class="p-home-medical-item__text-wrapper">
-                  <h2 class="p-home-medical-item__title">特殊診療</h2>
-                  <p class="p-home-medical-item__text">インプラント・ホワイトニング<br>予防歯科・口腔外科・審美歯科</p>
-                </div>
-              </a>
+              <?php endforeach; ?>              
             </div>
             <p class="p-home-medical__text">
               当院では、患者さんの歯の健康状態や治療方針を丁寧にカウンセリングし、十分ご理解していただいた上で治療いたします。
@@ -220,7 +224,9 @@
           <?php
             $args = array(
               'post_type' => 'blog',
-              'posts_per_page' => 6 
+              'posts_per_page' => 6 ,
+              'orderby' => 'date',
+              'order' => 'DESC'
             );
             $the_query = get_posts( $args );
             if ( $the_query ) :
@@ -238,12 +244,11 @@
                     echo '<img data-src="' . esc_url(get_template_directory_uri()) . '/img/common/blog01.jpeg" alt="記事の画像" class="p-home-blog-item__img lazyload">';
                   }
                 ?>
-                
               </p>
               <div class="p-home-blog-item__body">
                 <div class="p-home-blog-item__cats">
                   <p class="p-home-blog-item__cat">
-                    <?php echo esc_html( get_the_terms( get_the_ID(), 'cat' )[0]->name ); ?>
+                    <?php echo esc_html( get_the_terms( get_the_ID(), 'genre' )[0]->name ); ?>
                   </p>
                 </div>
                 <p class="p-home-blog-item__title">
