@@ -29,7 +29,6 @@ add_filter( 'document_title_separator', 'change_title_separator' );
 //css jsの読み込み
 function my_script_init()
 {
-
   //swiper
   if( is_front_page() || is_page('staff')) {
     wp_enqueue_style('swiper-css', '//unpkg.com/swiper/swiper-bundle.min.css', 'all');
@@ -43,9 +42,24 @@ function my_script_init()
 }
 add_action('wp_enqueue_scripts', 'my_script_init');
 
+//ナビゲーションのカレント
+function check($param) {
+  switch(true) {
+    case is_post_type_archive($param);
+    case is_page($param);
+    case is_singular($param);
+    case $param === 'blog' && is_tax();
+    echo 'is-current';
+    break;
+  }
+}
 
+//カテゴリ説明欄でhtmlを記述可能にする
+remove_filter( 'pre_term_description', 'wp_filter_kses' );
+
+
+//カスタム投稿タイプ カスタム分類
 add_action('init', function() {
-  //カスタム投稿タイプ
   //スタッフブログ
   register_post_type('blog', [
     'label' => 'スタッフブログ',
@@ -54,10 +68,11 @@ add_action('init', function() {
     'supports' => ['thumbnail','title','editor','custom-fields'],
     'has_archive' => true,
     'show_in_rest' =>true,
+    'exclude_from_search' => true,
   ]);
 
-  register_taxonomy('cat', 'blog',[
-    'label' => 'ブログカテゴリ',
+  register_taxonomy('genre', 'blog',[
+    'label' => 'ブログカテゴリー',
     'hierarchical' => true,
     'show_in_rest' => true,
   ]);
@@ -95,3 +110,4 @@ add_action('init', function() {
   ]);
 
 });
+
