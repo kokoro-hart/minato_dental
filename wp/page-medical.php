@@ -51,9 +51,9 @@
               <div class="p-medical-nav__title-wrapper">
                 <h2 class="p-medical-nav__title"><?php echo $cat->name; // 一般診療 or 特殊診療?></h2>
                 <?php if($cat_slug === 'medical01') : // スラッグがmedical01の場合?>
-                <p class="p-medical-nav__label p-medical-nav__label--blue"><?php echo $cat->description;?></p>
+                <p class="p-medical-nav__label p-medical-nav__label--blue">保険対象</p>
                 <?php else : // medical01以外は?>
-                  <p class="p-medical-nav__label p-medical-nav__label--red"><?php echo $cat->description;?></p>
+                  <p class="p-medical-nav__label p-medical-nav__label--red">実費</p>
                 <?php endif; ?>
               </div>
 
