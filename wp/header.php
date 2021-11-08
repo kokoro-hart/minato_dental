@@ -86,12 +86,12 @@
                 </a>
               </li>
               <li class="c-global-nav__item">
-                <a href="<?php echo esc_url(home_url('/blog')); ?>" class="c-global-nav__link <?php check('blog');?>">
+                <a href="<?php echo esc_url(home_url('/blog')); ?>" class="c-global-nav__link <?php if(is_home() || is_category() || is_single() || is_archive()) echo 'is-current' ?>">
                   <svg class="c-svg c-global-nav__icon" width="24" height="24">
                     <use xlink:href="<? echo get_template_directory_uri(); ?>/img/svg/sprite.min.svg#icon-blog" />
                   </svg>
                   <span class="c-global-nav__text">
-                    スタッフブログ
+                    ブログ・お知らせ
                   </span>
                   <svg class="c-svg c-global-nav__arrow-right u-hidden-xl-up" width="14" height="14">
                     <use xlink:href="<? echo get_template_directory_uri(); ?>/img/svg/sprite.min.svg#icon-right" />
