@@ -66,7 +66,7 @@
           <div class="p-home-news__body">
             <?php
               $args = array(
-                'post_type' => 'post',
+                'post_type' => 'news',
                 'posts_per_page' => 1,
                 'orderby' => 'date',
                 'order' => 'DESC',
@@ -125,6 +125,7 @@
         </div>
       </section>
       <!--/コンセプト-->
+      
       <!--当院３つのおすすめ-->
       <section class="p-home-recommend l-home__recommend">
         <div class="p-home-recommend__title-wrapper">
@@ -170,6 +171,7 @@
         </ol>
       </section>
       <!--/当院３つのおすすめ-->
+
       <!--診察案内-->
       <section class="p-home-medical l-home__medical l-decoration">
         <div class="l-decoration__top"></div>
@@ -221,18 +223,18 @@
               スタッフブログ
             </h2>
           </div>
-          <?php
-            $args = array(
-              'post_type' => 'blog',
-              'posts_per_page' => 6 ,
-              'orderby' => 'date',
-              'order' => 'DESC'
-            );
-            $the_query = get_posts( $args );
-            if ( $the_query ) :
-          ?>
           <div class="p-home-blog__items">
-            <?php foreach ( $the_query as $post ) : setup_postdata( $post ); ?>
+            <?php
+              $args = array(
+                'post_type' => 'post',
+                'posts_per_page' => 6,
+                'orderby' => 'date',
+                'order' => 'DESC',
+              );
+              $new_posts = get_posts($args);
+              foreach($new_posts as $post) : setup_postdata($post);
+              $category = get_the_category();
+            ?>
             <a href="<?php the_permalink(); ?>" class="p-home-blog-item">
               <p class="p-home-blog-item__thumbnail">
                 <?php
@@ -247,9 +249,11 @@
               </p>
               <div class="p-home-blog-item__body">
                 <div class="p-home-blog-item__cats">
+                  <?php if($category[0]) : ?>
                   <p class="p-home-blog-item__cat">
-                    <?php echo esc_html( get_the_terms( get_the_ID(), 'genre' )[0]->name ); ?>
+                    <?php echo $category[0]->cat_name; ?>
                   </p>
+                  <?php endif; ?>
                 </div>
                 <p class="p-home-blog-item__title">
                   <?php the_title(); ?>
@@ -259,7 +263,6 @@
             </a>
             <?php endforeach; wp_reset_postdata(); ?>
           </div>
-          <?php endif; ?>
           <div class="p-home-blog__link-wrapper">
             
             <a href="<?php echo esc_url(home_url('/blog')); ?>" class="c-button-primary">
