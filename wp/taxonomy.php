@@ -1,7 +1,7 @@
 
     <?php get_header(); ?>
 
-    <main class="p-blog">
+    <main class="p-news">
       <!--メインビジュアル-->
       <section class="p-lower-mv">
         <picture class="p-lower-mv__picture">
@@ -11,8 +11,8 @@
           <img src="<?php echo get_template_directory_uri(); ?>/img/common/mv-blog_pc.jpeg" class="p-lower-mv__img" media="(min-width: 768px)" decoding="async" alt="スタッフブログ">
         </picture>
         <div class="p-lower-mv__contents">
-          <h2 class="p-lower-mv__heading">スタッフブログ</h2>
-          <p class="p-lower-mv__lead">STAFF BLOG</p>
+          <h2 class="p-lower-mv__heading">お知らせ</h2>
+          <p class="p-lower-mv__lead">NEWS</p>
         </div>
       </section>
       <!--/メインビジュアル-->
@@ -43,7 +43,7 @@
               $term_object = get_queried_object(); // タームオブジェクトを取得
 	            $term_slug   = $term_object->slug; // タームスラッグ
                 $custom_posts = get_posts(array(
-                    'post_type' => 'blog', // 投稿タイプ
+                    'post_type' => 'news', // 投稿タイプ
                     'posts_per_page' => -1, // 表示件数
                     'orderby' => 'date', // 表示順の基準
                     'order' => 'DESC', // 昇順・降順
@@ -57,7 +57,8 @@
                     )
                 ));
                 global $post;
-                if($custom_posts): foreach($custom_posts as $post): setup_postdata($post); 
+                if($custom_posts): 
+                foreach($custom_posts as $post): setup_postdata($post); 
               ?>                  
 
               <a href="<?php the_permalink(); ?>" class="p-archive-main-card">
@@ -86,30 +87,16 @@
                   </time>
                 </div>
               </a>
+              
               <?php endforeach; wp_reset_postdata(); endif; ?>
-
-            </article>
-            
+            </article>  
             <!--ページネーション-->
-            <?php if(paginate_links()): ?>
-            <div class="p-archive-main__pagination c-pagination">
-              <?php
-                echo 
-                paginate_links(array(
-                  'end_size' => 1,
-                  'mid_size' => 1,
-                  'prev_next' => true,
-                  'next_text' => '<svg height="16" width="16" class="c-pagination__arrow c-pagination__arrow--next" xmlns="http://www.w3.org/2000/svg"><path d="M7.999 0a8 8 0 11-8 8 8 8 0 018-8zm-.932 4.632l2.436 2.335H3.612a.772.772 0 00-.775.77v.516a.772.772 0 00.774.774h5.89l-2.434 2.34a.775.775 0 00-.013 1.106l.355.352a.771.771 0 001.094 0l4.281-4.277a.771.771 0 000-1.094L8.503 3.17a.771.771 0 00-1.094 0l-.355.352a.779.779 0 00.013 1.11z" fill="#fff"/></svg>次へ',
-                  'prev_text' => '<svg height="16" width="16" class="c-pagination__arrow c-pagination__arrow--prev" xmlns="http://www.w3.org/2000/svg"><path d="M7.999 15.999a8 8 0 118-8 8 8 0 01-8 8zm.932-4.632L6.496 9.032h5.89a.772.772 0 00.774-.774v-.521a.772.772 0 00-.774-.774h-5.89l2.436-2.331a.775.775 0 00.013-1.106l-.355-.352a.771.771 0 00-1.094 0l-4.28 4.277a.771.771 0 000 1.094l4.281 4.281a.771.771 0 001.094 0l.355-.352a.775.775 0 00-.014-1.107z" fill="#fff"/></svg>前へ',
-                ));
-              ?>
-            </div>
-            <?php endif;?>
-            <!--/ページネーション-->
+            <?php my_pagination(); ?>
+            <!--/ページネーション-->                     
           </main>
           <!--/メインエリア-->
           <!--サイドバー-->
-          <?php get_template_part('includes/sidebar-blog'); ?>
+          <?php get_template_part('includes/sidebar-news'); ?>
           <!--サイドバー-->
         </div>
       </section>
