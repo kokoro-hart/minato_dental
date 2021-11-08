@@ -118,6 +118,8 @@
     margin-top: 72px;
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
 }
 
@@ -127,6 +129,12 @@
   margin-left: 0;
 }
 
+.wpcf7 form.sent .wpcf7-response-output {
+  max-width: 400px;
+  width: 100%;
+  margin: auto;
+}
+
 .date-2,
 .date-3 {
   display: block;
@@ -134,6 +142,10 @@
   @include global.mq(md) {
     margin-top: 20px;
   }
+}
+
+.wpcf7 form .wpcf7-response-output {
+    text-align: center;
 }
 
 //ラジオボタン
