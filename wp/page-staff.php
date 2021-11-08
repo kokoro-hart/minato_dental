@@ -103,7 +103,7 @@
         <!--/院長の挨拶-->
 
         <!--ギャラリー（swiper.js）-->
-        <!-- <section id="js-gallery" class="p-staff-gallery l-lower-staff__gallery">
+        <section id="js-gallery" class="p-staff-gallery l-lower-staff__gallery">
           <div class="swiper swiper-gallery">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
@@ -138,7 +138,7 @@
               </div>
             </div>
           </div>
-        </section> -->
+        </section>
         <!--/ギャラリー（swiper.js）-->
 
         <!--スタッフ紹介-->
