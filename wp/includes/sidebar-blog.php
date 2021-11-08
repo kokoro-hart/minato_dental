@@ -16,6 +16,8 @@
     <a href="<?php echo esc_url(home_url('/about')); ?>" class="p-sidebar-intro__button">
       当院について
     </a>
+    <div>
+    </div>
   </article>
   <!--/クリニックの紹介-->
   <!--新着記事-->
@@ -29,8 +31,62 @@
     <div class="p-sidebar__cards">
       <?php
         $args = array(
-          'post_type' => 'blog', 
-          'posts_per_page' => 5,
+          'post_type' => 'post',
+          'posts_per_page' => 3,
+          'orderby' => 'date',
+          'order' => 'DESC',
+        );
+        $new_posts = get_posts($args);
+        foreach($new_posts as $post) : setup_postdata($post);
+        $category = get_the_category();
+      ?>
+      <a href="<?php the_permalink(); ?>" class="p-sidebar-card">
+        <div class="p-sidebar-card__thumbnail">
+          <?php
+            if(has_post_thumbnail()) {
+              the_post_thumbnail('small', array(
+                'class' => 'p-sidebar-card__img lazyload'
+              ));
+            } else {
+              echo '<img data-src="' . esc_url(get_template_directory_uri()) . '/img/common/blog01.jpeg" alt="記事の画像" class="p-sidebar-card__img lazyload">';
+            }
+          ?>
+        </div>
+        <div class="p-sidebar-card__body">
+          <div class="p-sidebar-card__cats">
+            <?php if($category[0]) : ?>
+            <p class="p-sidebar-card__cat">
+              <?php echo $category[0]->cat_name; ?>
+            </p>
+            <?php endif; ?>
+          </div>
+          <h3 class="p-sidebar-card__title">
+            <?php the_title(); ?>
+          </h3>
+          <time class="p-sidebar-card__time" datetime="<?php the_time('c'); ?>">
+            <?php the_time('Y.n.j'); ?>
+          </time>
+        </div>
+      </a>
+      <?php endforeach; wp_reset_postdata();?>
+      
+    </div>
+  </article>
+  <!--新着記事-->
+
+  <!--お知らせ-->
+  <article class="p-sidebar-new">
+    <h2 class="p-sidebar__title">
+      <svg class="c-svg p-sidebar__title-icon" width="24" height="24">
+        <use xlink:href="<?php echo get_template_directory_uri(); ?>/img/svg/sprite.min.svg#icon-sidebar03" />
+      </svg>
+      お知らせ
+    </h2>
+    <div class="p-sidebar__cards">
+      <?php
+        $args = array(
+          'post_type' => 'news', 
+          'posts_per_page' => 2,
           'orderby' => 'date',
           'order' => 'DESC'
         );
@@ -72,8 +128,12 @@
         wp_reset_postdata();
       ?>
     </div>
+    <a href="<?php echo esc_url(home_url('/news')); ?>" class="p-sidebar-intro__button">
+      過去のお知らせを見る
+    </a>
   </article>
-  <!--新着記事-->
+  <!--/お知らせ-->
+  
   <!--カテゴリーリスト-->
   <article class="p-sidebar-cats">
     <h2 class="p-sidebar__title">
@@ -84,14 +144,17 @@
     </h2>
     <ul class="p-sidebar-cats__list">
       <?php
-        $blog_cats = get_terms( 'genre', array(
-          'hide_empty' => false
-        ));
-        foreach ( $blog_cats as $blog_cat ) :
+        $args = array(
+          'parent' => 0,
+          'orderby' => 'term_order',
+          'order' => 'ASC'
+        );
+        $categories = get_categories( $args );
+        foreach( $categories as $category ) : 
       ?>
       <li class="p-sidebar-cats__item">
-        <a href="<?php echo esc_url(get_term_link($blog_cat->slug, 'genre')); ?>" class="p-sidebar-cats__link">
-          <?php echo esc_html( $blog_cat->name ); ?>
+        <a href="<?php echo get_category_link( $category->term_id ); ?>" class="p-sidebar-cats__link">
+          <?php echo $category->name; ?>
         </a>
       </li>
       <?php endforeach; ?>
