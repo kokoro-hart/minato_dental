@@ -46,6 +46,13 @@ add_action('wp_enqueue_scripts', 'my_script_init');
 //カテゴリ説明欄でhtmlを記述可能にする
 remove_filter( 'pre_term_description', 'wp_filter_kses' );
 
+//フォーム設置ページのみContactForm7のcss、jsを読み込み
+add_action( 'wp', function() {
+  if ( is_page( 'contact' ) || is_page( 'reserve' ) ) return;
+  add_filter( 'wpcf7_load_js', '__return_false' );
+  add_filter( 'wpcf7_load_css', '__return_false' );
+});
+
 
 // 独自関数
 //--------------------------------------------------------------------------------------
@@ -77,13 +84,6 @@ function my_pagination()
     .'</div>';
   }
 }
-
-//フォーム設置ページのみContactForm7のcss、jsを読み込み
-add_action( 'wp', function() {
-  if ( is_page( 'contact' ) || is_page( 'reserve' ) ) return;
-  add_filter( 'wpcf7_load_js', '__return_false' );
-  add_filter( 'wpcf7_load_css', '__return_false' );
-});
 
 //カスタム投稿 カスタム分類
 //--------------------------------------------------------------------------------------
@@ -139,3 +139,16 @@ add_action('init', function() {
 });
 
 
+//lazyload対象のアイキャッチはsrcをdata-srcに置き換える
+function my_post_image_html( $html, $post_id, $post_image_id ) {
+
+  //遅延読み込み対象の画像のみ
+  if(strpos($html, 'lazyload') === false) {
+      return $html;
+  }
+
+  //srcをdata-srcに置換する
+  $html = str_replace('src="', 'data-src="', $html);
+  return $html;
+}
+add_filter( 'post_thumbnail_html', 'my_post_image_html', 10, 3 );
