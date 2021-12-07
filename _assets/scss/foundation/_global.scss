@@ -1,5 +1,14 @@
-//グローバルで使用するスタイル
-@forward "tools/fonts";
+//setting
 @forward "tools/variables";
-@forward "tools/mixins";
+@forward "tools/fonts";
+
+//mixins
+@forward "mixins/breakpoint";
+@forward "mixins/browser";
+@forward "mixins/line-clamp";
+@forward "mixins/object-fit";
+@forward "mixins/font-size";
+@forward "mixins/line-height";
+
+//functions
 @forward "tools/functions";
