@@ -1,0 +1,82 @@
+@use "foundation/global";
+
+// External スワイパー
+//--------------------------------------------------------------------------
+.p-mv {
+  //swiper-mv
+  .swiper-mv {
+    border-radius: 28px;
+    height: 100%;
+  }
+
+  .swiper-slide::after {
+    content: "";
+    position: absolute;
+    background: rgba(global.$color-text-black, 0.1);
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    top: 49%;
+    width: 48px;
+    height: 48px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    z-index: 1;
+
+    @include global.mq(md) {
+      width: 66px;
+      height: 66px;
+    }
+
+    &::after {
+      visibility: hidden;
+    }
+  }
+
+  .swiper-button-prev {
+    left: -2px;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2266%22%20height%3D%2266%22%20viewBox%3D%220%200%2066%2066%22%3E%3Cdefs%3E%3Cstyle%3E.a%7Bfill%3A%23fff%3B%7D.b%7Bfill%3Anone%3Bstroke%3A%23c2c2c2%3Bstroke-linecap%3Around%3Bstroke-width%3A2px%3B%7D.c%7Bfilter%3Aurl(%23a)%3B%7D%3C%2Fstyle%3E%3Cfilter%20id%3D%22a%22%20x%3D%220%22%20y%3D%220%22%20width%3D%2266%22%20height%3D%2266%22%20filterUnits%3D%22userSpaceOnUse%22%3E%3CfeOffset%20dy%3D%223%22%20input%3D%22SourceAlpha%22%2F%3E%3CfeGaussianBlur%20stdDeviation%3D%223%22%20result%3D%22b%22%2F%3E%3CfeFlood%20flood-opacity%3D%220.161%22%2F%3E%3CfeComposite%20operator%3D%22in%22%20in2%3D%22b%22%2F%3E%3CfeComposite%20in%3D%22SourceGraphic%22%2F%3E%3C%2Ffilter%3E%3C%2Fdefs%3E%3Cg%20transform%3D%22translate(9%206)%22%3E%3Cg%20class%3D%22c%22%20transform%3D%22matrix(1%2C%200%2C%200%2C%201%2C%20-9%2C%20-6)%22%3E%3Ccircle%20class%3D%22a%22%20cx%3D%2224%22%20cy%3D%2224%22%20r%3D%2224%22%20transform%3D%22translate(9%206)%22%2F%3E%3C%2Fg%3E%3Cpath%20class%3D%22b%22%20d%3D%22M17.6%2C0V17.6H0%22%20transform%3D%22translate(40.627%2023.714)%20rotate(135)%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+
+    @include global.mq(md) {
+      left: -33px;
+    }
+  }
+
+  .swiper-button-next {
+    right: -2px;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2266%22%20height%3D%2266%22%20viewBox%3D%220%200%2066%2066%22%3E%3Cdefs%3E%3Cstyle%3E.a%7Bfill%3A%23fff%3B%7D.b%7Bfill%3Anone%3Bstroke%3A%23c2c2c2%3Bstroke-linecap%3Around%3Bstroke-width%3A2px%3B%7D.c%7Bfilter%3Aurl(%23a)%3B%7D%3C%2Fstyle%3E%3Cfilter%20id%3D%22a%22%20x%3D%220%22%20y%3D%220%22%20width%3D%2266%22%20height%3D%2266%22%20filterUnits%3D%22userSpaceOnUse%22%3E%3CfeOffset%20dy%3D%223%22%20input%3D%22SourceAlpha%22%2F%3E%3CfeGaussianBlur%20stdDeviation%3D%223%22%20result%3D%22b%22%2F%3E%3CfeFlood%20flood-opacity%3D%220.161%22%2F%3E%3CfeComposite%20operator%3D%22in%22%20in2%3D%22b%22%2F%3E%3CfeComposite%20in%3D%22SourceGraphic%22%2F%3E%3C%2Ffilter%3E%3C%2Fdefs%3E%3Cg%20transform%3D%22translate(9%206)%22%3E%3Cg%20class%3D%22c%22%20transform%3D%22matrix(1%2C%200%2C%200%2C%201%2C%20-9%2C%20-6)%22%3E%3Ccircle%20class%3D%22a%22%20cx%3D%2224%22%20cy%3D%2224%22%20r%3D%2224%22%20transform%3D%22translate(9%206)%22%2F%3E%3C%2Fg%3E%3Cpath%20class%3D%22b%22%20d%3D%22M17.6%2C17.6V0H0%22%20transform%3D%22translate(19.818%2011.269)%20rotate(45)%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+
+    @include global.mq(md) {
+      right: -33px;
+    }
+  }
+
+  .swiper-horizontal > .swiper-pagination-bullets,
+  .swiper-pagination-bullets.swiper-pagination-horizontal {
+    position: absolute;
+    bottom: 28px;
+    left: -8px;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    width: 100%;
+
+    @include global.mq(md) {
+      bottom: 12px;
+      left: -17px;
+    }
+  }
+
+  .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+  .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin-top: 10px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
