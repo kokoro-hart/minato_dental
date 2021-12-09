@@ -138,7 +138,8 @@ add_action('init', function() {
   ]);
 });
 
-
+// フィルターフック
+//--------------------------------------------------------------------------------------
 //lazyload対象のアイキャッチはsrcをdata-srcに置き換える
 function my_post_image_html( $html, $post_id, $post_image_id ) {
 
@@ -152,3 +153,13 @@ function my_post_image_html( $html, $post_id, $post_image_id ) {
   return $html;
 }
 add_filter( 'post_thumbnail_html', 'my_post_image_html', 10, 3 );
+
+//javascriptの遅延defer属性を追加
+function scriptLoader($script, $handle, $src) {
+	if (is_admin()) {
+		return $script;
+	}
+	$script = sprintf('<script src="%s" type="text/javascript" defer=""></script>' . "\n", $src);
+	return $script;
+}
+add_filter('script_loader_tag', 'scriptLoader', 10, 5);
