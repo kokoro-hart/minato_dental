@@ -1,0 +1,40 @@
+@use "foundation/global";
+
+// Project 当院3つのおすすめ
+//--------------------------------------------------------------------------
+
+.p-recommend__title-wrapper {
+  text-align: center;
+}
+
+.p-recommend__items {
+  max-width: 600px;
+  margin: 38px auto 0;
+  padding: 0 48px;
+
+  @include global.mq(md) {
+    display: flex;
+    justify-content: center;
+    max-width: 966px;
+    margin: 60px auto 0;
+    padding: 0 20px;
+  }
+}
+
+.p-recommend__item {
+  text-align: center;
+  width: 100%;
+
+  @include global.mq(md) {
+    width: calc(33.333333% - 60px * 2 / 3);
+  }
+
+  &:not(:first-child) {
+    margin-top: 60px;
+
+    @include global.mq(md) {
+      margin-top: 0;
+      margin-left: 60px;
+    }
+  }
+}

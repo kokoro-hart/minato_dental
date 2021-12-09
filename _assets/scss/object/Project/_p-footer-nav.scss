@@ -1,0 +1,36 @@
+@use "foundation/global";
+
+// Project フッター ナビゲーション
+//--------------------------------------------------------------------------
+.p-footer-nav {
+  margin-top: 58px;
+  padding-left: 10px;
+  @include global.fz(16, 16);
+  @include global.lh(1.4);
+
+  @include global.mq(lg) {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.p-footer-nav__item {
+  margin-top: 40px;
+  font-weight: 700;
+  max-width: 300px;
+
+  @include global.mq(lg) {
+    margin-top: 0;
+    &:nth-child(n + 2) {
+      margin-left: 40px;
+    }
+  }
+}
+
+.p-footer-nav__box {
+  display: flex;
+}
+
+.p-footer-nav__link {
+  font-weight: 700;
+}

@@ -1,0 +1,117 @@
+@use "foundation/global";
+
+// Project 診察案内 アイテム
+//--------------------------------------------------------------------------
+
+.p-medical-item {
+  position: relative;
+  border-radius: 20px;
+  padding: 30px 20px 20px;
+  background-color: global.$color-text-white;
+
+  @include global.mq(md) {
+    padding: 62px 60px 60px;
+  }
+}
+
+.p-medical-item__title-wrapper {
+  border-bottom: 1px solid global.$color-border02;
+  padding-bottom: 20px;
+
+  @include global.mq(md) {
+    display: flex;
+    align-items: center;
+    padding-bottom: 44px;
+  }
+}
+
+.p-medical-item__title {
+  @include global.fz(20, 28);
+  @include global.lh(1.4, 1.57);
+  font-weight: 700;
+  letter-spacing: 1.6px;
+
+  @include global.mq(md) {
+    letter-spacing: 2.24px;
+  }
+}
+
+.p-medical-item__lead {
+  margin-top: 18px;
+  color: global.$color-main;
+  @include global.fz(14);
+  @include global.lh(1.4);
+  letter-spacing: 1.12px;
+  font-weight: 700;
+
+  @include global.mq(md) {
+    margin-top: 0;
+    margin-left: 40px;
+  }
+}
+
+.p-medical-item__body {
+  margin-top: 20px;
+  @include global.mq(md) {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+  }
+}
+
+.p-medical-item__text {
+  @include global.fz(14);
+  @include global.lh(1.71);
+
+  @include global.mq(md) {
+    width: calc(50% - 25px / 2);
+  }
+
+  @include global.mq(lg) {
+    width: calc(50% - 40px / 2);
+  }
+}
+
+.p-medical-item__img-wrapper {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  width: 100%;
+  margin-top: 16px;
+  padding-top: calc(3 / 4 * 100%);
+
+  @include global.mq(md) {
+    width: calc(50% - 25px / 2);
+    margin-top: 0;
+    padding-top: calc(3 / 9 * 100%);
+  }
+
+  @include global.mq(lg) {
+    width: calc(50% - 40px / 2);
+  }
+}
+
+.p-medical-item__img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  @include global.object-fit(cover);
+}
+
+.p-medical-item__tag {
+  display: block;
+  position: absolute;
+  right: 20px;
+  top: 8px;
+  width: 80px;
+  height: 60px;
+
+  @include global.mq(md) {
+    top: 0;
+    width: 100px;
+    height: 80px;
+  }
+}

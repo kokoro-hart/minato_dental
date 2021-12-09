@@ -1,0 +1,153 @@
+@use "foundation/global";
+
+// Project 診察案内リンク
+//--------------------------------------------------------------------------
+
+.p-medical-link {
+  $this: &;
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 210px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  color: global.$color-text-white;
+  overflow: hidden;
+
+  @include global.mq(md) {
+    width: calc(50% - 40px / 2);
+    height: 288px;
+  }
+
+  @include global.mq(lg) {
+    width: calc(50% - 80px / 2);
+  }
+
+  //背景
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    transition: background-color 0.4s, transform 0.4s ease-out;
+  }
+
+  //背景マスク
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: global.$color-mask01;
+    transition: background-color 0.4s ease-out;
+  }
+
+  //ホバー時
+  &:hover,
+  &:focus {
+    &::before {
+      transform: scale(1.1, 1.1);
+    }
+
+    &::after {
+      background-color: global.$color-mask02;
+    }
+
+    #{$this}__text-wrapper {
+      border-color: global.$color-text-white;
+    }
+  }
+
+  //背景画像
+  &:nth-of-type(1) {
+    &::before {
+      background-image: url(../img/webp/medical01.webp);
+
+      @include global.browser("ie") {
+        //ieの場合
+        background-image: url(../img/common/medical01.jpeg);
+      }
+      @include global.browser("safari") {
+        //safariの場合
+        background-image: url(../img/common/medical01.jpeg);
+      }
+    }
+  }
+
+  &:nth-of-type(2) {
+    &::before {
+      background-image: url(../img/webp/medical02.webp);
+
+      @include global.browser("ie") {
+        //ieの場合
+        background-image: url(../img/common/medical02.jpeg);
+      }
+      @include global.browser("safari") {
+        //safariの場合
+        background-image: url(../img/common/medical02.jpeg);
+      }
+    }
+  }
+}
+
+.p-medical-link__text-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  margin: 10px;
+  border-radius: 20px;
+  border: 2px solid transparent;
+  transition: border-color 0.4s ease-out;
+}
+
+.p-medical-link__title {
+  position: relative;
+  padding-bottom: 23px;
+  @include global.fz(20, 28);
+  @include global.lh(1.15);
+  font-weight: 700;
+  letter-spacing: 1.6px;
+
+  @include global.mq(md) {
+    letter-spacing: 2.24px;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 2px;
+    background-color: global.$color-text-white;
+    border-radius: 3px;
+  }
+}
+
+.p-medical-link__text {
+  margin-top: 20px;
+  @include global.fz(12, 16);
+  @include global.lh(1.58, 1.75);
+  font-weight: 700;
+  letter-spacing: 0.96px;
+
+  @include global.mq(md) {
+    letter-spacing: 1.28px;
+  }
+}

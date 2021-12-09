@@ -3,7 +3,7 @@
   <%- include('../common/_header', {pageId:pageId }) %>
 
     <% console.log(jsonData) %>
-      <main class="p-staff">
+      <main>
         <!--メインビジュアル-->
         <section class="p-lower-mv">
           <picture class="p-lower-mv__picture">
@@ -160,26 +160,26 @@
                 <h3 class="p-staff__sub-title">歯科衛生士</h3>
                 <ul class="p-staff-member__items">
                   <% for (let member01 in jsonData.staff01){ %>
-                  <li class="p-staff-member-item">
-                    <div class="p-staff-member-item__img-wrapper">
-                      <img data-src="<%= jsonData.staff01[member01].src %>" alt="スタッフの写真" class="p-staff-member-item__img lazyload">
+                  <li class="p-staff-member__item p-card-staff">
+                    <div class="p-card-staff__img-wrapper">
+                      <img data-src="<%= jsonData.staff01[member01].src %>" alt="スタッフの写真" class="p-card-staff__img lazyload">
                     </div>
-                    <div class="p-staff-member-item__name-wrapper">
-                      <p class="p-staff-member-item__role">歯科衛生士</p>
-                      <p class="p-staff-member-item__name"><%= jsonData.staff01[member01].name %></p>
+                    <div class="p-card-staff__name-wrapper">
+                      <p class="p-card-staff__role">歯科衛生士</p>
+                      <p class="p-card-staff__name"><%= jsonData.staff01[member01].name %></p>
                     </div>
-                    <dl class="p-staff-member-item__dl">
-                      <div class="p-staff-member-item__row">
-                        <dt class="p-staff-member-item__dt">出身地</dt>
-                        <dd class="p-staff-member-item__dd"><%= jsonData.staff01[member01].from %></dd>
+                    <dl class="p-card-staff__dl">
+                      <div class="p-card-staff__row">
+                        <dt class="p-card-staff__dt">出身地</dt>
+                        <dd class="p-card-staff__dd"><%= jsonData.staff01[member01].from %></dd>
                       </div>
-                      <div class="p-staff-member-item__row">
-                        <dt class="p-staff-member-item__dt">趣味</dt>
-                        <dd class="p-staff-member-item__dd"><%= jsonData.staff01[member01].hobby %></dd>
+                      <div class="p-card-staff__row">
+                        <dt class="p-card-staff__dt">趣味</dt>
+                        <dd class="p-card-staff__dd"><%= jsonData.staff01[member01].hobby %></dd>
                       </div>
-                      <div class="p-staff-member-item__row">
-                        <dt class="p-staff-member-item__dt">好きな食べ物</dt>
-                        <dd class="p-staff-member-item__dd"><%= jsonData.staff01[member01].food %></dd>
+                      <div class="p-card-staff__row">
+                        <dt class="p-card-staff__dt">好きな食べ物</dt>
+                        <dd class="p-card-staff__dd"><%= jsonData.staff01[member01].food %></dd>
                       </div>
                     </dl>
                   </li>
@@ -193,32 +193,32 @@
                 <h3 class="p-staff__sub-title">歯科助手</h3>
                 <ul class="p-staff-member__items">
                   <% for (let member02 in jsonData.staff02){ %>
-                    <li class="p-staff-member-item">
-                      <div class="p-staff-member-item__img-wrapper">
-                        <img data-src="<%= jsonData.staff02[member02].src %>" alt="スタッフの写真" class="p-staff-member-item__img lazyload">
+                    <li class="p-staff-member__item p-card-staff">
+                      <div class="p-card-staff__img-wrapper">
+                        <img data-src="<%= jsonData.staff02[member02].src %>" alt="スタッフの写真" class="p-card-staff__img lazyload">
                       </div>
-                      <div class="p-staff-member-item__name-wrapper">
-                        <p class="p-staff-member-item__role">歯科助手</p>
-                        <p class="p-staff-member-item__name">
+                      <div class="p-card-staff__name-wrapper">
+                        <p class="p-card-staff__role">歯科助手</p>
+                        <p class="p-card-staff__name">
                           <%= jsonData.staff02[member02].name %>
                         </p>
                       </div>
-                      <dl class="p-staff-member-item__dl">
-                        <div class="p-staff-member-item__row">
-                          <dt class="p-staff-member-item__dt">出身地</dt>
-                          <dd class="p-staff-member-item__dd">
+                      <dl class="p-card-staff__dl">
+                        <div class="p-card-staff__row">
+                          <dt class="p-card-staff__dt">出身地</dt>
+                          <dd class="p-card-staff__dd">
                             <%= jsonData.staff02[member02].from %>
                           </dd>
                         </div>
-                        <div class="p-staff-member-item__row">
-                          <dt class="p-staff-member-item__dt">趣味</dt>
-                          <dd class="p-staff-member-item__dd">
+                        <div class="p-card-staff__row">
+                          <dt class="p-card-staff__dt">趣味</dt>
+                          <dd class="p-card-staff__dd">
                             <%= jsonData.staff02[member02].hobby %>
                           </dd>
                         </div>
-                        <div class="p-staff-member-item__row">
-                          <dt class="p-staff-member-item__dt">好きな食べ物</dt>
-                          <dd class="p-staff-member-item__dd">
+                        <div class="p-card-staff__row">
+                          <dt class="p-card-staff__dt">好きな食べ物</dt>
+                          <dd class="p-card-staff__dd">
                             <%= jsonData.staff02[member02].food %>
                           </dd>
                         </div>

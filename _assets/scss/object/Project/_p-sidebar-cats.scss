@@ -1,0 +1,49 @@
+@use "foundation/global";
+
+// Project サイドバー カテゴリリスト
+//--------------------------------------------------------------------------
+
+.p-sidebar-cats {
+  margin-top: 61px;
+}
+
+.p-sidebar-cats__list {
+  margin-top: 16px;
+  padding-left: 21px;
+}
+
+.p-sidebar-cats__item {
+  display: block;
+  margin-bottom: 14px;
+}
+
+.p-sidebar-cats__link {
+  display: block;
+  position: relative;
+  padding-left: 12px;
+  transition: color 0.3s;
+  @include global.fz(16);
+  @include global.lh(1.4);
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -6px;
+    width: 12px;
+    height: 15px;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20height%3D%2212%22%20viewBox%3D%220%200%2015.4%2015.979%22%20width%3D%2216%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22%231391E6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%221.4%22%3E%3Cpath%20d%3D%22m7.5%2018h14%22%20transform%3D%22translate(-6.8%20-10.01)%22%2F%3E%3Cpath%20d%3D%22m18%207.5%206.606%207-6.606%207%22%20transform%3D%22translate(-9.906%20-6.51)%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform 0.3s;
+  }
+
+  &:hover,
+  &:focus {
+    color: global.$color-main;
+    &::before {
+      transform: translate(2.5px, -50%);
+    }
+  }
+}

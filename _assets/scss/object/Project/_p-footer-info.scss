@@ -1,0 +1,108 @@
+@use "foundation/global";
+
+// Project フッター インフォメーション
+//--------------------------------------------------------------------------
+.p-footer-info {
+  width: 100%;
+  border-radius: 8px;
+  padding: 32px 22px 20px 22px;
+  background-color: global.$color-text-white;
+  text-align: center;
+
+  @include global.mq(md) {
+    border-radius: 20px;
+  }
+  @include global.mq(lg) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.p-footer-info__inner {
+  max-width: 478px;
+  width: 100%;
+  margin: auto;
+
+  @include global.mq(lg) {
+    margin: 0;
+  }
+}
+
+//ロゴ
+.p-footer-info__logo {
+  line-height: 0;
+}
+
+.p-footer-info__logo-svg {
+  width: 311px;
+  height: 33px;
+  color: global.$color-main;
+
+  @include global.mq(md) {
+    width: 401px;
+    height: 45px;
+  }
+}
+
+//住所
+.p-footer-info__access {
+  display: block;
+  margin-top: 10px;
+  @include global.fz(14);
+  @include global.lh(1.7);
+}
+
+.p-footer-info__access-inside {
+  display: inline-block;
+  margin-left: 14px;
+}
+
+//電話番号
+.p-footer-info__tel {
+  display: inline-block;
+  margin-top: 20px;
+  color: global.$color-main;
+  @include global.fz(32);
+  @include global.lh(1.12);
+  font-weight: 700;
+  letter-spacing: -0.64px;
+
+  @include global.mq(md) {
+    margin-top: 24px;
+  }
+}
+
+.p-footer-info__tel-icon {
+  width: 28px;
+  height: 28px;
+  color: global.$color-main;
+  transform: translateY(2px);
+}
+
+//営業時間
+.p-footer-info__time {
+  color: global.$color-main;
+  @include global.fz(12);
+  @include global.lh(1.7);
+}
+
+//予約 お問い合わせ
+.p-footer-info__link-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+//診察時間
+.p-footer-info__medical {
+  display: inline-block;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: global.$box-shadow;
+  margin-top: 20px;
+}
+
+.p-footer-info__medical-img {
+  width: 100%;
+}

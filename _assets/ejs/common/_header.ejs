@@ -37,6 +37,7 @@
           <h1 id="js-header-logo" class="p-header-logo">
             <svg class="c-svg p-header-logo__svg" width="270" height="31">
               <use xlink:href="/img/svg/sprite.min.svg#logo" />
+              みなみ歯科クリニック
             </svg>
           </h1>            
         <% } else { %>
@@ -44,6 +45,7 @@
             <a href="/" class="p-header-logo__link">
               <svg class="c-svg p-header-logo__svg" width="270" height="31">
                 <use xlink:href="/img/svg/sprite.min.svg#logo" />
+                みなみ歯科クリニック
               </svg>
             </a>
           </h1>
@@ -53,33 +55,33 @@
         <div class="l-header__content">
 
           <!--グローバルナビ-->
-          <nav class="c-global-nav" id="js-global-nav" area-hidden="true">
-            <ul class="c-global-nav__list">
+          <nav class="p-global-nav" id="js-global-nav" aria-level="ページ内のメニュー">
+            <ul class="p-global-nav__list">
               <% for (let page in jsonData.nav){ %>
               <% if (page === pageId) { %>
-              <li class="c-global-nav__item">
-                <a class="c-global-nav__link is-current">
-                  <svg class="c-svg c-global-nav__icon" width="24" height="24">
+              <li class="p-global-nav__item">
+                <a class="p-global-nav__link is-current">
+                  <svg class="c-svg p-global-nav__icon" width="24" height="24">
                     <use xlink:href="/img/svg/sprite.min.svg#icon-<%= jsonData.nav[page].id %>" />
                   </svg>
-                  <span class="c-global-nav__text">
+                  <span class="p-global-nav__text">
                     <%= jsonData.nav[page].name %>
                   </span>                
-                  <svg class="c-svg c-global-nav__arrow-right u-hidden-xl-up" width="14" height="14">
+                  <svg class="c-svg p-global-nav__arrow-right u-hidden-xl-up" width="14" height="14">
                     <use xlink:href="/img/svg/sprite.min.svg#icon-right" />
                   </svg>
                 </a>
               </li>
               <% }else { %>
-                <li class="c-global-nav__item">
-                  <a href="<%= jsonData.nav[page].slug %>" class="c-global-nav__link">
-                    <svg class="c-svg c-global-nav__icon" width="24" height="24">
+                <li class="p-global-nav__item">
+                  <a href="<%= jsonData.nav[page].slug %>" class="p-global-nav__link">
+                    <svg class="c-svg p-global-nav__icon" width="24" height="24">
                       <use xlink:href="/img/svg/sprite.min.svg#icon-<%= jsonData.nav[page].id %>" />
                     </svg>
-                    <span class="c-global-nav__text">
+                    <span class="p-global-nav__text">
                       <%= jsonData.nav[page].name %>
                     </span>
-                    <svg class="c-svg c-global-nav__arrow-right u-hidden-xl-up" width="14" height="14">
+                    <svg class="c-svg p-global-nav__arrow-right u-hidden-xl-up" width="14" height="14">
                       <use xlink:href="/img/svg/sprite.min.svg#icon-right" />
                     </svg>
                   </a>
@@ -100,7 +102,7 @@
           <!--ドロワーボタン-->
 
           <!--電話番号-->
-          <div class="p-header-tel u-hidden-xl-down">
+          <address class="p-header-tel u-hidden-xl-down">
             <p class="p-header-tel__text">
               〒166-0001 東京都杉並区阿佐谷北7-3-1
             </p>
@@ -110,7 +112,7 @@
               </svg>
               03-1234-5678
             </a>
-          </div>
+          </address>
           <!--電話番号-->
 
         </div>

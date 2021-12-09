@@ -2,65 +2,11 @@
 
 // Layout 下層ページ
 //--------------------------------------------------------------------------
+
 .l-lower {
   margin-top: 60px;
 
   @include global.mq(md) {
     margin-top: 80px;
-  }
-}
-
-// 当院について
-//--------------------------------------------------------------------------
-.l-lower-about {
-  &__state {
-    margin-top: 100px;
-    @include global.mq(md) {
-      margin-top: 160px;
-    }
-  }
-}
-
-// 診察案内
-//--------------------------------------------------------------------------
-.l-lower-medical {
-  &__details {
-    margin-top: 100px;
-    
-    @include global.mq(md) {
-      margin-top: 160px;
-    }
-  }
-}
-
-// スタッフ紹介
-//--------------------------------------------------------------------------
-.l-lower-staff {
-
-  &__gallery {
-    margin-top: 100px;
-
-    @include global.mq(md) {
-      margin-top: 150px;
-    }
-  }
-
-  &__member {
-    margin-top: 100px;
-
-    @include global.mq(md) {
-      margin-top: 169px;
-    }
-  }
-
-}
-
-// フォーム
-//--------------------------------------------------------------------------
-.l-lower-form {
-  margin-top: 60px;
-
-  @include global.mq(md) {
-    margin-top: 72px;
   }
 }

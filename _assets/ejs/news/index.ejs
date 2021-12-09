@@ -3,7 +3,7 @@
   <%- include('../common/_header', {pageId:pageId }) %>
 
     <% console.log(jsonData) %>
-      <main class="p-news">
+      <main>
         <!--メインビジュアル-->
         <section class="p-lower-mv">
           <picture class="p-lower-mv__picture">
@@ -40,26 +40,26 @@
 
         <!--スタッフブログ-->
         <section class="p-archive l-lower l-archive">
-          <div class="p-archive__inner l-archive__inner l-inner">
+          <div class="l-archive__inner l-inner">
             <!--メインエリア-->
             <main class="p-archive-main l-archive__main">
               <article class="p-archive-main__cards">
                 <% for (let post in jsonData.blog){ %>
-                  <a href="/single/" class="p-archive-main-card">
-                    <div class="p-archive-main-card__thumbnail">
+                  <a href="/single/" class="p-archive-main__card p-card-archive">
+                    <div class="p-card-archive__thumbnail">
                       <img data-src="<%= jsonData.blog[post].src %>" alt="記事の画像"
-                        class="p-archive-main-card__img lazyload">
+                        class="p-card-archive__img lazyload">
                     </div>
-                    <div class="p-archive-main-card__body">
-                      <div class="p-archive-main-card__cats">
-                        <p class="p-archive-main-card__cat">
+                    <div class="p-card-archive__body">
+                      <div class="p-card-archive__cats">
+                        <p class="p-card-archive__cat">
                           <%= jsonData.blog[post].category %>
                         </p>
                       </div>
-                      <h3 class="p-archive-main-card__title">
+                      <h3 class="p-card-archive__title">
                         <%= jsonData.blog[post].title %>
                       </h3>
-                      <time class="p-archive-main-card__time" datetime="<%= jsonData.blog[post].time %>">
+                      <time class="p-card-archive__time" datetime="<%= jsonData.blog[post].time %>">
                         <%= jsonData.blog[post].time %>
                       </time>
                     </div>
@@ -118,22 +118,22 @@
                   </svg>
                   新着記事
                 </h2>
-                <div class="p-sidebar__cards">
+                <div class="p-sidebar-new__cards">
                   <% for (let post in jsonData.new){ %>
-                    <a href="/single/" class="p-sidebar-card">
-                      <div class="p-sidebar-card__thumbnail">
-                        <img data-src="<%= jsonData.new[post].src %>" alt="記事の画像" class="p-sidebar-card__img lazyload">
+                    <a href="/single/" class="p-sidebar-new__card p-card-sidebar">
+                      <div class="p-card-sidebar__thumbnail">
+                        <img data-src="<%= jsonData.new[post].src %>" alt="記事の画像" class="p-card-sidebar__img lazyload">
                       </div>
-                      <div class="p-sidebar-card__body">
-                        <div class="p-sidebar-card__cats">
-                          <p class="p-sidebar-card__cat">
+                      <div class="p-card-sidebar__body">
+                        <div class="p-card-sidebar__cats">
+                          <p class="p-card-sidebar__cat">
                             <%= jsonData.new[post].category %>
                           </p>
                         </div>
-                        <h3 class="p-sidebar-card__title">
+                        <h3 class="p-card-sidebar__title">
                           <%= jsonData.new[post].title %>
                         </h3>
-                        <time class="p-sidebar-card__time" datetime="<%= jsonData.new[post].time %>">
+                        <time class="p-card-sidebar__time" datetime="<%= jsonData.new[post].time %>">
                           <%= jsonData.new[post].time %>
                         </time>
                       </div>

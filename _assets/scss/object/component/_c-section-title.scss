@@ -1,0 +1,51 @@
+@use "foundation/global";
+
+// Component タイトル
+//--------------------------------------------------------------------------
+
+//セクションタイトル
+.c-section-title {
+  position: relative;
+  display: inline-block;
+  color: global.$color-text-black;
+  @include global.fz(20, 28);
+  @include global.lh(1.4);
+  font-weight: 700;
+  letter-spacing: 1.6px;
+
+  @include global.mq(md) {
+    letter-spacing: 2.24px;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20height%3D%2220%22%20viewBox%3D%220%200%2067.564%2020%22%20width%3D%2267.564%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22%231391e6%22%3E%3Cpath%20d%3D%22m11.975%200h3.589l-11.975%2017.708h-3.589z%22%2F%3E%3Cpath%20d%3D%22m11.975%200h3.589l-11.975%2017.708h-3.589z%22%20transform%3D%22translate(13)%22%2F%3E%3Cpath%20d%3D%22m11.975%200h3.589l-11.975%2017.708h-3.589z%22%20transform%3D%22translate(26)%22%2F%3E%3Cpath%20d%3D%22m11.975%200h3.589l-11.975%2017.708h-3.589z%22%20transform%3D%22translate(39)%22%2F%3E%3Cpath%20d%3D%22m11.975%200h3.589l-11.975%2017.708h-3.589z%22%20transform%3D%22translate(52)%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 15px;
+
+    @include global.mq(md) {
+      width: 72px;
+      height: 20px;
+    }
+  }
+
+  &::before {
+    left: -64px;
+    @include global.mq(md) {
+      left: -95px;
+    }
+  }
+
+  &::after {
+    right: -64px;
+    @include global.mq(md) {
+      right: -95px;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+@use "foundation/global";
+
+// Project ヘッダー 電話番号
+//--------------------------------------------------------------------------
+
+.p-header-tel {
+  margin-left: 32px;
+}
+
+.p-header-tel__text {
+  display: block;
+  text-align: right;
+  @include global.fz(12);
+  @include global.lh(3);
+}
+
+.p-header-tel__number {
+  color: global.$color-main;
+  @include global.fz(32);
+  @include global.lh(1.12);
+  font-weight: 700;
+  letter-spacing: -0.64px;
+}
+
+.p-header-tel__icon {
+  width: 28px;
+  height: 28px;
+  margin-right: -5px;
+  color: global.$color-main;
+  transform: translateY(2px);
+}

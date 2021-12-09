@@ -1,0 +1,32 @@
+@use "foundation/global";
+
+// Project 当院３つのおすすめカード
+//--------------------------------------------------------------------------
+
+.p-card-recommend__img {
+  width: 178px;
+
+  @include global.mq(md) {
+    width: 190px;
+  }
+}
+
+.p-card-recommend__svg {
+  display: inline-block;
+  margin-top: 12px;
+  width: 100%;
+  color: global.$color-sub02;
+}
+
+.p-card-recommend__text {
+  display: inline-block;
+  margin-top: 22px;
+  text-align: left;
+  @include global.fz(14);
+  @include global.lh(1.7);
+}
+
+.p-card-recommend__text--color-red {
+  margin: 0;
+  color: global.$color-accent;
+}

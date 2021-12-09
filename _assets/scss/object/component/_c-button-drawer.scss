@@ -1,0 +1,59 @@
+@use "foundation/global";
+
+// Component ドロワーボタン
+//--------------------------------------------------------------------------
+.c-button-drawer {
+  position: relative;
+  width: 28px;
+  height: 18px;
+  z-index: 20;
+  cursor: pointer;
+}
+
+.c-button-drawer__line {
+  position: absolute;
+  border-radius: 1px;
+  height: 3px;
+  width: 100%;
+  background-color: global.$color-main;
+  transition: transform 0.3s, background-color 0.3s;
+
+  &:nth-last-of-type(1) {
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  &:nth-last-of-type(2) {
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+
+  &:nth-last-of-type(3) {
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+}
+
+//ドロワーアクティブ時
+.c-button-drawer.is-active {
+  .c-button-drawer__line {
+    background-color: global.$color-text-white;
+
+    &:nth-last-of-type(1) {
+      top: 50%;
+      transform: translateY(-50%) rotate(45deg);
+    }
+
+    &:nth-last-of-type(2) {
+      display: none;
+    }
+
+    &:nth-last-of-type(3) {
+      top: 50%;
+      transform: translateY(-50%) rotate(-45deg);
+    }
+  }
+}

@@ -1,0 +1,87 @@
+@use "foundation/global";
+
+// Project スタッフ紹介 院長の挨拶
+//--------------------------------------------------------------------------
+
+.p-staff-director__title-wrapper {
+  width: 100%;
+  text-align: center;
+}
+
+.p-staff-director__inner {
+  @include global.mq(md) {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.p-staff-director__about {
+  @include global.mq(md) {
+    width: calc(50% - 80px / 2);
+  }
+}
+
+.p-staff-director__title {
+  @include global.fz(20, 28);
+  @include global.lh(1.6, 1.57);
+  font-weight: 700;
+  letter-spacing: 1.6px;
+}
+
+.p-staff-director__text-wrapper {
+  width: 100%;
+  margin-top: 32px;
+
+  @include global.mq(md) {
+    margin-top: 20px;
+  }
+}
+
+.p-staff-director__text {
+  display: inline-block;
+  @include global.fz(14);
+  @include global.lh(1.71);
+
+  &:nth-child(n + 2) {
+    margin-left: 16px;
+  }
+}
+
+.p-staff-director__picture {
+  display: block;
+  margin-top: 40px;
+
+  @include global.mq(md) {
+    margin-top: 0;
+  }
+}
+
+.p-staff-director__career {
+  margin-top: 40px;
+
+  @include global.mq(md) {
+    margin-top: 60px;
+  }
+}
+
+.p-staff-director__row {
+  display: flex;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.p-staff-director__certified {
+  margin-top: 40px;
+
+  @include global.mq(md) {
+    margin-top: 60px;
+  }
+}
+
+.p-staff-director__img-wrapper {
+  max-width: 460px;
+
+  @include global.mq(md) {
+    width: calc(50% - 80px / 2);
+  }
+}

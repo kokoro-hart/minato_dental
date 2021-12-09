@@ -13,34 +13,85 @@
 @use "layout/l-header";
 @use "layout/l-home";
 @use "layout/l-lower";
+@use "layout/l-lower-about";
+@use "layout/l-lower-medical";
+@use "layout/l-lower-staff";
+@use "layout/l-lower-form";
 @use "layout/l-archive";
 @use "layout/l-decoration";
 @use "layout/l-footer";
 
 /* Component (prefix: c- )
    ----------------------------------------------------------------- */
-@use "object/component/c-global-nav";
-@use "object/component/c-button";
+@use "object/component/c-button-drawer";
+@use "object/component/c-button-primary";
+@use "object/component/c-button-submit";
+@use "object/component/c-button-footer";
 @use "object/component/c-breadcrumb";
 @use "object/component/c-pagination";
-@use "object/component/c-reserve";
-@use "object/component/c-title";
+@use "object/component/c-section-title";
 
 /* Project (prefix: p- )
    ----------------------------------------------------------------- */
-@use "object/Project/p-header";
-@use "object/Project/p-home";
+@use "object/Project/p-header-tel";
+@use "object/Project/p-header-logo";
+@use "object/Project/p-global-nav";
+
+@use "object/Project/p-mv";
+
+@use "object/Project/p-medical-table";
+@use "object/Project/p-news";
+@use "object/Project/p-home-medical";
+@use "object/Project/p-medical-link";
+@use "object/Project/p-blog";
+
 @use "object/Project/p-feature";
-@use "object/Project/p-lower";
-@use "object/Project/p-about";
-@use "object/Project/p-medical";
+@use "object/Project/p-recommend";
+
+@use "object/Project/p-card-recommend";
+@use "object/Project/p-card-blog";
+@use "object/Project/p-card-staff";
+@use "object/Project/p-card-archive";
+@use "object/Project/p-card-sidebar";
+
+@use "object/Project/p-lower-mv";
+
+@use "object/Project/p-about-feature";
+@use "object/Project/p-about-state";
+
+@use "object/Project/p-medical-nav";
+@use "object/Project/p-medical-detail";
+@use "object/Project/p-medical-item";
+
 @use "object/Project/p-staff";
-@use "object/Project/p-archive";
+@use "object/Project/p-staff-director";
+@use "object/Project/p-staff-member";
+
+@use "object/Project/p-archive-main";
+
 @use "object/Project/p-single";
+
 @use "object/Project/p-sidebar";
+@use "object/Project/p-sidebar-intro";
+@use "object/Project/p-sidebar-new";
+@use "object/Project/p-sidebar-cats";
+
 @use "object/Project/p-contact";
+@use "object/Project/p-contact-info";
 @use "object/Project/p-form";
-@use "object/Project/p-footer";
+
+@use "object/Project/p-footer-info";
+@use "object/Project/p-footer-map";
+@use "object/Project/p-footer-nav";
+@use "object/Project/p-footer-lower-nav";
+@use "object/Project/p-footer-copyright";
+
+@use "object/Project/p-reserve";
+@use "object/Project/p-reserve-footer";
+
+/* External
+   ----------------------------------------------------------------- */
+@use "external/swiper";
 
 /* Utitlity (prefix: u- )
    ----------------------------------------------------------------- */

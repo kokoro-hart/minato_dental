@@ -1,0 +1,43 @@
+@use "foundation/global";
+
+// Component 通常のボタン
+//--------------------------------------------------------------------------
+.c-button-primary {
+  $this: &;
+  display: inline-block;
+  position: relative;
+  border: 1px solid global.$color-main;
+  border-radius: 24px;
+  padding: 10px 40px;
+  color: global.$color-main;
+  @include global.fz(14);
+  @include global.lh(1.4);
+  font-weight: 500;
+  transition: background-color 0.3s, color 0.3s;
+
+  @include global.mq(md) {
+    padding: 12px 46px;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: global.$color-main;
+    color: global.$color-text-white;
+
+    #{$this}__arrow {
+      color: global.$color-text-white;
+      transform: translate(3px, -50%);
+    }
+  }
+}
+
+.c-button-primary__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 12px;
+  width: 12px;
+  height: 12px;
+  color: global.$color-main;
+  transition: transform 0.3s, color 0.3s;
+}

@@ -1,0 +1,30 @@
+@use "foundation/global";
+
+// Project 診察案内 詳細ブロック
+//--------------------------------------------------------------------------
+
+.p-medical-detail__title-wrapper {
+  width: 100%;
+  text-align: center;
+}
+
+.p-medical-detail__items {
+  width: 100%;
+  margin-top: 40px;
+
+  @include global.mq(md) {
+    margin-top: 60px;
+  }
+}
+
+.p-medical-detail__item {
+  width: 100%;
+
+  &:nth-child(n + 2) {
+    margin-top: 20px;
+
+    @include global.mq(md) {
+      margin-top: 40px;
+    }
+  }
+}

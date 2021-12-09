@@ -8,25 +8,6 @@
   display: flex;
   justify-content: center;
 
-  &__arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 16px;
-    height: 16px;
-    transition: transform 0.3s;
-  }
-
-  &__arrow--next {
-    right: 15px;
-    left: auto;
-  }
-
-  &__arrow--prev {
-    left: right;
-    left: 15px;
-  }
-
   .page-numbers {
     position: relative;
     display: inline-block;
@@ -51,7 +32,8 @@
       }
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
       background-color: global.$color-main;
       color: global.$color-text-white;
     }
@@ -71,7 +53,8 @@
       padding: 11px 15px 10px 39px;
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
       #{$this}__arrow--prev {
         transform: translate(-3px, -50%);
       }
@@ -85,7 +68,8 @@
       padding: 11px 39px 10px 15px;
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
       #{$this}__arrow--next {
         transform: translate(3px, -50%);
       }
@@ -96,4 +80,23 @@
     background-color: global.$color-main;
     color: global.$color-text-white;
   }
+}
+
+.c-pagination__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s;
+}
+
+.c-pagination__arrow--next {
+  right: 15px;
+  left: auto;
+}
+
+.c-pagination__arrow--prev {
+  left: right;
+  left: 15px;
 }

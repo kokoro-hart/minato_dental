@@ -1,0 +1,79 @@
+@use "foundation/global";
+
+// Project スタッフ紹介 カード
+//--------------------------------------------------------------------------
+
+.p-card-staff__img-wrapper {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  padding-top: 100%;
+}
+
+.p-card-staff__img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  @include global.object-fit(cover);
+  height: 100%;
+  width: 100%;
+}
+
+.p-card-staff__name-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.p-card-staff__role {
+  display: inline-block;
+  @include global.fz(12);
+  @include global.lh(1.5);
+  letter-spacing: 0.96px;
+}
+
+.p-card-staff__name {
+  display: inline-block;
+  margin-left: 12px;
+  @include global.fz(18);
+  @include global.lh(1.55);
+  font-weight: 700;
+  letter-spacing: 1.44px;
+}
+
+.p-card-staff__dl {
+  width: 100%;
+  margin-top: 16px;
+}
+
+.p-card-staff__row {
+  display: flex;
+}
+
+.p-card-staff__dt {
+  width: 41%;
+  padding: 15px 0 15px 20px;
+  background-color: global.$color-sub02;
+  @include global.fz(14);
+  @include global.lh(1.71);
+  &:not(:last-child) {
+    border-bottom: 1px solid global.$color-text-white;
+  }
+
+  @include global.mq(md) {
+    width: 50%;
+  }
+}
+
+.p-card-staff__dd {
+  width: 59%;
+  padding: 15px 0 15px 20px;
+  @include global.fz(14);
+  @include global.lh(1.71);
+
+  @include global.mq(md) {
+    width: 50%;
+  }
+}

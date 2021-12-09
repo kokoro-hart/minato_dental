@@ -1,0 +1,27 @@
+@use "foundation/global";
+
+// Project ヘッダーロゴ
+//--------------------------------------------------------------------------
+
+.p-header-logo {
+  $this: &;
+  z-index: 999;
+  line-height: 0;
+  
+  &.is-active {
+    #{$this}__svg {
+      color: global.$color-text-white;
+    }
+  }
+}
+
+.p-header-logo__link {
+  display: block;
+  max-width: 270px;
+  width: 100%;
+}
+
+.p-header-logo__svg {
+  color: global.$color-main;
+  transition: color 0.3s;
+}

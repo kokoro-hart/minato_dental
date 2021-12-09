@@ -86,13 +86,6 @@ small {
   font-size: 100%;
 }
 
-input,
-button,
-select {
-  outline: none;
-}
-
-
 // 半角英数表示崩れ
 h1,
 h2,
@@ -121,9 +114,18 @@ img {
   height: auto;
 }
 
+address {
+  font-style: normal;
+}
 
+input[type="checkbox"]:focus + span:before,
+input[type="radio"]:focus + span {
+  outline: auto global.$color-sub01;
+}
 
-
+:focus:not(:focus-visible) {
+  outline: 0; //キーボード操作"以外"でフォーカスされた際はoutlineを消す
+}
 
 
 

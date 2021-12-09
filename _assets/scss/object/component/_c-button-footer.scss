@@ -1,0 +1,57 @@
+@use "foundation/global";
+
+// Component フッターのボタン
+//--------------------------------------------------------------------------
+
+.c-button-footer {
+  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+  max-width: 150px;
+  width: 100%;
+  padding: 10px 0;
+  color: global.$color-text-white;
+  background-color: global.$color-main;
+  @include global.fz(14, 16);
+  @include global.lh(1);
+  white-space: nowrap;
+  transition: background-color 0.3s;
+
+  @include global.mq(md) {
+    max-width: 220px;
+    height: 56px;
+  }
+
+  &:hover {
+    background-color: global.$color-sub01;
+  } 
+
+  &__icon {
+    width: 25px;
+    height: 20px;
+
+    @include global.mq(md) {
+      width: 28px;
+      height: 24px;
+    } 
+  }
+
+  &__text {
+    margin-left: 8px;
+  }
+}
+
+//背景白
+.c-button-footer--bg-white {
+  border: 1px solid global.$color-main;
+  background-color: global.$color-text-white;
+  color: global.$color-main;
+  transition: background-color 0.3s, color 0.3s;
+
+  &:hover {
+    background-color: global.$color-main;
+    color: global.$color-text-white;
+  } 
+}

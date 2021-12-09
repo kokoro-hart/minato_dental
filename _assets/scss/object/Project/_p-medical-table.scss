@@ -1,0 +1,23 @@
+@use "foundation/global";
+
+// Project 診察時間
+//--------------------------------------------------------------------------
+
+.p-medical-table {
+  position: relative;
+  box-shadow: global.$box-shadow;
+  border-radius: 12px;
+  z-index: 1;
+  max-width: 477px;
+  width: 100%;
+  margin-top: -22px;
+  background-color: global.$color-text-white;
+
+  @include global.mq(md) {
+    margin-left: 63px;
+  }
+}
+
+.p-medical-table__picture {
+  width: 100%;
+}

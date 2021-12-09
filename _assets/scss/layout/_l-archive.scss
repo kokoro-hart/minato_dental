@@ -3,34 +3,32 @@
 // Layout アーカイブ
 //--------------------------------------------------------------------------
 
-.l-archive {
-  &__inner {
-    @include global.mq(md) {
-      display: flex;
-      justify-content: space-between;
-    }
+.l-archive__inner {
+  @include global.mq(md) {
+    display: flex;
+    justify-content: space-between;
   }
+}
 
-  //メインエリア
-  &__main {
-    max-width: 500px;
-    width: 100%;
+//メインエリア
+.l-archive__main {
+  max-width: 500px;
+  width: 100%;
 
-    @include global.mq(md) {
-      max-width: calc(100% - 300px - 30px);
-      padding-top: 10px;
-    }
+  @include global.mq(md) {
+    max-width: calc(100% - 300px - 30px);
+    padding-top: 10px;
   }
+}
 
-  //サイドバー
-  &__sidebar {
-    max-width: 600px;
-    width: 100%;
-    margin-top: 100px;
+//サイドバー
+.l-archive__sidebar {
+  max-width: 600px;
+  width: 100%;
+  margin-top: 100px;
 
-    @include global.mq(md) {
-      max-width: 300px;
-      margin-top: 0;
-    }
+  @include global.mq(md) {
+    max-width: 300px;
+    margin-top: 0;
   }
 }

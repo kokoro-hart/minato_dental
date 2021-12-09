@@ -1,0 +1,22 @@
+@use "foundation/global";
+
+// Project フッター コピーライト
+//--------------------------------------------------------------------------
+.p-footer-copyright {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: initial;
+  margin-top: 60px;
+  padding-bottom: 79px;
+  padding-top: 17px;
+  background-color: global.$color-main;
+
+  @include global.mq(xl) {
+    padding-bottom: 17px;
+  }
+}
+
+.p-footer-copyright__text {
+  color: global.$color-text-white;
+}

@@ -6,121 +6,121 @@
   max-width: 728px;
   width: 100%;
   margin: auto;
+}
 
-  &__dl {
-    width: 100%;
-  }
+.p-form__dl {
+  width: 100%;
+}
 
-  &__row {
-    border-top: 1px solid global.$color-border03;
-    padding: 26px 0;
+.p-form__row {
+  border-top: 1px solid global.$color-border03;
+  padding: 26px 0;
 
-    @include global.mq(md) {
-      display: flex;
-      align-items: center;
-    }
-
-    &:last-child {
-      border-bottom: 1px solid global.$color-border03;
-    }
-  }
-
-  &__dd {
-    margin-top: 13px;
-    width: 100%;
-
-    @include global.mq(md) {
-      margin-top: 0;
-    }
-  }
-
-  &__dt {
+  @include global.mq(md) {
     display: flex;
-    max-width: calc(100% - 80px);
-    width: 100%;
-
-    @include global.mq(md) {
-      max-width: 240px;
-    }
-  }
-
-  &__label {
-    position: relative;
-    @include global.fz(16);
-    @include global.lh(1.4);
-
-    @include global.mq(md) {
-      max-width: calc(240px - 62px);
-    }
-  }
-
-  &__label--required {
-    &::after {
-      content: "必須";
-      position: absolute;
-      top: 50%;
-      right: -48px;
-      transform: translateY(-50%);
-      border-radius: 4px;
-      width: 36px;
-      height: 23px;
-      padding: 0 6px;
-      background-color: global.$color-accent;
-      color: global.$color-text-white;
-      @include global.fz(12);
-      @include global.lh(1);
-      font-weight: 700;
-      white-space: nowrap;
-      line-height: 23px;
-
-      @include global.mq(md) {
-        right: -52px;
-      }
-    }
-  }
-
-  &__input {
-    box-shadow: none;
-    appearance: none;
-    border-radius: 4px;
-    width: 100%;
-    padding: 13px 16px;
-    background-color: global.$color-form;
-    color: inherit;
-    @include global.fz(16);
-    @include global.lh(1.4);
-    font-family: inherit;
-
-    &::placeholder {
-      @include global.fz(16);
-      @include global.lh(1);
-      color: global.$color-border02;
-    }
-  }
-
-  &__select {
-    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%20width%3D%2220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22m0%200h20v20h-20z%22%20fill%3D%22%23fcfcfc%22%20opacity%3D%220%22%2F%3E%3Cpath%20d%3D%22m5%207.5%205%205%205-5%22%20fill%3D%22none%22%20stroke%3D%22%23393939%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%221.667%22%2F%3E%3C%2Fsvg%3E');
-    background-repeat: no-repeat;
-    background-position: right 12px center;
-  }
-
-  &__date {
-    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%20width%3D%2220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22m0%200h20v20h-20z%22%20fill%3D%22none%22%2F%3E%3Cpath%20d%3D%22m0%2013.573a1.391%201.391%200%200%200%201.377%201.4h10.1a1.391%201.391%200%200%200%201.377-1.4v-7.957h-12.854zm9.182-5.734a.349.349%200%200%201%20.344-.351h1.148a.349.349%200%200%201%20.344.351v1.17a.349.349%200%200%201%20-.344.351h-1.148a.349.349%200%200%201%20-.344-.351zm0%203.744a.349.349%200%200%201%20.344-.351h1.148a.349.349%200%200%201%20.344.351v1.17a.349.349%200%200%201%20-.344.351h-1.148a.349.349%200%200%201%20-.344-.351zm-3.673-3.744a.349.349%200%200%201%20.344-.351h1.147a.349.349%200%200%201%20.344.351v1.17a.349.349%200%200%201%20-.344.351h-1.147a.349.349%200%200%201%20-.344-.351zm0%203.744a.349.349%200%200%201%20.344-.351h1.147a.349.349%200%200%201%20.344.351v1.17a.349.349%200%200%201%20-.344.347h-1.147a.349.349%200%200%201%20-.344-.351zm-3.673-3.744a.349.349%200%200%201%20.344-.351h1.148a.349.349%200%200%201%20.344.351v1.17a.349.349%200%200%201%20-.344.351h-1.147a.349.349%200%200%201%20-.344-.351zm0%203.744a.349.349%200%200%201%20.344-.351h1.148a.349.349%200%200%201%20.344.351v1.17a.349.349%200%200%201%20-.344.351h-1.147a.349.349%200%200%201%20-.344-.351zm9.641-9.711h-1.377v-1.404a.465.465%200%200%200%20-.459-.468h-.918a.465.465%200%200%200%20-.459.468v1.4h-3.673v-1.4a.465.465%200%200%200%20-.459-.468h-.918a.465.465%200%200%200%20-.459.468v1.4h-1.378a1.391%201.391%200%200%200%20-1.377%201.408v1.4h12.854v-1.4a1.391%201.391%200%200%200%20-1.377-1.404z%22%20fill%3D%22%23393939%22%20transform%3D%22translate(4%203)%22%2F%3E%3C%2Fsvg%3E');
-    background-repeat: no-repeat;
-    background-position: right 12px center;
-  }
-
-  &__textarea {
-    height: 160px;
-  }
-
-  &__submit-wrapper {
-    margin-top: 72px;
-    display: flex;
-    justify-content: center;
     align-items: center;
-    flex-direction: column;
   }
+
+  &:last-child {
+    border-bottom: 1px solid global.$color-border03;
+  }
+}
+
+.p-form__dd {
+  margin-top: 13px;
+  width: 100%;
+
+  @include global.mq(md) {
+    margin-top: 0;
+  }
+}
+
+.p-form__dt {
+  display: flex;
+  max-width: calc(100% - 80px);
+  width: 100%;
+
+  @include global.mq(md) {
+    max-width: 240px;
+  }
+}
+
+.p-form__label {
+  position: relative;
+  @include global.fz(16);
+  @include global.lh(1.4);
+
+  @include global.mq(md) {
+    max-width: calc(240px - 62px);
+  }
+}
+
+.p-form__label--required {
+  &::after {
+    content: "必須";
+    position: absolute;
+    top: 50%;
+    right: -48px;
+    transform: translateY(-50%);
+    border-radius: 4px;
+    width: 36px;
+    height: 23px;
+    padding: 0 6px;
+    background-color: global.$color-accent;
+    color: global.$color-text-white;
+    @include global.fz(12);
+    @include global.lh(1);
+    font-weight: 700;
+    white-space: nowrap;
+    line-height: 23px;
+
+    @include global.mq(md) {
+      right: -52px;
+    }
+  }
+}
+
+.p-form__input {
+  box-shadow: none;
+  appearance: none;
+  border-radius: 4px;
+  width: 100%;
+  padding: 13px 16px;
+  background-color: global.$color-form;
+  color: inherit;
+  @include global.fz(16);
+  @include global.lh(1.4);
+  font-family: inherit;
+
+  &::placeholder {
+    @include global.fz(16);
+    @include global.lh(1);
+    color: global.$color-border02;
+  }
+}
+
+.p-form__select {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%20width%3D%2220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22m0%200h20v20h-20z%22%20fill%3D%22%23fcfcfc%22%20opacity%3D%220%22%2F%3E%3Cpath%20d%3D%22m5%207.5%205%205%205-5%22%20fill%3D%22none%22%20stroke%3D%22%23393939%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%221.667%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+}
+
+.p-form__date {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%20width%3D%2220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22m0%200h20v20h-20z%22%20fill%3D%22none%22%2F%3E%3Cpath%20d%3D%22m0%2013.573a1.391%201.391%200%200%200%201.377%201.4h10.1a1.391%201.391%200%200%200%201.377-1.4v-7.957h-12.854zm9.182-5.734a.349.349%200%200%201%20.344-.351h1.148a.349.349%200%200%201%20.344.351v1.17a.349.349%200%200%201%20-.344.351h-1.148a.349.349%200%200%201%20-.344-.351zm0%203.744a.349.349%200%200%201%20.344-.351h1.148a.349.349%200%200%201%20.344.351v1.17a.349.349%200%200%201%20-.344.351h-1.148a.349.349%200%200%201%20-.344-.351zm-3.673-3.744a.349.349%200%200%201%20.344-.351h1.147a.349.349%200%200%201%20.344.351v1.17a.349.349%200%200%201%20-.344.351h-1.147a.349.349%200%200%201%20-.344-.351zm0%203.744a.349.349%200%200%201%20.344-.351h1.147a.349.349%200%200%201%20.344.351v1.17a.349.349%200%200%201%20-.344.347h-1.147a.349.349%200%200%201%20-.344-.351zm-3.673-3.744a.349.349%200%200%201%20.344-.351h1.148a.349.349%200%200%201%20.344.351v1.17a.349.349%200%200%201%20-.344.351h-1.147a.349.349%200%200%201%20-.344-.351zm0%203.744a.349.349%200%200%201%20.344-.351h1.148a.349.349%200%200%201%20.344.351v1.17a.349.349%200%200%201%20-.344.351h-1.147a.349.349%200%200%201%20-.344-.351zm9.641-9.711h-1.377v-1.404a.465.465%200%200%200%20-.459-.468h-.918a.465.465%200%200%200%20-.459.468v1.4h-3.673v-1.4a.465.465%200%200%200%20-.459-.468h-.918a.465.465%200%200%200%20-.459.468v1.4h-1.378a1.391%201.391%200%200%200%20-1.377%201.408v1.4h12.854v-1.4a1.391%201.391%200%200%200%20-1.377-1.404z%22%20fill%3D%22%23393939%22%20transform%3D%22translate(4%203)%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+}
+
+.p-form__textarea {
+  height: 160px;
+}
+
+.p-form__submit-wrapper {
+  margin-top: 72px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 // コンタクトフォーム7用のスタイル
@@ -133,6 +133,7 @@
   max-width: 400px;
   width: 100%;
   margin: auto;
+  text-align: center;
 }
 
 .date-2,
@@ -144,13 +145,11 @@
   }
 }
 
-.wpcf7 form .wpcf7-response-output {
-    text-align: center;
-}
-
 //ラジオボタン
 [type="radio"] {
-  display: none;
+  position: absolute;
+  left: -100vw;
+  opacity: 0;
 }
 
 [type="radio"] + span {
@@ -181,7 +180,7 @@
   }
 }
 
-[type="radio"]:checked + span {
+input[type="radio"]:checked + span {
   &::after {
     content: "";
     display: block;
@@ -202,11 +201,13 @@
   padding-bottom: 16px;
 }
 
-[type="checkbox"] {
-  display: none;
+input[type="checkbox"] {
+  position: absolute;
+  left: -100vw;
+  opacity: 0;
 }
 
-[type="checkbox"] + span {
+input[type="checkbox"] + span {
   display: inline-block;
   position: relative;
   margin: 0 24px 0 0;
@@ -220,7 +221,7 @@
   }
 }
 
-[type="checkbox"] + span::before {
+input[type="checkbox"] + span::before {
   content: "";
   display: block;
   position: absolute;
@@ -233,7 +234,7 @@
   background: global.$color-text-white;
 }
 
-[type="checkbox"]:checked + span::after {
+input[type="checkbox"]:checked + span::after {
   content: "";
   display: block;
   position: absolute;

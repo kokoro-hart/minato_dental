@@ -13,29 +13,28 @@
   height: global.$header-height-sp;
   background-color: global.$color-text-white;
   box-shadow: global.$box-shadow;
-  
+
   @include global.mq(md) {
     height: global.$header-height-pc;
   }
+}
 
-  &__inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    height: inherit;
-    padding: 0 20px;
+.l-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: inherit;
+  padding: 0 20px;
 
-    @include global.mq(md) {
-      padding: 0 40px;
-    }
-  }
-
-  &__content {
-    @include global.mq(xl) {
-      display: flex;
-      height: inherit;
-    }
+  @include global.mq(md) {
+    padding: 0 40px;
   }
 }
 
+.l-header__content {
+  @include global.mq(xl) {
+    display: flex;
+    height: inherit;
+  }
+}

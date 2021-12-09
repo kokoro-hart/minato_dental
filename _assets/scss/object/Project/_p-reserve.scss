@@ -1,0 +1,34 @@
+@use "foundation/global";
+
+// Component WEB予約
+//--------------------------------------------------------------------------
+
+.p-reserve {
+  position: fixed;
+  right: 0;
+  top: 176px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 20;
+  border-radius: 20px 0 0 20px;
+  width: 92px;
+  height: 120px;
+  padding: 0 17px;
+  background-color: global.$color-main;
+  color: global.$color-text-white;
+  transition: background-color 0.3s;
+
+  &:hover,
+  &:focus {
+    background-color: global.$color-sub01;
+  }
+}
+
+.p-reserve__text {
+  margin-top: 12px;
+  @include global.fz(14);
+  @include global.lh(1.4);
+  font-weight: 700;
+}

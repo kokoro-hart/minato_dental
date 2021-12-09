@@ -1,0 +1,12 @@
+@use "foundation/global";
+
+// Layout 下層ページ フォーム
+//--------------------------------------------------------------------------
+
+.l-lower-form {
+  margin-top: 60px;
+
+  @include global.mq(md) {
+    margin-top: 72px;
+  }
+}

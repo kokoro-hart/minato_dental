@@ -1,0 +1,54 @@
+@use "foundation/global";
+
+// Project スタッフ紹介 スタッフ一覧
+//--------------------------------------------------------------------------
+
+.p-staff-member__title-wrapper {
+  width: 100%;
+  text-align: center;
+}
+
+.p-staff-member__items {
+  margin-top: 37px;
+
+  @include global.mq(md) {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &::after {
+    @include global.mq(md) {
+      content: "";
+      width: calc(33.333333% - 40px * 2 / 3);
+    }
+
+    @include global.mq(lg) {
+      width: calc(33.333333% - 80px * 2 / 3);
+    }
+  }
+}
+
+.p-staff-member__item {
+  width: 100%;
+
+  @include global.mq(md) {
+    width: calc(33.333333% - 40px * 2 / 3);
+
+    &:nth-child(n + 4) {
+      margin-top: 60px;
+    }
+  }
+
+  @include global.mq(lg) {
+    width: calc(33.333333% - 80px * 2 / 3);
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 53px;
+
+    @include global.mq(md) {
+      margin-bottom: 0;
+    }
+  }
+}

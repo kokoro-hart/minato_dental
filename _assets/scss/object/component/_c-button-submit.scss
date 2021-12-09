@@ -1,0 +1,31 @@
+@use "foundation/global";
+
+// Component submitボタン
+//--------------------------------------------------------------------------
+
+.c-button-submit {
+  display: inline-block;
+  border: 1px solid global.$color-main;
+  border-radius: 28px;
+  max-width: 273px;
+  width: 100%;
+  padding: 9px 13px;
+  color: global.$color-main;
+  @include global.fz(14, 16);
+  @include global.lh(1);
+  white-space: nowrap;
+  letter-spacing: 1.12px;
+  transition: background-color 0.3s, color 0.3s;
+
+  &:hover,
+  &:focus {
+    background-color: global.$color-main;
+    color: global.$color-text-white;
+  }
+
+  @include global.mq(md) {
+    max-width: 360px;
+    padding: 18px 22px;
+    letter-spacing: 1.28px;
+  }
+}

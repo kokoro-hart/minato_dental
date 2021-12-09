@@ -3,32 +3,40 @@
 // Layout トップページ
 //--------------------------------------------------------------------------
 
-.l-home {
+//診察時間 お知らせ
+.l-home__info {
+  padding: 0 20px;
 
-  //コンセプト
-  &__concept {
-    margin-top: 60px;
+  @include global.mq(md) {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
   }
+}
 
-  //当院の3つのおすすめ
-  //診察案内
-  &__recommend,
-  &__medical {
-    width: 100%;
-    margin-top: 100px;
+//コンセプト
+.l-home__concept {
+  margin-top: 60px;
+}
 
-    @include global.mq(md) {
-      margin-top: 120px;
-    }
+//当院の3つのおすすめ
+//診察案内
+.l-home__recommend,
+.l-home__medical {
+  width: 100%;
+  margin-top: 100px;
+
+  @include global.mq(md) {
+    margin-top: 120px;
   }
+}
 
-  //スタッフブログ
-  &__blog {
-    width: 100%;
-    margin-top: 100px;
+//スタッフブログ
+.l-home__blog {
+  width: 100%;
+  margin-top: 100px;
 
-    @include global.mq(md) {
-      margin-top: 160px;
-    }
+  @include global.mq(md) {
+    margin-top: 160px;
   }
 }

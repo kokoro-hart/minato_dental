@@ -1,0 +1,90 @@
+@use "foundation/global";
+
+// Project トップページ お知らせ
+//--------------------------------------------------------------------------
+
+.p-news {
+  max-width: 540px;
+  width: 100%;
+  margin-top: 40px;
+}
+
+.p-news__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.p-news__title {
+  display: flex;
+  align-items: flex-end;
+  font-weight: 700;
+}
+
+.p-news__title-ja {
+  @include global.fz(20);
+  @include global.lh(1.2);
+}
+
+.p-news__title-en {
+  margin-left: 16px;
+  color: global.$color-main;
+  @include global.fz(11, 12);
+  @include global.lh(1.7);
+}
+
+.p-news__past-link {
+  color: global.$color-text-gray;
+  @include global.fz(11, 12);
+  @include global.lh(1.7);
+  text-decoration: underline;
+}
+
+.p-news__body {
+  margin-top: 8px;
+}
+
+.p-news__archive {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
+  border-top: 1px solid global.$color-text-gray;
+  border-bottom: 1px solid global.$color-text-gray;
+  transition: color 0.3s;
+
+  &:hover,
+  &:focus {
+    color: global.$color-main;
+
+    .p-news__arrow {
+      color: global.$color-main;
+      transform: translate(4px, -50%);
+    }
+  }
+}
+
+.p-news__time {
+  padding-left: 6px;
+  @include global.fz(12);
+  @include global.lh(1.4);
+  white-space: nowrap;
+}
+
+.p-news__text {
+  margin-left: 12px;
+  padding-right: 32px;
+  @include global.fz(14);
+  @include global.lh(1.42);
+}
+
+.p-news__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 5px;
+  width: 14px;
+  height: 14px;
+  color: global.$color-text-black;
+  transition: transform 0.3s;
+}

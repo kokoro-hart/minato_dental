@@ -1,0 +1,55 @@
+@use "foundation/global";
+
+// Project お問い合わせ
+//  お電話でのご予約/ご相談
+//  メールでのご予約/ご相談
+//--------------------------------------------------------------------------
+
+.p-contact-info {
+  max-width: 728px;
+  width: 100%;
+  margin: auto;
+}
+
+.p-contact-info__title {
+  @include global.fz(20, 28);
+  @include global.lh(1.6);
+  font-weight: 700;
+  letter-spacing: 1.6px;
+
+  @include global.mq(md) {
+    letter-spacing: 2.24px;
+  }
+
+  &:not(:first-child) {
+    margin-top: 40px;
+  }
+}
+
+.p-contact-info__tel {
+  display: inline-block;
+  margin-top: 26px;
+  color: global.$color-main;
+  @include global.fz(32);
+  @include global.lh(1);
+  font-weight: 700;
+  letter-spacing: -0.64px;
+  white-space: nowrap;
+}
+
+.p-contact-info__time {
+  margin-top: 4px;
+  @include global.fz(12);
+  @include global.lh(1.4);
+  text-align: center;
+}
+
+.p-contact-info__tel-icon {
+  transform: translateY(1px);
+}
+
+.p-contact-info__text {
+  margin-top: 26px;
+  @include global.fz(14);
+  @include global.lh(1.71);
+}

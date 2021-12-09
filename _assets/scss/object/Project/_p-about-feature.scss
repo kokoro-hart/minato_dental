@@ -1,0 +1,26 @@
+@use "foundation/global";
+
+// Project 当院について ポリシーと特徴
+//--------------------------------------------------------------------------
+
+.p-about-feature__title-wrapper {
+  text-align: center;
+}
+
+.p-about-feature__items {
+  margin-top: 40px;
+
+  @include global.mq(md) {
+    margin-top: 60px;
+  }
+}
+
+.p-about-feature__item {
+  &:nth-child(n + 2) {
+    margin-top: 100px;
+
+    @include global.mq(md) {
+      margin-top: 160px;
+    }
+  }
+}

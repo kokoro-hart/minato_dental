@@ -1,0 +1,113 @@
+@use "foundation/global";
+
+// Project スタッフブログカード
+//--------------------------------------------------------------------------
+.p-card-blog {
+  $this: &;
+
+  &:hover,
+  &:focus {
+    color: global.$color-main;
+
+    #{$this}__img {
+      transform: scale(1.1, 1.1);
+    }
+
+    @include global.mq(md) {
+      #{$this}__img {
+        transform: translate(-50%, -50%) scale(1.1, 1.1);
+      }
+    }
+  }
+}
+
+
+  .p-card-blog__thumbnail {
+    overflow: hidden;
+    width: 40%;
+    height: 24vw;
+    border-radius: 10px;
+
+    @include global.mq(md) {
+      position: relative;
+      width: 100%;
+      height: auto;
+      border-radius: 0;
+      padding-top: calc(3/ 4.4 * 100%);
+    }
+  }
+
+  .p-card-blog__img {
+    width: 100%;
+    height: 100%;
+    @include global.object-fit(cover);
+    transition: transform 0.4s ease-out;
+
+    @include global.mq(md) {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .p-card-blog__body {
+    position: relative;
+    width: 60%;
+    padding-top: 8px;
+    padding-left: 10px;
+
+    @include global.mq(md) {
+      width: 100%;
+      padding: 24px 24px 16px;
+    }
+  }
+
+  .p-card-blog__cats {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -5px;
+    margin-top: -5px;
+
+    @include global.mq(md) {
+      position: absolute;
+      top: -14px;
+      left: 24px;
+    }
+  }
+
+  .p-card-blog__cat {
+    display: inline-block;
+    margin-left: 5px;
+    margin-top: 5px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    color: global.$color-text-white;
+    background-color: global.$color-main;
+    @include global.fz(10, 11);
+    @include global.lh(1.5);
+    white-space: nowrap;
+
+    @include global.mq(md) {
+      border-radius: 12px;
+      padding: 6px 12px;
+    }
+  }
+
+  .p-card-blog__title {
+    margin-top: 6px;
+    @include global.fz(14, 16);
+    @include global.lh(1.7, 1.5);
+    @include global.line-clamp(3);
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+
+  .p-card-blog__time {
+    display: inline-block;
+    margin-top: 4px;
+    color: global.$color-text-gray;
+    @include global.fz(11);
+    @include global.lh(1);
+    white-space: nowrap;
+  }

@@ -1,0 +1,18 @@
+@use "foundation/global";
+
+// Project サイドバー 新着記事
+//--------------------------------------------------------------------------
+.p-sidebar-new {
+  margin-top: 61px;
+}
+
+.p-sidebar-new__cards {
+  margin-top: 20px;
+}
+
+.p-sidebar-new__card {
+  display: flex;
+  min-height: 100px;
+  height: 100%;
+  margin-bottom: 20px;
+}

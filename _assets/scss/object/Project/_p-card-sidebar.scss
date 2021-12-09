@@ -1,0 +1,76 @@
+@use "foundation/global";
+
+// Project サイドバーカード
+//--------------------------------------------------------------------------
+
+.p-card-sidebar {
+  $this: &;
+  transition: color 0.3s;
+
+  &:hover,
+  &:focus {
+    color: global.$color-main;
+
+    #{$this}__img {
+      transform: translate(-50%, -50%) scale(1.1, 1.1);
+    }
+  }
+}
+
+.p-card-sidebar__thumbnail {
+  position: relative;
+  overflow: hidden;
+  max-width: 133px;
+  width: 100%;
+}
+
+.p-card-sidebar__img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  @include global.object-fit(cover);
+  transition: transform 0.4s ease-out;
+}
+
+.p-card-sidebar__body {
+  width: calc(100% - 133px);
+  padding: 10px 10px 0 10px;
+}
+
+.p-card-sidebar__cats {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -5px;
+  margin-top: -5px;
+}
+
+.p-card-sidebar__cat {
+  display: inline-block;
+  border-radius: 10px;
+  margin-left: 5px;
+  margin-top: 5px;
+  padding: 4px 8px;
+  background-color: global.$color-main;
+  color: global.$color-text-white;
+  @include global.fz(10);
+  @include global.lh(1);
+  white-space: nowrap;
+}
+
+.p-card-sidebar__title {
+  margin-top: 8px;
+  @include global.fz(14);
+  @include global.lh(1.42);
+  @include global.line-clamp(3);
+  font-weight: 500;
+}
+
+.p-card-sidebar__time {
+  margin-top: 9px;
+  color: global.$color-text-gray;
+  @include global.fz(11);
+  @include global.lh(1);
+}
