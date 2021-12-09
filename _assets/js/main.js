@@ -12,6 +12,9 @@ import '@modules/intersection-observer';
 //picture
 import '@modules/picturefill';
 
+//smooth
+import '@modules/smoothscroll-polyfill';
+
 //line-clamp
 import './lib/clamp.js';
 
