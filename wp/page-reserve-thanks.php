@@ -1,6 +1,6 @@
     <?php get_header(); ?>
 
-    <main class="p-reserve">
+    <main>
       <!--メインビジュアル-->
       <section class="p-lower-mv">
         <picture class="p-lower-mv__picture">

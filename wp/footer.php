@@ -12,15 +12,17 @@
                   </svg>
                 </a>
               </div>
-              <p class="p-footer-info__access">
-                〒166-0001 <span class="p-footer-info__access-inside">東京都杉並区阿佐谷北7-3-1</span>
-              </p>
-              <a href="tel:0312345678" class="p-footer-info__tel">
-                <svg class="c-svg p-footer-info__tel-icon" width="28" height="28">
-                  <use xlink:href="<?php echo get_template_directory_uri(); ?>/img/svg/sprite.min.svg#icon-tel" />
-                </svg>
-                03-1234-5678
-              </a>
+              <address class="p-footer-info__address">
+                <p class="p-footer-info__access">
+                  〒166-0001 <span class="p-footer-info__access-inside">東京都杉並区阿佐谷北7-3-1</span>
+                </p>
+                <a href="tel:0312345678" class="p-footer-info__tel">
+                  <svg class="c-svg p-footer-info__tel-icon" width="28" height="28">
+                    <use xlink:href="<?php echo get_template_directory_uri(); ?>/img/svg/sprite.min.svg#icon-tel" />
+                  </svg>
+                  03-1234-5678
+                </a>
+              </address>
               <p class="p-footer-info__time">(年中無休 AM9:00〜PM22:00)</p>
               <div class="p-footer-info__link-wrapper">
                 <a href="<?php echo esc_url(home_url('/reserve')); ?>" class="c-button-footer">
@@ -174,28 +176,29 @@
         <!--コピーライト-->
       </div>
     </footer>
+
     <!--予約-->
-    <a href="<?php echo esc_url(home_url('/reserve')); ?>" class="c-reserve u-hidden-xl-down">
-      <svg class="c-svg c-reserve__icon" width="48" height="28">
+    <a href="<?php echo esc_url(home_url('/reserve')); ?>" class="p-reserve u-hidden-xl-down">
+      <svg class="c-svg p-reserve__icon" width="48" height="28">
         <use xlink:href="<?php echo get_template_directory_uri(); ?>/img/svg/sprite.min.svg#icon-web" />
       </svg>
-      <p class="c-reserve__text">WEB予約 はこちら</p>
+      <p class="p-reserve__text">WEB予約 はこちら</p>
     </a>
-    <div class="c-reverse-footer u-hidden-xl-up">
-      <div class="c-reverse-footer__tel">
-        <a href="tel:0312345678" class="c-reverse-footer__tel-link">
-          <svg class="c-svg c-reverse-footer__tel-icon" width="18" height="18">
+    <div class="p-reverse-footer u-hidden-xl-up">
+      <div class="p-reverse-footer__tel">
+        <a href="tel:0312345678" class="p-reverse-footer__tel-link">
+          <svg class="c-svg p-reverse-footer__tel-icon" width="18" height="18">
             <use xlink:href="<?php echo get_template_directory_uri(); ?>/img/svg/sprite.min.svg#icon-tel" />
           </svg>
           03-1234-5678
         </a>
-        <p class="c-reverse-footer__tel-text">(年中無休 AM9:00〜PM22:00)</p>
+        <p class="p-reverse-footer__tel-text">(年中無休 AM9:00〜PM22:00)</p>
       </div>
-      <a href="<?php echo esc_url(home_url('/reserve')); ?>" class="c-reverse-footer__web">
-        <svg class="c-svg c-reverse-footer__web-icon" width="43.5" height="25.5">
+      <a href="<?php echo esc_url(home_url('/reserve')); ?>" class="p-reverse-footer__web">
+        <svg class="c-svg p-reverse-footer__web-icon" width="43.5" height="25.5">
           <use xlink:href="<?php echo get_template_directory_uri(); ?>/img/svg/sprite.min.svg#icon-web" />
         </svg>
-        <p class="c-reverse-footer__web-text">WEB予約<br>はこちら</p>
+        <p class="p-reverse-footer__web-text">WEB予約<br>はこちら</p>
       </a>
     </div>
     <!--/予約-->

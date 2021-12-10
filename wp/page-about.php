@@ -1,14 +1,14 @@
 
     <?php get_header(); ?>
 
-    <main class="p-about">
+    <main>
       <!--メインビジュアル-->
       <section class="p-lower-mv">
         <picture class="p-lower-mv__picture">
           <source class="p-lower-mv__img" srcset="<?php echo get_template_directory_uri(); ?>/img/webp/mv-about_sp.webp" media="(max-width: 767px)" type="image/webp" />
           <source class="p-lower-mv__img" srcset="<?php echo get_template_directory_uri(); ?>/img/webp/mv-about_pc.webp" media="(min-width: 768px)" type="image/webp" />
           <source class="p-lower-mv__img" srcset="<?php echo get_template_directory_uri(); ?>/img/common/mv-about_sp.jpeg" media="(max-width: 767px)" />
-          <img src="<?php echo get_template_directory_uri(); ?>/img/common/mv-about_pc.jpeg" class="p-lower-mv__img" media="(min-width: 768px)" decoding="async" alt="診察案内">
+          <img src="<?php echo get_template_directory_uri(); ?>/img/common/mv-about_pc.jpeg" class="p-lower-mv__img" media="(min-width: 768px)" decoding="async" alt="当院について">
         </picture>
         <div class="p-lower-mv__contents">
           <h2 class="p-lower-mv__heading">当院について</h2>

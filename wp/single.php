@@ -1,7 +1,7 @@
 
     <?php get_header(); ?>
 
-    <main class="p-blog">
+    <main>
       <!--メインビジュアル-->
       <section class="p-lower-mv">
         <picture class="p-lower-mv__picture">

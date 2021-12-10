@@ -1,7 +1,7 @@
 
     <?php get_header(); ?>
 
-    <main class="p-staff">
+    <main>
       <!--メインビジュアル-->
       <section class="p-lower-mv">
         <picture class="p-lower-mv__picture">
@@ -170,41 +170,42 @@
                   foreach ( $my_posts as $post ) :
                   setup_postdata( $post );
                 ?>
-                <li class="p-staff-member-item">
-                  <div class="p-staff-member-item__img-wrapper">
+                <li class="p-staff-member__item p-card-staff">
+                  <div class="p-card-staff__img-wrapper">
                     <?php 
                       if(has_post_thumbnail()) {
-                        the_post_thumbnail('small', array(
-                          'class' => 'p-staff-member-item__img lazyload',
+                        the_post_thumbnail('full', array(
+                          
+                          'class' => 'p-card-staff__img lazyload',
                         ));
                       } else {
-                        echo '<img data-src="' . esc_url(get_template_directory_uri()) . '/img/common/staff01.jpeg" alt="スタッフの写真" class="p-staff-member-item__img lazyload">';
+                        echo '<img data-src="' . esc_url(get_template_directory_uri()) . '/img/common/staff01.jpeg" alt="スタッフの写真" class="p-card-staff__img lazyload">';
                       }
                     ?>
                   </div> 
-                  <div class="p-staff-member-item__name-wrapper">
-                    <p class="p-staff-member-item__role"><?php echo $cat->name; ?></p>
-                    <p class="p-staff-member-item__name"><?php the_title(); ?></p>
+                  <div class="p-card-staff__name-wrapper">
+                    <p class="p-card-staff__role"><?php echo $cat->name; ?></p>
+                    <p class="p-card-staff__name"><?php the_title(); ?></p>
                   </div>
-                  <dl class="p-staff-member-item__dl">
+                  <dl class="p-card-staff__dl">
                     <?php if ( get_field('from')) :  ?>
-                    <div class="p-staff-member-item__row">
-                      <dt class="p-staff-member-item__dt">出身地</dt>
-                      <dd class="p-staff-member-item__dd"><?php the_field( 'from' ); //出身地 ?></dd>
+                    <div class="p-card-staff__row">
+                      <dt class="p-card-staff__dt">出身地</dt>
+                      <dd class="p-card-staff__dd"><?php the_field( 'from' ); //出身地 ?></dd>
                     </div>
                     <?php endif; ?>
 
                     <?php if ( get_field('hobby')) :  ?>
-                    <div class="p-staff-member-item__row">
-                      <dt class="p-staff-member-item__dt">趣味</dt>
-                      <dd class="p-staff-member-item__dd"><?php the_field( 'hobby' ); //趣味 ?></dd>
+                    <div class="p-card-staff__row">
+                      <dt class="p-card-staff__dt">趣味</dt>
+                      <dd class="p-card-staff__dd"><?php the_field( 'hobby' ); //趣味 ?></dd>
                     </div>
                     <?php endif; ?>
 
                     <?php if ( get_field('food')) :  ?>
-                    <div class="p-staff-member-item__row">
-                      <dt class="p-staff-member-item__dt">好きな食べ物</dt>
-                      <dd class="p-staff-member-item__dd"><?php the_field( 'food' ); //好きな食べ物 ?></dd>
+                    <div class="p-card-staff__row">
+                      <dt class="p-card-staff__dt">好きな食べ物</dt>
+                      <dd class="p-card-staff__dd"><?php the_field( 'food' ); //好きな食べ物 ?></dd>
                     </div>
                     <?php endif; ?>
                   </dl>

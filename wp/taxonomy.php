@@ -82,8 +82,10 @@
                   </time>
                 </div>
               </a>
-              
-              <?php endforeach; wp_reset_postdata(); endif; ?>
+              <?php 
+                endforeach; wp_reset_postdata(); 
+                endif; 
+              ?>
             </article>  
             <!--ページネーション-->
             <?php my_pagination(); ?>

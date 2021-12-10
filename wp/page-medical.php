@@ -118,47 +118,47 @@
                   setup_postdata( $post );
                   $post_slug = $post->post_name;
                 ?>
-                <li id="<?php echo $post_slug; ?>" class="p-medical-detail-item">
-                  <div class="p-medical-detail-item__title-wrapper">
-                    <h3 class="p-medical-detail-item__title">
+                <li id="<?php echo $post_slug; ?>" class="p-medical-detail__item p-medical-item">
+                  <div class="p-medical-item__title-wrapper">
+                    <h3 class="p-medical-item__title">
                       <?php the_title(); ?>
                     </h3>
                     <?php if ( get_field('worries')) :  ?>
-                    <p class="p-medical-detail-item__lead">
+                    <p class="p-medical-item__lead">
                       <?php the_field( 'worries' ); //お悩み ?>
                     </p>
                     <?php endif; ?>
                   </div>
-                  <div class="p-medical-detail-item__body">
+                  <div class="p-medical-item__body">
                     <?php if ( get_field('overview')) :  ?>
-                    <p class="p-medical-detail-item__text">
+                    <p class="p-medical-item__text">
                       <?php the_field( 'overview' ); //概要紹介 ?>
                     </p>
                     <?php endif; ?>
-                    <div class="p-medical-detail-item__img-wrapper">
+                    <div class="p-medical-item__img-wrapper">
                       <?php 
                         if(has_post_thumbnail()) {
-                          the_post_thumbnail('small', array(
-                            'class' => 'p-medical-detail-item__img lazyload',
+                          the_post_thumbnail('full', array(
+                            'class' => 'p-medical-item__img lazyload',
                           ));
                         } else {
-                          echo '<img data-src="' . esc_url(get_template_directory_uri()) . '/img/common/medical08.jpeg" alt="一般歯科" class="p-medical-detail-item__img lazyload">';
+                          echo '<img data-src="' . esc_url(get_template_directory_uri()) . '/img/common/medical08.jpeg" alt="一般歯科" class="p-medical-item__img lazyload">';
                         }
                       ?>
                     </div>
                   </div>
                   <?php if($cat_slug === 'medical01') : // スラッグがmedical01の場合は青のリボン?>
-                    <svg class="c-svg p-medical-detail-item__tag u-hidden-md-up" width="80" height="60">
+                    <svg class="c-svg p-medical-item__tag u-hidden-md-up" width="80" height="60">
                       <use xlink:href="<?php echo get_template_directory_uri(); ?>/img/svg/sprite.min.svg#icon-tag01_sp" />
                     </svg>
-                    <svg class="c-svg p-medical-detail-item__tag u-hidden-md-down" width="100" height="80">
+                    <svg class="c-svg p-medical-item__tag u-hidden-md-down" width="100" height="80">
                       <use xlink:href="<?php echo get_template_directory_uri(); ?>/img/svg/sprite.min.svg#icon-tag01_pc" />
                     </svg>
                   <?php else : // medical01以外は赤のリボン?>
-                    <svg class="c-svg p-medical-detail-item__tag u-hidden-md-up" width="80" height="60">
+                    <svg class="c-svg p-medical-item__tag u-hidden-md-up" width="80" height="60">
                       <use xlink:href="<?php echo get_template_directory_uri(); ?>/img/svg/sprite.min.svg#icon-tag02_sp" />
                     </svg>
-                    <svg class="c-svg p-medical-detail-item__tag u-hidden-md-down" width="100" height="80">
+                    <svg class="c-svg p-medical-item__tag u-hidden-md-down" width="100" height="80">
                       <use xlink:href="<?php echo get_template_directory_uri(); ?>/img/svg/sprite.min.svg#icon-tag02_pc" />
                     </svg>
                   <?php endif; ?>

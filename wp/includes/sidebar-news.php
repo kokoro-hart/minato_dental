@@ -26,7 +26,7 @@
       </svg>
       新着記事
     </h2>
-    <div class="p-sidebar__cards">
+    <div class="p-sidebar-new__cards">
       <?php
         $args = array(
           'post_type' => 'news', 
@@ -40,28 +40,28 @@
         foreach ( $my_posts as $post ) :
         setup_postdata( $post );
       ?>
-      <a href="<?php the_permalink(); ?>" class="p-sidebar-card">
-        <div class="p-sidebar-card__thumbnail">
+      <a href="<?php the_permalink(); ?>" class="p-sidebar-new__card p-card-sidebar">
+        <div class="p-card-sidebar__thumbnail">
           <?php
             if(has_post_thumbnail()) {
-              the_post_thumbnail('small', array(
-                'class' => 'p-sidebar-card__img lazyload'
+              the_post_thumbnail('full', array(
+                'class' => 'p-card-sidebar__img lazyload'
               ));
             } else {
-              echo '<img data-src="' . esc_url(get_template_directory_uri()) . '/img/common/blog01.jpeg" alt="記事の画像" class="p-sidebar-card__img lazyload">';
+              echo '<img data-src="' . esc_url(get_template_directory_uri()) . '/img/common/blog01.jpeg" alt="記事の画像" class="p-card-sidebar__img lazyload">';
             }
           ?>
         </div>
-        <div class="p-sidebar-card__body">
-          <div class="p-sidebar-card__cats">
-            <p class="p-sidebar-card__cat">
+        <div class="p-card-sidebar__body">
+          <div class="p-card-sidebar__cats">
+            <p class="p-card-sidebar__cat">
               <?php echo esc_html( get_the_terms( get_the_ID(), 'genre' )[0]->name ); ?>
             </p>
           </div>
-          <h3 class="p-sidebar-card__title">
+          <h3 class="p-card-sidebar__title">
             <?php the_title(); ?>
           </h3>
-          <time class="p-sidebar-card__time" datetime="<?php the_time('c'); ?>">
+          <time class="p-card-sidebar__time" datetime="<?php the_time('c'); ?>">
             <?php the_time('Y.n.j'); ?>
           </time>
         </div>
