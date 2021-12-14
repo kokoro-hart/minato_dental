@@ -21,12 +21,6 @@ function my_setup()
 }
 add_action('after_setup_theme', 'my_setup');
 
-function change_title_separator( $sep ){
-  $sep = ' | ';
-  return $sep;
-}
-add_filter( 'document_title_separator', 'change_title_separator' );
-
 //css jsの読み込み
 function my_script_init()
 {
@@ -43,6 +37,33 @@ function my_script_init()
 }
 add_action('wp_enqueue_scripts', 'my_script_init');
 
+// フィルターフック
+//--------------------------------------------------------------------------------------
+//lazyload対象のアイキャッチはsrcをdata-srcに置き換える
+function my_post_image_html( $html, $post_id, $post_image_id ) {
+
+  //遅延読み込み対象の画像のみ
+  if(strpos($html, 'lazyload') === false) {
+      return $html;
+  }
+
+  //srcをdata-srcに置換する
+  $html = str_replace('src="', 'data-src="', $html);
+  return $html;
+}
+add_filter( 'post_thumbnail_html', 'my_post_image_html', 10, 3 );
+
+//javascriptの遅延defer属性を追加
+function scriptLoader($script, $handle, $src) {
+	if (is_admin()) {
+		return $script;
+	}
+	$script = sprintf('<script src="%s" type="text/javascript" defer=""></script>' . "\n", $src);
+	return $script;
+}
+add_filter('script_loader_tag', 'scriptLoader', 10, 5);
+
+
 //カテゴリ説明欄でhtmlを記述可能にする
 remove_filter( 'pre_term_description', 'wp_filter_kses' );
 
@@ -53,6 +74,11 @@ add_action( 'wp', function() {
   add_filter( 'wpcf7_load_css', '__return_false' );
 });
 
+function change_title_separator( $sep ){
+  $sep = ' | ';
+  return $sep;
+}
+add_filter( 'document_title_separator', 'change_title_separator' );
 
 // 独自関数
 //--------------------------------------------------------------------------------------
@@ -137,29 +163,3 @@ add_action('init', function() {
     'show_in_rest' => true,
   ]);
 });
-
-// フィルターフック
-//--------------------------------------------------------------------------------------
-//lazyload対象のアイキャッチはsrcをdata-srcに置き換える
-function my_post_image_html( $html, $post_id, $post_image_id ) {
-
-  //遅延読み込み対象の画像のみ
-  if(strpos($html, 'lazyload') === false) {
-      return $html;
-  }
-
-  //srcをdata-srcに置換する
-  $html = str_replace('src="', 'data-src="', $html);
-  return $html;
-}
-add_filter( 'post_thumbnail_html', 'my_post_image_html', 10, 3 );
-
-//javascriptの遅延defer属性を追加
-function scriptLoader($script, $handle, $src) {
-	if (is_admin()) {
-		return $script;
-	}
-	$script = sprintf('<script src="%s" type="text/javascript" defer=""></script>' . "\n", $src);
-	return $script;
-}
-add_filter('script_loader_tag', 'scriptLoader', 10, 5);
