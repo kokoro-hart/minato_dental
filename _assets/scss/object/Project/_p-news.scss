@@ -7,12 +7,17 @@
   max-width: 540px;
   width: 100%;
   margin-top: 40px;
+
+  @include global.mq(md) {
+    margin-top: 24px;
+  }
 }
 
 .p-news__head {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-left: 16px;
 }
 
 .p-news__title {
@@ -31,6 +36,10 @@
   color: global.$color-main;
   @include global.fz(11, 12);
   @include global.lh(1.7);
+
+  @include global.mq(md) {
+    margin-left: 21px;
+  }
 }
 
 .p-news__past-link {
@@ -48,7 +57,7 @@
   position: relative;
   display: flex;
   align-items: center;
-  padding: 12px 0;
+  padding: 9px 0;
   border-top: 1px solid global.$color-text-gray;
   border-bottom: 1px solid global.$color-text-gray;
   transition: color 0.3s;
@@ -69,6 +78,10 @@
   @include global.fz(12);
   @include global.lh(1.4);
   white-space: nowrap;
+
+  @include global.mq(md) {
+    padding-left: 14px;
+  }
 }
 
 .p-news__text {
@@ -76,6 +89,10 @@
   padding-right: 32px;
   @include global.fz(14);
   @include global.lh(1.42);
+
+  @include global.mq(md) {
+    margin-left: 23px;
+  }
 }
 
 .p-news__arrow {

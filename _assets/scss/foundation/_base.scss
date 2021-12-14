@@ -127,6 +127,10 @@ input[type="radio"]:focus + span {
   outline: 0; //キーボード操作"以外"でフォーカスされた際はoutlineを消す
 }
 
+main {
+  overflow: hidden;
+}
+
 
 
 

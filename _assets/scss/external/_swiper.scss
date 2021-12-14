@@ -61,15 +61,15 @@
   .swiper-pagination-bullets.swiper-pagination-horizontal {
     position: absolute;
     bottom: 28px;
-    left: -8px;
+    left: 7px;
     display: flex;
     flex-direction: column;
     z-index: 1;
     width: 100%;
 
     @include global.mq(md) {
-      bottom: 12px;
-      left: -17px;
+      bottom: 6px;
+      left: -22px;
     }
   }
 

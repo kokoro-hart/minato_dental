@@ -14,8 +14,8 @@
 
   @include global.mq(md) {
     display: flex;
-    justify-content: center;
-    max-width: 966px;
+    justify-content: space-between;
+    max-width: 1006px;
     margin: 60px auto 0;
     padding: 0 20px;
   }
@@ -34,7 +34,6 @@
 
     @include global.mq(md) {
       margin-top: 0;
-      margin-left: 60px;
     }
   }
 }

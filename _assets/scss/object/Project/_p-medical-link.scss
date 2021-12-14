@@ -124,6 +124,7 @@
   letter-spacing: 1.6px;
 
   @include global.mq(md) {
+    padding-bottom: 25px;
     letter-spacing: 2.24px;
   }
 
@@ -137,6 +138,10 @@
     height: 2px;
     background-color: global.$color-text-white;
     border-radius: 3px;
+
+    @include global.mq(md) {
+      width: 41px;
+    }
   }
 }
 

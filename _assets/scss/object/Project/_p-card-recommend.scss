@@ -7,7 +7,7 @@
   width: 178px;
 
   @include global.mq(md) {
-    width: 190px;
+    width: 179px;
   }
 }
 
@@ -20,7 +20,7 @@
 
 .p-card-recommend__text {
   display: inline-block;
-  margin-top: 22px;
+  margin-top: 17px;
   text-align: left;
   @include global.fz(14);
   @include global.lh(1.7);

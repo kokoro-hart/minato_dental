@@ -10,6 +10,7 @@
   text-align: center;
 
   @include global.mq(md) {
+    padding-bottom: 36px;
     border-radius: 20px;
   }
   @include global.mq(lg) {
@@ -91,7 +92,7 @@
 .p-footer-info__link-wrapper {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 18px;
 }
 
 //診察時間

@@ -23,6 +23,10 @@
   padding-bottom: 96px;
   background-color: global.$color-sub02;
 
+  @include global.mq(md) {
+    padding-top: 23px;
+  }
+
   &::before {
     content: "";
     position: absolute;

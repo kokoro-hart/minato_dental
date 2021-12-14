@@ -45,7 +45,7 @@
   &::after {
     right: -64px;
     @include global.mq(md) {
-      right: -95px;
+      right: -100px;
     }
   }
 }

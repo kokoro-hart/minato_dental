@@ -24,7 +24,8 @@
     height: 56px;
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: global.$color-sub01;
   } 
 
@@ -50,7 +51,8 @@
   color: global.$color-main;
   transition: background-color 0.3s, color 0.3s;
 
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: global.$color-main;
     color: global.$color-text-white;
   } 
