@@ -41,10 +41,10 @@
                   'order' => 'DESC',
                   'paged' => get_query_var('paged')
                 );
-                $my_posts = get_posts( $args );
-                if ( $my_posts) :
+                $archive_posts = get_posts( $args );
+                if ( $archive_posts) :
 
-                foreach ( $my_posts as $post ) :
+                foreach ( $archive_posts as $post ) :
                 setup_postdata( $post );
               ?>
               <a href="<?php the_permalink(); ?>" class="p-archive-main__card p-card-archive">

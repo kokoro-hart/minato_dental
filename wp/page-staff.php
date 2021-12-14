@@ -147,27 +147,27 @@
           <div class="l-inner">
             <!--歯科衛生士-->
             <?php
-              $cat_args = array(
+              $tax_args = array(
                 'taxonomy' => 'staff'
               );
-              $cat_lists = get_categories( $cat_args );
-              foreach($cat_lists as $cat) :
+              $tax_lists = get_categories( $tax_args );
+              foreach($tax_lists as $tax) :
             ?>
             <div class="p-staff__content">
-              <h3 class="p-staff__sub-title"><?php echo $cat->name; ?></h3>
+              <h3 class="p-staff__sub-title"><?php echo $tax->name; ?></h3>
               <ul class="p-staff-member__items">
               <?php
                   $args = array(
-                    'posts_per_page' => -1, //投稿を全て取得
-                    'post_type' => 'staffs', //診療案内
-                    'staff' => $cat->slug, 
+                    'posts_per_page' => -1,
+                    'post_type' => 'staffs', //スタッフ
+                    'staff' => $tax->slug, 
                     'orderby' => 'date',
                     'order' => 'DESC'
                   );
-                  $my_posts = get_posts( $args );
-                  if ( $my_posts ) :
+                  $staff_posts = get_posts( $args );
+                  if ( $staff_posts ) :
 
-                  foreach ( $my_posts as $post ) :
+                  foreach ( $staff_posts as $post ) :
                   setup_postdata( $post );
                 ?>
                 <li class="p-staff-member__item p-card-staff">
@@ -184,7 +184,7 @@
                     ?>
                   </div> 
                   <div class="p-card-staff__name-wrapper">
-                    <p class="p-card-staff__role"><?php echo $cat->name; ?></p>
+                    <p class="p-card-staff__role"><?php echo $tax->name; ?></p>
                     <p class="p-card-staff__name"><?php the_title(); ?></p>
                   </div>
                   <dl class="p-card-staff__dl">

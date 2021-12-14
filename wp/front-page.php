@@ -139,7 +139,6 @@
               <img data-src="<?php echo get_template_directory_uri(); ?>/img/common/recommend01.png" width="355" height="65" alt="おすすめ01" class="p-card-recommend__img lazyload">
               <svg class="c-svg p-card-recommend__svg" width="276" height="254">
                 <use xlink:href="<?php echo get_template_directory_uri(); ?>/img/svg/sprite.min.svg#recommend01" />
-                痛くない歯科医療の追求
               </svg>
             </h3>
             <p class="p-card-recommend__text">
@@ -151,7 +150,6 @@
               <img data-src="<?php echo get_template_directory_uri(); ?>/img/common/recommend02.png" width="355" height="65" alt="おすすめ02" class="p-card-recommend__img lazyload">
               <svg class="c-svg p-card-recommend__svg" width="276" height="254">
                 <use xlink:href="<?php echo get_template_directory_uri(); ?>/img/svg/sprite.min.svg#recommend02" />
-                駅から徒歩3分
               </svg>
             </h3>
             <p class="p-card-recommend__text">
@@ -163,7 +161,6 @@
               <img data-src="<?php echo get_template_directory_uri(); ?>/img/common/recommend03.png" width="355" height="65" alt="おすすめ03" class="p-card-recommend__img lazyload">
               <svg class="c-svg p-card-recommend__svg" width="276" height="254">
                 <use xlink:href="<?php echo get_template_directory_uri(); ?>/img/svg/sprite.min.svg#recommend03" />
-                夜20:30まで営業
               </svg>
             </h3>
             <p class="p-card-recommend__text">
@@ -234,8 +231,8 @@
                 'orderby' => 'date',
                 'order' => 'DESC',
               );
-              $new_posts = get_posts($args);
-              foreach($new_posts as $post) : setup_postdata($post);
+              $blog_posts = get_posts($args);
+              foreach($blog_posts as $post) : setup_postdata($post);
               $category = get_the_category();
             ?>
             <a href="<?php the_permalink(); ?>" class="p-blog__item p-card-blog">

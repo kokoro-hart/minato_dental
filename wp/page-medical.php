@@ -35,17 +35,17 @@
           <div class="p-medical-nav__inner l-inner">
             <?php
               // タクソノミ取得
-              $catargs = array(
+              $tax_args = array(
                 'taxonomy' => 'medical'
               );
-              $cat_lists = get_categories( $catargs );
-              foreach($cat_lists as $cat) :
-              $cat_slug = $cat->slug; // カテゴリのスラッグを取得
+              $tax_lists = get_categories( $tax_args );
+              foreach($tax_lists as $tax) :
+              $tax_slug = $tax->slug; // カテゴリのスラッグを取得
             ?>
             <div class="p-medical-nav__group">
               <div class="p-medical-nav__title-wrapper">
-                <h2 class="p-medical-nav__title"><?php echo $cat->name; // 一般診療 or 特殊診療?></h2>
-                <?php if($cat_slug === 'medical01') : // スラッグがmedical01の場合?>
+                <h2 class="p-medical-nav__title"><?php echo $tax->name; // 一般診療 or 特殊診療?></h2>
+                <?php if($tax_slug === 'medical01') : // スラッグがmedical01の場合?>
                 <p class="p-medical-nav__label p-medical-nav__label--blue">保険対象</p>
                 <?php else : // medical01以外は?>
                   <p class="p-medical-nav__label p-medical-nav__label--red">実費</p>
@@ -57,14 +57,14 @@
                   $args = array(
                     'posts_per_page' => -1, //投稿を全て取得
                     'post_type' => 'plan', //診療案内
-                    'medical' => $cat->slug, 
+                    'medical' => $tax->slug, 
                     'orderby' => 'date',
                     'order' => 'DESC'
                   );
-                  $my_posts = get_posts( $args );
-                  if ( $my_posts ) :
+                  $medical_posts = get_posts( $args );
+                  if ( $medical_posts ) :
 
-                  foreach ( $my_posts as $post ) :
+                  foreach ( $medical_posts as $post ) :
                   setup_postdata( $post );
                   $post_slug = $post->post_name;
                 ?>
@@ -88,18 +88,18 @@
         <!--診療内容-->
         <?php
           // タクソノミ取得
-          $catargs = array(
+          $tax_args = array(
             'taxonomy' => 'medical'
           );
-          $cat_lists = get_categories( $catargs );
-          foreach($cat_lists as $cat) :
-          $cat_slug = $cat->slug; // カテゴリのスラッグを取得
+          $tax_lists = get_categories( $tax_args );
+          foreach($tax_lists as $tax) :
+          $tax_slug = $tax->slug; // カテゴリのスラッグを取得
         ?>
-        <section id="<?php echo $cat_slug; ?>" class="l-lower-medical__details l-decoration">
+        <section id="<?php echo $tax_slug; ?>" class="l-lower-medical__details l-decoration">
           <div class="l-decoration__top"></div>
           <div class="p-medical-detail l-decoration__body">
             <div class="p-medical-detail__title-wrapper">
-              <h2 class="c-section-title"><?php echo $cat->name; ?></h2>
+              <h2 class="c-section-title"><?php echo $tax->name; ?></h2>
             </div>
             <div class="l-inner">
               <ul class="p-medical-detail__items">
@@ -107,14 +107,14 @@
                   $args = array(
                     'posts_per_page' => -1, //投稿を全て取得
                     'post_type' => 'plan', //診療案内
-                    'medical' => $cat->slug, 
+                    'medical' => $tax->slug, 
                     'orderby' => 'date',
                     'order' => 'DESC'
                   );
-                  $my_posts = get_posts( $args );
-                  if ( $my_posts ) :
+                  $medical_posts = get_posts( $args );
+                  if ( $medical_posts ) :
 
-                  foreach ( $my_posts as $post ) :
+                  foreach ( $medical_posts as $post ) :
                   setup_postdata( $post );
                   $post_slug = $post->post_name;
                 ?>
@@ -147,7 +147,7 @@
                       ?>
                     </div>
                   </div>
-                  <?php if($cat_slug === 'medical01') : // スラッグがmedical01の場合は青のリボン?>
+                  <?php if($tax_slug === 'medical01') : // スラッグがmedical01の場合は青のリボン?>
                     <svg class="c-svg p-medical-item__tag u-hidden-md-up" width="80" height="60">
                       <use xlink:href="<?php echo get_template_directory_uri(); ?>/img/svg/sprite.min.svg#icon-tag01_sp" />
                     </svg>

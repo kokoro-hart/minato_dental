@@ -4,7 +4,7 @@
         <div class="l-footer__inner l-inner">
           <!--インフォメーション-->
           <div class="p-footer-info">
-            <div class="p-footer-info__contact">
+            <div class="p-footer-info__inner">
               <div class="p-footer-info__logo">
                 <a href="/" class="p-footer-info__logo-link">
                   <svg class="c-svg p-footer-info__logo-svg" width="311" height="33">
@@ -59,7 +59,9 @@
           <!--インフォメーション-->
           <!--フッターナビゲーション-->
           <ul class="p-footer-nav">
-            <a href="<?php echo esc_url(home_url('/')); ?>" class="p-footer-nav__link">TOP</a>
+            <li class="p-footer-nav__item">
+              <a href="<?php echo esc_url(home_url('/')); ?>" class="p-footer-nav__link">TOP</a>
+            </li>
             <!--当院について-->
             <li class="p-footer-nav__item">
               当院について
@@ -109,19 +111,19 @@
               <div class="p-footer-nav__box">
                 <?php
                   // タクソノミ取得
-                  $catargs = array(
+                  $tax_args = array(
                     'taxonomy' => 'medical'
                   );
-                  $cat_lists = get_categories( $catargs );
-                  foreach($cat_lists as $cat) :
-                  $cat_slug = $cat->slug; // カテゴリのスラッグを取得
+                  $tax_lists = get_categories( $tax_args );
+                  foreach($tax_lists as $tax) :
+                  $tax_slug = $tax->slug; // タクソノミのスラッグを取得
                 ?>
                 <ul class="p-footer-lower-nav">
                   <?php
                     $args = array(
-                      'posts_per_page' => 4, //投稿を全て取得
-                      'post_type' => 'plan', //診療案内
-                      'medical' => $cat->slug, 
+                      'posts_per_page' => 4, 
+                      'post_type' => 'plan', 
+                      'medical' => $tax->slug, 
                       'orderby' => 'date',
                       'order' => 'DESC'
                     );
