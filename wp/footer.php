@@ -8,7 +8,7 @@
               <div class="p-footer-info__logo">
                 <a href="/" class="p-footer-info__logo-link">
                   <svg class="c-svg p-footer-info__logo-svg" width="311" height="33">
-                    <use xlink:href="<?php echo get_template_directory_uri(); ?>/img/svg/sprite.min.svg#logo" />
+                    <use xlink:href="<?php echo esc_url(get_template_directory_uri()); ?>/img/svg/sprite.min.svg#logo" />
                   </svg>
                 </a>
               </div>
@@ -18,7 +18,7 @@
                 </p>
                 <a href="tel:0312345678" class="p-footer-info__tel">
                   <svg class="c-svg p-footer-info__tel-icon" width="28" height="28">
-                    <use xlink:href="<?php echo get_template_directory_uri(); ?>/img/svg/sprite.min.svg#icon-tel" />
+                    <use xlink:href="<?php echo esc_url(get_template_directory_uri()); ?>/img/svg/sprite.min.svg#icon-tel" />
                   </svg>
                   03-1234-5678
                 </a>
@@ -27,7 +27,7 @@
               <div class="p-footer-info__link-wrapper">
                 <a href="<?php echo esc_url(home_url('/reserve')); ?>" class="c-button-footer">
                   <svg class="c-svg c-button-footer__icon" width="25" height="14">
-                    <use xlink:href="<?php echo get_template_directory_uri(); ?>/img/svg/sprite.min.svg#icon-web" />
+                    <use xlink:href="<?php echo esc_url(get_template_directory_uri()); ?>/img/svg/sprite.min.svg#icon-web" />
                   </svg>
                   <span class="c-button-footer__text">
                     WEB予約
@@ -35,7 +35,7 @@
                 </a>
                 <a href="<?php echo esc_url(home_url('/contact')); ?>" class="c-button-footer c-button-footer--bg-white u-ml15">
                   <svg class="c-svg c-button-footer__icon" width="14" height="14">
-                    <use xlink:href="<?php echo get_template_directory_uri(); ?>/img/svg/sprite.min.svg#icon-contact" />
+                    <use xlink:href="<?php echo esc_url(get_template_directory_uri()); ?>/img/svg/sprite.min.svg#icon-contact" />
                   </svg>
                   <span class="c-button-footer__text">
                     お問い合わせ
@@ -43,10 +43,10 @@
                 </a>
               </div>
               <picture class="p-footer-info__medical">
-                <source class="p-footer-info__medical-img" srcset="<?php echo get_template_directory_uri(); ?>/img/webp/medical-time_sp.webp" media="(max-width: 767px)" type="image/webp" />
-                <source class="p-footer-info__medical-img" srcset="<?php echo get_template_directory_uri(); ?>/img/webp/medical-time_pc.webp" media="(min-width: 768px)" type="image/webp" />
-                <source class="p-footer-info__medical-img" srcset="<?php echo get_template_directory_uri(); ?>/img/common/medical-time_sp.png" media="(max-width: 767px)" />
-                <img data-src="<?php echo get_template_directory_uri(); ?>/img/common/medical-time_pc.png" class="p-footer-info__medical-img lazyload" media="(min-width: 768px)" alt="診察時間">
+                <source class="p-footer-info__medical-img" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/img/webp/medical-time_sp.webp" media="(max-width: 767px)" type="image/webp" />
+                <source class="p-footer-info__medical-img" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/img/webp/medical-time_pc.webp" media="(min-width: 768px)" type="image/webp" />
+                <source class="p-footer-info__medical-img" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/img/common/medical-time_sp.png" media="(max-width: 767px)" />
+                <img data-src="<?php echo esc_url(get_template_directory_uri()); ?>/img/common/medical-time_pc.png" class="p-footer-info__medical-img lazyload" media="(min-width: 768px)" alt="診察時間">
               </picture>
             </div>
             <div class="p-footer-map">
@@ -182,7 +182,7 @@
     <!--予約-->
     <a href="<?php echo esc_url(home_url('/reserve')); ?>" class="p-reserve u-hidden-xl-down">
       <svg class="c-svg p-reserve__icon" width="48" height="28">
-        <use xlink:href="<?php echo get_template_directory_uri(); ?>/img/svg/sprite.min.svg#icon-web" />
+        <use xlink:href="<?php echo esc_url(get_template_directory_uri()); ?>/img/svg/sprite.min.svg#icon-web" />
       </svg>
       <p class="p-reserve__text">WEB予約 はこちら</p>
     </a>
@@ -190,7 +190,7 @@
       <div class="p-reverse-footer__tel">
         <a href="tel:0312345678" class="p-reverse-footer__tel-link">
           <svg class="c-svg p-reverse-footer__tel-icon" width="18" height="18">
-            <use xlink:href="<?php echo get_template_directory_uri(); ?>/img/svg/sprite.min.svg#icon-tel" />
+            <use xlink:href="<?php echo esc_url(get_template_directory_uri()); ?>/img/svg/sprite.min.svg#icon-tel" />
           </svg>
           03-1234-5678
         </a>
@@ -198,7 +198,7 @@
       </div>
       <a href="<?php echo esc_url(home_url('/reserve')); ?>" class="p-reverse-footer__web">
         <svg class="c-svg p-reverse-footer__web-icon" width="43.5" height="25.5">
-          <use xlink:href="<?php echo get_template_directory_uri(); ?>/img/svg/sprite.min.svg#icon-web" />
+          <use xlink:href="<?php echo esc_url(get_template_directory_uri()); ?>/img/svg/sprite.min.svg#icon-web" />
         </svg>
         <p class="p-reverse-footer__web-text">WEB予約<br>はこちら</p>
       </a>

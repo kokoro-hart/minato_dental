@@ -8,28 +8,28 @@
           <div class="swiper-wrapper">
             <div class="swiper-slide">
               <picture class="p-mv__picture">
-                <source class="p-mv__img" srcset="<? echo get_template_directory_uri(); ?>/img/webp/mv01.webp" type="image/webp" />
-                <img src="<? echo get_template_directory_uri(); ?>/img/common/mv01.jpeg" class="p-mv__img" width="1160" height="520" decoding="async" alt="メインビジュアル">
+                <source class="p-mv__img" srcset="<? echo esc_url(get_template_directory_uri()); ?>/img/webp/mv01.webp" type="image/webp" />
+                <img src="<? echo esc_url(get_template_directory_uri()); ?>/img/common/mv01.jpeg" class="p-mv__img" width="1160" height="520" decoding="async" alt="メインビジュアル">
               </picture>
             </div>
             <div class="swiper-slide">
               <picture class="p-mv__picture">
-                <source class="p-mv__img" srcset="<? echo get_template_directory_uri(); ?>/img/webp/mv02.webp" type="image/webp" />
-                <img src="<? echo get_template_directory_uri(); ?>/img/common/mv02.jpeg" class="p-mv__img" width="1160" height="520" decoding="async" alt="メインビジュアル">
+                <source class="p-mv__img" srcset="<? echo esc_url(get_template_directory_uri()); ?>/img/webp/mv02.webp" type="image/webp" />
+                <img src="<? echo esc_url(get_template_directory_uri()); ?>/img/common/mv02.jpeg" class="p-mv__img" width="1160" height="520" decoding="async" alt="メインビジュアル">
               </picture>
             </div>
             <div class="swiper-slide">
               <picture class="p-mv__picture">
-                <source class="p-mv__img" srcset="<? echo get_template_directory_uri(); ?>/img/webp/mv03.webp" type="image/webp" />
-                <img src="<? echo get_template_directory_uri(); ?>/img/common/mv03.jpeg" class="p-mv__img" width="1160" height="520" decoding="async" alt="メインビジュアル">
+                <source class="p-mv__img" srcset="<? echo esc_url(get_template_directory_uri()); ?>/img/webp/mv03.webp" type="image/webp" />
+                <img src="<? echo esc_url(get_template_directory_uri()); ?>/img/common/mv03.jpeg" class="p-mv__img" width="1160" height="520" decoding="async" alt="メインビジュアル">
               </picture>
             </div>
           </div>
           <svg class="c-svg p-mv__text u-hidden-md-up" width="265" height="74.5">
-            <use xlink:href="<? echo get_template_directory_uri(); ?>/img/svg/sprite.min.svg#mv-text_sp" />
+            <use xlink:href="<? echo esc_url(get_template_directory_uri()); ?>/img/svg/sprite.min.svg#mv-text_sp" />
           </svg>
           <svg class="c-svg p-mv__text u-hidden-md-down" width="415" height="120">
-            <use xlink:href="<? echo get_template_directory_uri(); ?>/img/svg/sprite.min.svg#mv-text_pc" />
+            <use xlink:href="<? echo esc_url(get_template_directory_uri()); ?>/img/svg/sprite.min.svg#mv-text_pc" />
           </svg>
         </div>
         <div class="swiper-pagination"></div>
@@ -43,10 +43,10 @@
         <!--診察時間-->
         <div class="p-medical-table">
           <picture class="p-medical-table__picture">
-            <source class="p-medical-table__img" srcset="<? echo get_template_directory_uri(); ?>/img/webp/medical-time_sp.webp" media="(max-width: 767px)" type="image/webp" />
-            <source class="p-medical-table__img" srcset="<? echo get_template_directory_uri(); ?>/img/webp/medical-time_pc.webp" media="(min-width: 768px)" type="image/webp" />
-            <source class="p-medical-table__img" srcset="<? echo get_template_directory_uri(); ?>/img/common/medical-time_sp.png" media="(max-width: 767px)" />
-            <img src="<? echo get_template_directory_uri(); ?>/img/common/medical-time_pc.png" class="p-medical-table__img" media="(min-width: 768px)" decoding="async" alt="診察時間">
+            <source class="p-medical-table__img" srcset="<? echo esc_url(get_template_directory_uri()); ?>/img/webp/medical-time_sp.webp" media="(max-width: 767px)" type="image/webp" />
+            <source class="p-medical-table__img" srcset="<? echo esc_url(get_template_directory_uri()); ?>/img/webp/medical-time_pc.webp" media="(min-width: 768px)" type="image/webp" />
+            <source class="p-medical-table__img" srcset="<? echo esc_url(get_template_directory_uri()); ?>/img/common/medical-time_sp.png" media="(max-width: 767px)" />
+            <img src="<? echo esc_url(get_template_directory_uri()); ?>/img/common/medical-time_pc.png" class="p-medical-table__img" media="(min-width: 768px)" decoding="async" alt="診察時間">
           </picture>
         </div>
         <!--/診察時間-->
@@ -80,7 +80,7 @@
                 <?php the_title(); ?>
               </p>
               <svg class="c-svg p-news__arrow" width="14" height="14">
-                <use xlink:href="<? echo get_template_directory_uri(); ?>/img/svg/sprite.min.svg#icon-right" />
+                <use xlink:href="<? echo esc_url(get_template_directory_uri()); ?>/img/svg/sprite.min.svg#icon-right" />
               </svg>
             </a>
             <?php endforeach; wp_reset_postdata(); ?>
@@ -93,12 +93,12 @@
       <!--コンセプト-->
       <section class="p-feature p-feature--decoration l-home__concept">
         <svg class="c-svg p-feature__bg u-hidden-md-up" width="145vw" height="81vw">
-          <use xlink:href="<? echo get_template_directory_uri(); ?>/img/svg/sprite.min.svg#concept-bg" />
+          <use xlink:href="<? echo esc_url(get_template_directory_uri()); ?>/img/svg/sprite.min.svg#concept-bg" />
         </svg>
         <div class="p-feature__contents">
           <picture class="p-feature__picture">
-            <source class="p-feature__img" srcset="<? echo get_template_directory_uri(); ?>/img/webp/concept-img01.webp" type="image/webp" />
-            <img data-src="<? echo get_template_directory_uri(); ?>/img/common/concept-img01.jpeg" width="1280" height="876" class="p-feature__img lazyload" alt="コンセプトイメージ">
+            <source class="p-feature__img" srcset="<? echo esc_url(get_template_directory_uri()); ?>/img/webp/concept-img01.webp" type="image/webp" />
+            <img data-src="<? echo esc_url(get_template_directory_uri()); ?>/img/common/concept-img01.jpeg" width="1280" height="876" class="p-feature__img lazyload" alt="コンセプトイメージ">
           </picture>
           <div class="p-feature__textarea">
             <div class="p-feature__title">
@@ -117,7 +117,7 @@
               <a href="<?php echo esc_url(home_url('/about'));?>" class="c-button-primary">
                 当院について
                 <svg class="c-svg c-button-primary__arrow" width="12" height="12">
-                  <use xlink:href="<? echo get_template_directory_uri(); ?>/img/svg/sprite.min.svg#icon-right" />
+                  <use xlink:href="<? echo esc_url(get_template_directory_uri()); ?>/img/svg/sprite.min.svg#icon-right" />
                 </svg>
               </a>
             </div>
@@ -136,9 +136,9 @@
         <ol class="p-recommend__items">
           <li class="p-recommend__item p-card-recommend">
             <h3 class="p-card-recommend__head">
-              <img data-src="<?php echo get_template_directory_uri(); ?>/img/common/recommend01.png" width="355" height="65" alt="おすすめ01" class="p-card-recommend__img lazyload">
+              <img data-src="<?php echo esc_url(get_template_directory_uri()); ?>/img/common/recommend01.png" width="355" height="65" alt="おすすめ01" class="p-card-recommend__img lazyload">
               <svg class="c-svg p-card-recommend__svg" width="276" height="254">
-                <use xlink:href="<?php echo get_template_directory_uri(); ?>/img/svg/sprite.min.svg#recommend01" />
+                <use xlink:href="<?php echo esc_url(get_template_directory_uri()); ?>/img/svg/sprite.min.svg#recommend01" />
               </svg>
             </h3>
             <p class="p-card-recommend__text">
@@ -147,9 +147,9 @@
           </li>
           <li class="p-recommend__item p-card-recommend">
             <h3 class="p-card-recommend__head">
-              <img data-src="<?php echo get_template_directory_uri(); ?>/img/common/recommend02.png" width="355" height="65" alt="おすすめ02" class="p-card-recommend__img lazyload">
+              <img data-src="<?php echo esc_url(get_template_directory_uri()); ?>/img/common/recommend02.png" width="355" height="65" alt="おすすめ02" class="p-card-recommend__img lazyload">
               <svg class="c-svg p-card-recommend__svg" width="276" height="254">
-                <use xlink:href="<?php echo get_template_directory_uri(); ?>/img/svg/sprite.min.svg#recommend02" />
+                <use xlink:href="<?php echo esc_url(get_template_directory_uri()); ?>/img/svg/sprite.min.svg#recommend02" />
               </svg>
             </h3>
             <p class="p-card-recommend__text">
@@ -158,9 +158,9 @@
           </li>
           <li class="p-recommend__item p-card-recommend">
             <h3 class="p-card-recommend__head">
-              <img data-src="<?php echo get_template_directory_uri(); ?>/img/common/recommend03.png" width="355" height="65" alt="おすすめ03" class="p-card-recommend__img lazyload">
+              <img data-src="<?php echo esc_url(get_template_directory_uri()); ?>/img/common/recommend03.png" width="355" height="65" alt="おすすめ03" class="p-card-recommend__img lazyload">
               <svg class="c-svg p-card-recommend__svg" width="276" height="254">
-                <use xlink:href="<?php echo get_template_directory_uri(); ?>/img/svg/sprite.min.svg#recommend03" />
+                <use xlink:href="<?php echo esc_url(get_template_directory_uri()); ?>/img/svg/sprite.min.svg#recommend03" />
               </svg>
             </h3>
             <p class="p-card-recommend__text">
@@ -268,7 +268,7 @@
             <a href="<?php echo esc_url(home_url('/blog')); ?>" class="c-button-primary">
               スタッフブログ一覧はこちら
               <svg class="c-svg c-button-primary__arrow" width="12" height="12">
-                <use xlink:href="<? echo get_template_directory_uri(); ?>/img/svg/sprite.min.svg#icon-right" />
+                <use xlink:href="<? echo esc_url(get_template_directory_uri()); ?>/img/svg/sprite.min.svg#icon-right" />
               </svg>
             </a>
           </div>

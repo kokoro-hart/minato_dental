@@ -5,10 +5,10 @@
       <!--メインビジュアル-->
       <section class="p-lower-mv">
         <picture class="p-lower-mv__picture">
-          <source class="p-lower-mv__img" srcset="<?php echo get_template_directory_uri(); ?>/img/webp/mv-medical_sp.webp" media="(max-width: 767px)" type="image/webp" />
-          <source class="p-lower-mv__img" srcset="<?php echo get_template_directory_uri(); ?>/img/webp/mv-medical_pc.webp" media="(min-width: 768px)" type="image/webp" />
-          <source class="p-lower-mv__img" srcset="<?php echo get_template_directory_uri(); ?>/img/common/mv-medical_sp.jpeg" media="(max-width: 767px)" />
-          <img src="<?php echo get_template_directory_uri(); ?>/img/common/mv-medical_pc.jpeg" class="p-lower-mv__img" media="(min-width: 768px)" decoding="async" alt="診察案内">
+          <source class="p-lower-mv__img" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/img/webp/mv-medical_sp.webp" media="(max-width: 767px)" type="image/webp" />
+          <source class="p-lower-mv__img" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/img/webp/mv-medical_pc.webp" media="(min-width: 768px)" type="image/webp" />
+          <source class="p-lower-mv__img" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/img/common/mv-medical_sp.jpeg" media="(max-width: 767px)" />
+          <img src="<?php echo esc_url(get_template_directory_uri()); ?>/img/common/mv-medical_pc.jpeg" class="p-lower-mv__img" media="(min-width: 768px)" decoding="async" alt="診察案内">
         </picture>
         <div class="p-lower-mv__contents">
           <h2 class="p-lower-mv__heading">診療案内</h2>
@@ -149,17 +149,17 @@
                   </div>
                   <?php if($tax_slug === 'medical01') : // スラッグがmedical01の場合は青のリボン?>
                     <svg class="c-svg p-medical-item__tag u-hidden-md-up" width="80" height="60">
-                      <use xlink:href="<?php echo get_template_directory_uri(); ?>/img/svg/sprite.min.svg#icon-tag01_sp" />
+                      <use xlink:href="<?php echo esc_url(get_template_directory_uri()); ?>/img/svg/sprite.min.svg#icon-tag01_sp" />
                     </svg>
                     <svg class="c-svg p-medical-item__tag u-hidden-md-down" width="100" height="80">
-                      <use xlink:href="<?php echo get_template_directory_uri(); ?>/img/svg/sprite.min.svg#icon-tag01_pc" />
+                      <use xlink:href="<?php echo esc_url(get_template_directory_uri()); ?>/img/svg/sprite.min.svg#icon-tag01_pc" />
                     </svg>
                   <?php else : // medical01以外は赤のリボン?>
                     <svg class="c-svg p-medical-item__tag u-hidden-md-up" width="80" height="60">
-                      <use xlink:href="<?php echo get_template_directory_uri(); ?>/img/svg/sprite.min.svg#icon-tag02_sp" />
+                      <use xlink:href="<?php echo esc_url(get_template_directory_uri()); ?>/img/svg/sprite.min.svg#icon-tag02_sp" />
                     </svg>
                     <svg class="c-svg p-medical-item__tag u-hidden-md-down" width="100" height="80">
-                      <use xlink:href="<?php echo get_template_directory_uri(); ?>/img/svg/sprite.min.svg#icon-tag02_pc" />
+                      <use xlink:href="<?php echo esc_url(get_template_directory_uri()); ?>/img/svg/sprite.min.svg#icon-tag02_pc" />
                     </svg>
                   <?php endif; ?>
                   

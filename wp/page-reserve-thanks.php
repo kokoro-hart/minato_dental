@@ -4,10 +4,10 @@
       <!--メインビジュアル-->
       <section class="p-lower-mv">
         <picture class="p-lower-mv__picture">
-          <source class="p-lower-mv__img" srcset="<?php echo get_template_directory_uri(); ?>/img/webp/mv-contact_sp.webp" media="(max-width: 767px)" type="image/webp" />
-          <source class="p-lower-mv__img" srcset="<?php echo get_template_directory_uri(); ?>/img/webp/mv-contact_pc.webp" media="(min-width: 768px)" type="image/webp" />
-          <source class="p-lower-mv__img" srcset="<?php echo get_template_directory_uri(); ?>/img/common/mv-contact_sp.jpeg" media="(max-width: 767px)" />
-          <img src="<?php echo get_template_directory_uri(); ?>/img/common/mv-contact_pc.jpeg" class="p-lower-mv__img" media="(min-width: 768px)" decoding="async" alt="WEB予約">
+          <source class="p-lower-mv__img" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/img/webp/mv-contact_sp.webp" media="(max-width: 767px)" type="image/webp" />
+          <source class="p-lower-mv__img" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/img/webp/mv-contact_pc.webp" media="(min-width: 768px)" type="image/webp" />
+          <source class="p-lower-mv__img" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/img/common/mv-contact_sp.jpeg" media="(max-width: 767px)" />
+          <img src="<?php echo esc_url(get_template_directory_uri()); ?>/img/common/mv-contact_pc.jpeg" class="p-lower-mv__img" media="(min-width: 768px)" decoding="async" alt="WEB予約">
         </picture>
         <div class="p-lower-mv__contents">
           <h2 class="p-lower-mv__heading">WEB予約</h2>

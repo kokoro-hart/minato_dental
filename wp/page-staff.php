@@ -5,10 +5,10 @@
       <!--メインビジュアル-->
       <section class="p-lower-mv">
         <picture class="p-lower-mv__picture">
-          <source class="p-lower-mv__img" srcset="<?php echo get_template_directory_uri(); ?>/img/webp/mv-staff_sp.webp" media="(max-width: 767px)" type="image/webp" />
-          <source class="p-lower-mv__img" srcset="<?php echo get_template_directory_uri(); ?>/img/webp/mv-staff_pc.webp" media="(min-width: 768px)" type="image/webp" />
-          <source class="p-lower-mv__img" srcset="<?php echo get_template_directory_uri(); ?>/img/common/mv-staff_sp.jpeg" media="(max-width: 767px)" />
-          <img src="<?php echo get_template_directory_uri(); ?>/img/common/mv-staff_pc.jpeg" class="p-lower-mv__img" media="(min-width: 768px)" decoding="async" alt="スタッフの紹介">
+          <source class="p-lower-mv__img" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/img/webp/mv-staff_sp.webp" media="(max-width: 767px)" type="image/webp" />
+          <source class="p-lower-mv__img" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/img/webp/mv-staff_pc.webp" media="(min-width: 768px)" type="image/webp" />
+          <source class="p-lower-mv__img" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/img/common/mv-staff_sp.jpeg" media="(max-width: 767px)" />
+          <img src="<?php echo esc_url(get_template_directory_uri()); ?>/img/common/mv-staff_pc.jpeg" class="p-lower-mv__img" media="(min-width: 768px)" decoding="async" alt="スタッフの紹介">
         </picture>
         <div class="p-lower-mv__contents">
           <h2 class="p-lower-mv__heading">スタッフ紹介</h2>
@@ -55,8 +55,8 @@
                   </p>
                 </div>
                 <picture class="p-staff-director__picture u-hidden-md-up">
-                  <source class="p-staff-director__img" srcset="<?php echo get_template_directory_uri(); ?>/img/webp/staff-director.webp" type="image/webp" />
-                  <img src="<?php echo get_template_directory_uri(); ?>/img/common/staff-director.jpeg" class="p-staff-director__img" width="460" height="613" decoding="async" alt="院長の写真">
+                  <source class="p-staff-director__img" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/img/webp/staff-director.webp" type="image/webp" />
+                  <img src="<?php echo esc_url(get_template_directory_uri()); ?>/img/common/staff-director.jpeg" class="p-staff-director__img" width="460" height="613" decoding="async" alt="院長の写真">
                 </picture>
                 <div class="p-staff-director__career">
                   <p class="p-staff__sub-title">経歴</p>
@@ -88,8 +88,8 @@
               </div>
               <div class="p-staff-director__img-wrapper">
                 <picture class="p-staff-director__picture u-hidden-md-down">
-                  <source class="p-staff-director__img" srcset="<?php echo get_template_directory_uri(); ?>/img/webp/staff-director.webp" type="image/webp" />
-                  <img src="<?php echo get_template_directory_uri(); ?>/img/common/staff-director.jpeg" class="p-staff-director__img" width="460" height="613" decoding="async" alt="院長の写真">
+                  <source class="p-staff-director__img" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/img/webp/staff-director.webp" type="image/webp" />
+                  <img src="<?php echo esc_url(get_template_directory_uri()); ?>/img/common/staff-director.jpeg" class="p-staff-director__img" width="460" height="613" decoding="async" alt="院長の写真">
                 </picture>
               </div>
             </div>
@@ -103,32 +103,32 @@
             <div class="swiper-wrapper">
               <div class="swiper-slide">
                 <picture class="p-staff-gallery__picture">
-                  <source class="p-staff-gallery__img" srcset="<?php echo get_template_directory_uri(); ?>/img/webp/staff-swiper01.webp" type="image/webp" />
-                  <img class="p-staff-gallery__img" src="<?php echo get_template_directory_uri(); ?>/img/common/staff-swiper01.jpeg" width="634" height="476" decoding="async" alt="ギャラリーの画像">
+                  <source class="p-staff-gallery__img" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/img/webp/staff-swiper01.webp" type="image/webp" />
+                  <img class="p-staff-gallery__img" src="<?php echo esc_url(get_template_directory_uri()); ?>/img/common/staff-swiper01.jpeg" width="634" height="476" decoding="async" alt="ギャラリーの画像">
                 </picture>
               </div>
               <div class="swiper-slide">
                 <picture class="p-staff-gallery__picture">
-                  <source class="p-staff-gallery__img" srcset="<?php echo get_template_directory_uri(); ?>/img/webp/staff-swiper02.webp" type="image/webp" />
-                  <img class="p-staff-gallery__img" src="<?php echo get_template_directory_uri(); ?>/img/common/staff-swiper02.jpeg" width="634" height="476" decoding="async" alt="ギャラリーの画像">
+                  <source class="p-staff-gallery__img" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/img/webp/staff-swiper02.webp" type="image/webp" />
+                  <img class="p-staff-gallery__img" src="<?php echo esc_url(get_template_directory_uri()); ?>/img/common/staff-swiper02.jpeg" width="634" height="476" decoding="async" alt="ギャラリーの画像">
                 </picture>
               </div>
               <div class="swiper-slide">
                 <picture class="p-staff-gallery__picture">
-                  <source class="p-staff-gallery__img" srcset="<?php echo get_template_directory_uri(); ?>/img/webp/staff-swiper03.webp" type="image/webp" />
-                  <img class="p-staff-gallery__img" src="<?php echo get_template_directory_uri(); ?>/img/common/staff-swiper03.jpeg" width="634" height="476" decoding="async" alt="ギャラリーの画像">
+                  <source class="p-staff-gallery__img" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/img/webp/staff-swiper03.webp" type="image/webp" />
+                  <img class="p-staff-gallery__img" src="<?php echo esc_url(get_template_directory_uri()); ?>/img/common/staff-swiper03.jpeg" width="634" height="476" decoding="async" alt="ギャラリーの画像">
                 </picture>
               </div>
               <div class="swiper-slide">
                 <picture class="p-staff-gallery__picture">
-                  <source class="p-staff-gallery__img" srcset="<?php echo get_template_directory_uri(); ?>/img/webp/staff-swiper04.webp" type="image/webp" />
-                  <img class="p-staff-gallery__img" src="<?php echo get_template_directory_uri(); ?>/img/common/staff-swiper04.jpeg" width="634" height="476" decoding="async" alt="ギャラリーの画像">
+                  <source class="p-staff-gallery__img" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/img/webp/staff-swiper04.webp" type="image/webp" />
+                  <img class="p-staff-gallery__img" src="<?php echo esc_url(get_template_directory_uri()); ?>/img/common/staff-swiper04.jpeg" width="634" height="476" decoding="async" alt="ギャラリーの画像">
                 </picture>
               </div>
               <div class="swiper-slide">
                 <picture class="p-staff-gallery__picture">
-                  <source class="p-staff-gallery__img" srcset="<?php echo get_template_directory_uri(); ?>/img/webp/staff-swiper05.webp" type="image/webp" />
-                  <img class="p-staff-gallery__img" src="<?php echo get_template_directory_uri(); ?>/img/common/staff-swiper05.jpeg" width="634" height="476" decoding="async" alt="ギャラリーの画像">
+                  <source class="p-staff-gallery__img" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/img/webp/staff-swiper05.webp" type="image/webp" />
+                  <img class="p-staff-gallery__img" src="<?php echo esc_url(get_template_directory_uri()); ?>/img/common/staff-swiper05.jpeg" width="634" height="476" decoding="async" alt="ギャラリーの画像">
                 </picture>
               </div>
             </div>

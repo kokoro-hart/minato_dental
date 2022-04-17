@@ -3,13 +3,13 @@
   <article class="p-sidebar-intro">
     <h2 class="p-sidebar__title">
       <svg class="c-svg p-sidebar__title-icon" width="24" height="24">
-        <use xlink:href="<?php echo get_template_directory_uri(); ?>/img/svg/sprite.min.svg#icon-sidebar01" />
+        <use xlink:href="<?php echo esc_url(get_template_directory_uri());  ?>/img/svg/sprite.min.svg#icon-sidebar01" />
       </svg>
       クリニックの紹介
     </h2>
     <picture class="p-sidebar-intro__picture">
-      <source class="p-sidebar-intro__img" srcset="<?php echo get_template_directory_uri(); ?>/img/webp/sidebar01.webp" type="image/webp" />
-      <img src="<?php echo get_template_directory_uri(); ?>/img/common/sidebar01.jpeg" alt="クリニックの紹介" decoding="async" class="p-sidebar-intro__img">
+      <source class="p-sidebar-intro__img" srcset="<?php echo esc_url(get_template_directory_uri());  ?>/img/webp/sidebar01.webp" type="image/webp" />
+      <img src="<?php echo esc_url(get_template_directory_uri());  ?>/img/common/sidebar01.jpeg" alt="クリニックの紹介" decoding="async" class="p-sidebar-intro__img">
     </picture>
     <h3 class="p-sidebar-intro__title">みなみ歯科クリニック</h3>
     <p class="p-sidebar-intro__text">お子様からご高齢の方まで、快適な空間で治療が受けられる場を作り、地域医療に貢献しきたいと考えております。</p>
@@ -22,7 +22,7 @@
   <article class="p-sidebar-new">
     <h2 class="p-sidebar__title">
       <svg class="c-svg p-sidebar__title-icon" width="24" height="24">
-        <use xlink:href="<?php echo get_template_directory_uri(); ?>/img/svg/sprite.min.svg#icon-sidebar03" />
+        <use xlink:href="<?php echo esc_url(get_template_directory_uri());  ?>/img/svg/sprite.min.svg#icon-sidebar03" />
       </svg>
       新着記事
     </h2>
@@ -78,7 +78,7 @@
   <article class="p-sidebar-cats">
     <h2 class="p-sidebar__title">
       <svg class="c-svg p-sidebar__title-icon" width="24" height="24">
-        <use xlink:href="<?php echo get_template_directory_uri(); ?>/img/svg/sprite.min.svg#icon-sidebar03" />
+        <use xlink:href="<?php echo esc_url(get_template_directory_uri());  ?>/img/svg/sprite.min.svg#icon-sidebar03" />
       </svg>
       カテゴリー
     </h2>

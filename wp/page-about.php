@@ -5,10 +5,10 @@
       <!--メインビジュアル-->
       <section class="p-lower-mv">
         <picture class="p-lower-mv__picture">
-          <source class="p-lower-mv__img" srcset="<?php echo get_template_directory_uri(); ?>/img/webp/mv-about_sp.webp" media="(max-width: 767px)" type="image/webp" />
-          <source class="p-lower-mv__img" srcset="<?php echo get_template_directory_uri(); ?>/img/webp/mv-about_pc.webp" media="(min-width: 768px)" type="image/webp" />
-          <source class="p-lower-mv__img" srcset="<?php echo get_template_directory_uri(); ?>/img/common/mv-about_sp.jpeg" media="(max-width: 767px)" />
-          <img src="<?php echo get_template_directory_uri(); ?>/img/common/mv-about_pc.jpeg" class="p-lower-mv__img" media="(min-width: 768px)" decoding="async" alt="当院について">
+          <source class="p-lower-mv__img" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/img/webp/mv-about_sp.webp" media="(max-width: 767px)" type="image/webp" />
+          <source class="p-lower-mv__img" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/img/webp/mv-about_pc.webp" media="(min-width: 768px)" type="image/webp" />
+          <source class="p-lower-mv__img" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/img/common/mv-about_sp.jpeg" media="(max-width: 767px)" />
+          <img src="<?php echo esc_url(get_template_directory_uri()); ?>/img/common/mv-about_pc.jpeg" class="p-lower-mv__img" media="(min-width: 768px)" decoding="async" alt="当院について">
         </picture>
         <div class="p-lower-mv__contents">
           <h2 class="p-lower-mv__heading">当院について</h2>
@@ -39,12 +39,12 @@
             <!--ポリシー-->
             <section class="p-feature p-feature--decoration p-about-feature__item">
               <svg class="c-svg p-feature__bg u-hidden-md-up" width="145vw" height="81vw">
-                <use xlink:href="<?php echo get_template_directory_uri(); ?>/img/svg/sprite.min.svg#concept-bg" />
+                <use xlink:href="<?php echo esc_url(get_template_directory_uri()); ?>/img/svg/sprite.min.svg#concept-bg" />
               </svg>
               <div class="p-feature__contents">
                 <picture class="p-feature__picture">
-                  <source class="p-feature__img" srcset="<?php echo get_template_directory_uri(); ?>/img/webp/feature01.webp" type="image/webp" />
-                  <img data-src="<?php echo get_template_directory_uri(); ?>/img/common/feature01.jpeg" width="1280" height="876" class="p-feature__img lazyload" alt="ポリシー">
+                  <source class="p-feature__img" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/img/webp/feature01.webp" type="image/webp" />
+                  <img data-src="<?php echo esc_url(get_template_directory_uri()); ?>/img/common/feature01.jpeg" width="1280" height="876" class="p-feature__img lazyload" alt="ポリシー">
                 </picture>
                 <div class="p-feature__textarea">
                   <div class="p-feature__title">
@@ -67,8 +67,8 @@
             <section class="p-feature p-feature--reverse p-about-feature__item">
               <div class="p-feature__contents">
                 <picture class="p-feature__picture">
-                  <source class="p-feature__img" srcset="<?php echo get_template_directory_uri(); ?>/img/webp/feature02.webp" type="image/webp" />
-                  <img data-src="<?php echo get_template_directory_uri(); ?>/img/common/feature02.jpeg" width="1280" height="876" class="p-feature__img lazyload" alt="特徴">
+                  <source class="p-feature__img" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/img/webp/feature02.webp" type="image/webp" />
+                  <img data-src="<?php echo esc_url(get_template_directory_uri()); ?>/img/common/feature02.jpeg" width="1280" height="876" class="p-feature__img lazyload" alt="特徴">
                 </picture>
                 <div class="p-feature__textarea">
                   <div class="p-feature__title">
@@ -99,38 +99,38 @@
             <div class="p-about-state__photos">
               <div class="p-about-state__photo">
                 <picture class="p-about-state__picture">
-                  <source class="p-about-state__img" srcset="<?php echo get_template_directory_uri(); ?>/img/webp/about01.webp" type="image/webp" />
-                  <img data-src="<?php echo get_template_directory_uri(); ?>/img/common/about01.jpeg" width="634" height="634" class="p-about-state__img lazyload" alt="院内の様子">
+                  <source class="p-about-state__img" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/img/webp/about01.webp" type="image/webp" />
+                  <img data-src="<?php echo esc_url(get_template_directory_uri()); ?>/img/common/about01.jpeg" width="634" height="634" class="p-about-state__img lazyload" alt="院内の様子">
                 </picture>
               </div>
               <div class="p-about-state__photo">
                 <picture class="p-about-state__picture">
-                  <source class="p-about-state__img" srcset="<?php echo get_template_directory_uri(); ?>/img/webp/about02.webp" type="image/webp" />
-                  <img data-src="<?php echo get_template_directory_uri(); ?>/img/common/about02.jpeg" width="634" height="634" class="p-about-state__img lazyload" alt="院内の様子">
+                  <source class="p-about-state__img" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/img/webp/about02.webp" type="image/webp" />
+                  <img data-src="<?php echo esc_url(get_template_directory_uri()); ?>/img/common/about02.jpeg" width="634" height="634" class="p-about-state__img lazyload" alt="院内の様子">
                 </picture>
               </div>
               <div class="p-about-state__photo">
                 <picture class="p-about-state__picture">
-                  <source class="p-about-state__img" srcset="<?php echo get_template_directory_uri(); ?>/img/webp/about03.webp" type="image/webp" />
-                  <img data-src="<?php echo get_template_directory_uri(); ?>/img/common/about03.jpeg" width="634" height="634" class="p-about-state__img lazyload" alt="院内の様子">
+                  <source class="p-about-state__img" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/img/webp/about03.webp" type="image/webp" />
+                  <img data-src="<?php echo esc_url(get_template_directory_uri()); ?>/img/common/about03.jpeg" width="634" height="634" class="p-about-state__img lazyload" alt="院内の様子">
                 </picture>
               </div>
               <div class="p-about-state__photo">
                 <picture class="p-about-state__picture">
-                  <source class="p-about-state__img" srcset="<?php echo get_template_directory_uri(); ?>/img/webp/about04.webp" type="image/webp" />
-                  <img data-src="<?php echo get_template_directory_uri(); ?>/img/common/about04.jpeg" width="634" height="634" class="p-about-state__img lazyload" alt="院内の様子">
+                  <source class="p-about-state__img" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/img/webp/about04.webp" type="image/webp" />
+                  <img data-src="<?php echo esc_url(get_template_directory_uri()); ?>/img/common/about04.jpeg" width="634" height="634" class="p-about-state__img lazyload" alt="院内の様子">
                 </picture>
               </div>
               <div class="p-about-state__photo">
                 <picture class="p-about-state__picture">
-                  <source class="p-about-state__img" srcset="<?php echo get_template_directory_uri(); ?>/img/webp/about05.webp" type="image/webp" />
-                  <img data-src="<?php echo get_template_directory_uri(); ?>/img/common/about05.jpeg" width="634" height="634" class="p-about-state__img lazyload" alt="院内の様子">
+                  <source class="p-about-state__img" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/img/webp/about05.webp" type="image/webp" />
+                  <img data-src="<?php echo esc_url(get_template_directory_uri()); ?>/img/common/about05.jpeg" width="634" height="634" class="p-about-state__img lazyload" alt="院内の様子">
                 </picture>
               </div>
               <div class="p-about-state__photo">
                 <picture class="p-about-state__picture">
-                  <source class="p-about-state__img" srcset="<?php echo get_template_directory_uri(); ?>/img/webp/about06.webp" type="image/webp" />
-                  <img data-src="<?php echo get_template_directory_uri(); ?>/img/common/about06.jpeg" width="634" height="634" class="p-about-state__img lazyload" alt="院内の様子">
+                  <source class="p-about-state__img" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/img/webp/about06.webp" type="image/webp" />
+                  <img data-src="<?php echo esc_url(get_template_directory_uri()); ?>/img/common/about06.jpeg" width="634" height="634" class="p-about-state__img lazyload" alt="院内の様子">
                 </picture>
               </div>
             </div>
