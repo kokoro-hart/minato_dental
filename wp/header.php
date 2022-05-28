@@ -4,18 +4,9 @@
   <meta charset="utf-8">
   <meta name="format-detection" content="telephone=no">
   <meta name="viewport" content="width=device-width">
-  <meta name="description" content="街の皆様の笑顔を守る、アットホームな歯医者さん">
-  <meta property="og:title" content="<?php the_title(); ?> | みなみ歯科クリニック">
-  <meta property="og:description" content="街の皆様の笑顔を守る、アットホームな歯医者さん">
-  <meta property="og:url" content="<?php echo esc_url(home_url('/')); ?>">
-  <meta property="og:type" content="website">
-  <meta property="og:local" content="ja_JP">
-  <meta property="og:image" content="<? echo esc_url(get_template_directory_uri()); ?>/img/common/mv01.jpeg">
-  <meta property="og:site_name" content="みなみ歯科クリニック">
-
+  <?php my_meta_ogp(); ?>
   <link rel="apple-touch-icon" href="<? echo esc_url(get_template_directory_uri()); ?>/img/common/apple-touch-icon.png">
   <link rel="icon" href="<? echo esc_url(get_template_directory_uri()); ?>/img/common/favicon.ico" id="favicon">
-
   <?php wp_head(); ?>
 </head>
 <body>

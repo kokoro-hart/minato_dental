@@ -1,8 +1,8 @@
 <?php
 
-// 初期設定
-//--------------------------------------------------------------------------------------
-
+/**********************
+初期設定
+*********************/
 function my_setup()
 {
   add_theme_support('post-thumbnails'); // アイキャッチ画像を有効化
@@ -37,11 +37,84 @@ function my_script_init()
 }
 add_action('wp_enqueue_scripts', 'my_script_init');
 
-// フィルターフック
-//--------------------------------------------------------------------------------------
-//lazyload対象のアイキャッチはsrcをdata-srcに置き換える
-function my_post_image_html( $html, $post_id, $post_image_id ) {
 
+/**********************
+OGP設定
+*********************/
+function my_meta_ogp()
+{
+  if (is_front_page() || is_home() || is_singular()) {
+
+    /*初期設定*/
+
+    // 画像 （アイキャッチ画像が無い時に使用する代替画像URL）
+    $ogp_image = ''.esc_url(get_template_directory_uri()).'/img/common/mv01.jpeg';
+    // Twitterのアカウント名 (@xxx)
+    $twitter_site = '@xxx_minami_dental';
+    // Twitterカードの種類（summary_large_image または summary を指定）
+    $twitter_card = 'summary_large_image';
+    // Facebook APP ID
+    $facebook_app_id = '';
+
+    /*初期設定 ここまで*/
+
+    global $post;
+    $ogp_title = '';
+    $ogp_description = '';
+    $ogp_url = '';
+    $html = '';
+
+    if (is_singular()) {
+      // 記事＆固定ページ
+      setup_postdata($post);
+      $ogp_title = $post->post_title . ' | ' . get_bloginfo('name');
+      $ogp_description = mb_substr(get_the_excerpt(), 0, 100);
+      $ogp_url = get_permalink();
+      wp_reset_postdata();
+    } elseif (is_front_page() || is_home()) {
+      // トップページ
+      $ogp_title = get_bloginfo('name');
+      $ogp_description = get_bloginfo('description');
+      $ogp_url = home_url();
+    }
+
+    // og:type
+    $ogp_type = (is_front_page() || is_home()) ? 'website' : 'article';
+
+    // og:image
+    if (is_singular() && has_post_thumbnail()) {
+      $ps_thumb = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full');
+      $ogp_image = $ps_thumb[0];
+    }
+
+    // 出力するOGPタグをまとめる
+    $html = "\n";
+    $html .= '<meta property="og:title" content="' . esc_attr($ogp_title) . '">' . "\n";
+    $html .= '<meta property="og:description" content="' . esc_attr($ogp_description) . '">' . "\n";
+    $html .= '<meta property="og:type" content="' . $ogp_type . '">' . "\n";
+    $html .= '<meta property="og:url" content="' . esc_url($ogp_url) . '">' . "\n";
+    $html .= '<meta property="og:image" content="' . esc_url($ogp_image) . '">' . "\n";
+    $html .= '<meta property="og:site_name" content="' . esc_attr(get_bloginfo('name')) . '">' . "\n";
+    $html .= '<meta name="twitter:card" content="' . $twitter_card . '">' . "\n";
+    $html .= '<meta name="twitter:site" content="' . $twitter_site . '">' . "\n";
+    $html .= '<meta property="og:locale" content="ja_JP">' . "\n";
+
+    if ($facebook_app_id != "") {
+      $html .= '<meta property="fb:app_id" content="' . $facebook_app_id . '">' . "\n";
+    }
+
+    echo $html;
+  }
+}
+// wp_head内でOGPを出力する場合
+//add_action('wp_head', 'my_meta_ogp');
+
+
+/**********************
+フィルターフック
+*********************/
+
+function my_post_image_html( $html, $post_id, $post_image_id ) {
   //遅延読み込み対象の画像のみ
   if(strpos($html, 'lazyload') === false) {
       return $html;
@@ -53,7 +126,7 @@ function my_post_image_html( $html, $post_id, $post_image_id ) {
 }
 add_filter( 'post_thumbnail_html', 'my_post_image_html', 10, 3 );
 
-//javascriptの遅延defer属性を追加
+//scriptタグにdefer属性を追加
 function scriptLoader($script, $handle, $src) {
 	if (is_admin()) {
 		return $script;
@@ -64,25 +137,28 @@ function scriptLoader($script, $handle, $src) {
 add_filter('script_loader_tag', 'scriptLoader', 10, 5);
 
 
-//カテゴリ説明欄でhtmlを記述可能にする
+// カテゴリ説明欄でhtmlを記述可能にする
 remove_filter( 'pre_term_description', 'wp_filter_kses' );
 
-//フォーム設置ページのみContactForm7のcss、jsを読み込み
+// フォーム設置ページのみContactForm7のcss、jsを読み込み
 add_action( 'wp', function() {
   if ( is_page( 'contact' ) || is_page( 'reserve' ) ) return;
   add_filter( 'wpcf7_load_js', '__return_false' );
   add_filter( 'wpcf7_load_css', '__return_false' );
 });
 
+// titleタグの区切り
 function change_title_separator( $sep ){
   $sep = ' | ';
   return $sep;
 }
 add_filter( 'document_title_separator', 'change_title_separator' );
 
-// 独自関数
-//--------------------------------------------------------------------------------------
-//ナビゲーションのカレント
+
+/**********************
+関数
+*********************/
+// ナビゲーションのカレント
 function check($param) {
   switch(true) {
     case is_post_type_archive($param);
@@ -111,8 +187,9 @@ function my_pagination()
   }
 }
 
-//カスタム投稿 カスタム分類
-//--------------------------------------------------------------------------------------
+/**********************
+カスタム投稿設定
+*********************/
 add_action('init', function() {
   //スタッフブログ
   register_post_type('news', [
