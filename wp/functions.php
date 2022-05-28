@@ -43,14 +43,14 @@ OGP設定
 *********************/
 function my_meta_ogp()
 {
-  if (is_front_page() || is_home() || is_singular()) {
+  if (is_front_page() || is_home() || is_singular() || is_archive()) {
 
     /*初期設定*/
 
     // 画像 （アイキャッチ画像が無い時に使用する代替画像URL）
     $ogp_image = ''.esc_url(get_template_directory_uri()).'/img/common/mv01.jpeg';
     // Twitterのアカウント名 (@xxx)
-    $twitter_site = '@xxx_minami_dental';
+    $twitter_site = '@dummy_minami_dental';
     // Twitterカードの種類（summary_large_image または summary を指定）
     $twitter_card = 'summary_large_image';
     // Facebook APP ID
@@ -64,22 +64,43 @@ function my_meta_ogp()
     $ogp_url = '';
     $html = '';
 
-    if (is_singular()) {
+    if (is_front_page()) {
+      // トップページ
+      $ogp_title = get_bloginfo('name');
+      $ogp_description = get_bloginfo('description');
+      $ogp_url = home_url();
+    } elseif (is_tax() || is_category())  {
+      // カテゴリページ
+      $ogp_title = single_cat_title( '', false ) . ' | ' . get_bloginfo('name');
+      $ogp_description = get_bloginfo('description');
+      $ogp_url =get_pagenum_link(get_query_var('paged'));
+    } elseif (is_page()) {
+      // 固定ページ
+      $ogp_title = get_the_title() . ' | ' . get_bloginfo('name');
+      $ogp_description = get_bloginfo('description');
+      $ogp_url = get_pagenum_link(get_query_var('paged'));
+      wp_reset_postdata();
+    } elseif (is_archive('news'))  {
+      // アーカイブページ
+      $ogp_title = 'お知らせ | ' . get_bloginfo('name');
+      $ogp_description = get_bloginfo('description');
+      $ogp_url =get_pagenum_link(get_query_var('paged'));
+    } elseif (is_home()) {
+      // スタッフブログページ
+      $ogp_title = 'スタッフブログ | ' . get_bloginfo('name');
+      $ogp_description = get_bloginfo('description');
+      $ogp_url =get_pagenum_link(get_query_var('paged'));
+    } elseif (is_singular()) {
       // 記事＆固定ページ
       setup_postdata($post);
       $ogp_title = $post->post_title . ' | ' . get_bloginfo('name');
       $ogp_description = mb_substr(get_the_excerpt(), 0, 100);
       $ogp_url = get_permalink();
       wp_reset_postdata();
-    } elseif (is_front_page() || is_home()) {
-      // トップページ
-      $ogp_title = get_bloginfo('name');
-      $ogp_description = get_bloginfo('description');
-      $ogp_url = home_url();
     }
 
     // og:type
-    $ogp_type = (is_front_page() || is_home()) ? 'website' : 'article';
+    $ogp_type = (is_front_page()) ? 'website' : 'article';
 
     // og:image
     if (is_singular() && has_post_thumbnail()) {
