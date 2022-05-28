@@ -7,6 +7,7 @@
   <?php my_meta_ogp(); ?>
   <link rel="apple-touch-icon" href="<? echo esc_url(get_template_directory_uri()); ?>/img/common/apple-touch-icon.png">
   <link rel="icon" href="<? echo esc_url(get_template_directory_uri()); ?>/img/common/favicon.ico" id="favicon">
+  <meta name="description" content="<?php bloginfo('description'); ?>">
   <?php wp_head(); ?>
 </head>
 <body>
